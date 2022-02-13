@@ -1,4 +1,4 @@
-**Composite Pattern**
+# Composite Pattern
 
 The composite pattern provides a solution for grouping composable objects that share a common operation under a single interface, so we can handle different levels of composition without worrying whether the object in hand is a primitive or a composite. Composite objects generally keep a list of children.
 
