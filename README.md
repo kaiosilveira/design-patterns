@@ -18,3 +18,4 @@ Each subdirectory will be a .NET solution with two projects:
 
 - [Composite](composite/README.md)
 - [Strategy](strategy/README.md)
+- [Prototype](prototype/README.md)
