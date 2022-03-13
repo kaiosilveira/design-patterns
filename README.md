@@ -16,8 +16,16 @@ Each subdirectory will be a .NET solution with two projects:
 
 ## Pattern catalog
 
-- [Composite](composite/README.md)
-- [Strategy](strategy/README.md)
-- [Prototype](prototype/README.md)
+**Creational patterns**
+
 - [Abstract Factory](abstract-factory/README.md)
 - [Abstract Factory](builder/README.md)
+- [Prototype](prototype/README.md)
+
+**Structural patterns**
+
+- [Composite](composite/README.md)
+
+**Behavioral patterns**
+
+- [Strategy](strategy/README.md)
