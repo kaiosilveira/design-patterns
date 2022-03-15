@@ -1,6 +1,6 @@
 # Design Patterns
 
-This repository was created to exercise my learnings from the Design Patterns book. The idea is to create a subdirectory for each design pattern present in the book and a working example of the implementation.
+This repository was created to exercise my learnings from the Design Patterns and Head First Design Patterns books. The idea is to create a subdirectory for each pattern present in those books and provide a working example of them. As I'm not exactly creative, some examples will be the same of the ones displayed in the books.
 
 ## Language choice
 
