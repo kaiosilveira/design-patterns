@@ -20,6 +20,7 @@ Each subdirectory will be a .NET solution with two projects:
 
 - [Abstract Factory](abstract-factory/README.md)
 - [Abstract Factory](builder/README.md)
+- [Factory Method](factory-method/README.md)
 - [Prototype](prototype/README.md)
 
 **Structural patterns**
