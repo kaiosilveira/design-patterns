@@ -5,11 +5,13 @@ on:
     branches: [main]
 
 jobs:
-  build-observer-pattern:
+  observer-pattern:
     runs-on: ubuntu-latest
+    strategy:
+      matrix: { dir: ["./observer", "./strategy"] }
     defaults:
       run:
-        working-directory: "./observer"
+        working-directory: ${{ matrix.dir }}
 
     steps:
       - uses: actions/checkout@v2
