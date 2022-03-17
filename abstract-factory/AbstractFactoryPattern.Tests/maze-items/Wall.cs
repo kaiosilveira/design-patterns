@@ -13,6 +13,7 @@ public class WallTest
     Assert.Equal("--", icon);
   }
 
+  [Fact]
   public void TestReturnCorrectVerticalIcon()
   {
     var icon = new Wall(Orientation.VERTICAL).GetIcon();

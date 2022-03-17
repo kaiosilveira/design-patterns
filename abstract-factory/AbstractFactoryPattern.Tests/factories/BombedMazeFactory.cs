@@ -28,6 +28,7 @@ public class BombedMazeFactoryTest
     Assert.IsType<BombedRoom>(room);
   }
 
+  [Fact]
   public void TestCreateBombedMaze()
   {
     var maze = new BombedMazeFactory().MakeMaze();
