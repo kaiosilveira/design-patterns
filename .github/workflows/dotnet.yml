@@ -5,10 +5,22 @@ on:
     branches: [main]
 
 jobs:
-  observer-pattern:
+  continuous-integration:
     runs-on: ubuntu-latest
     strategy:
-      matrix: { dir: ["./observer", "./strategy"] }
+      matrix:
+        {
+          dir:
+            [
+              "./abstract-factory",
+              "./builder",
+              "./composite",
+              "./factory-method",
+              "./observer",
+              "./prototype",
+              "./strategy",
+            ],
+        }
     defaults:
       run:
         working-directory: ${{ matrix.dir }}
