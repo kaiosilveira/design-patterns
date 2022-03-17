@@ -6,7 +6,6 @@ namespace ObserverPattern.Domain.Displays;
 
 public class CurrentConditionsDisplay : Display, Observer<WeatherDataState>
 {
-
   private WeatherDataState weatherConditions;
 
   public CurrentConditionsDisplay(Subject<WeatherDataState> subject)
@@ -26,5 +25,10 @@ public class CurrentConditionsDisplay : Display, Observer<WeatherDataState>
     var humidity = this.weatherConditions.Humidity;
     var pressure = this.weatherConditions.Pressure;
     return $"Current conditions: {temperature}*C | {humidity}% | pressure: {pressure}";
+  }
+
+  public void Display()
+  {
+    Console.WriteLine(GetDisplayText());
   }
 }

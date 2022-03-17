@@ -25,5 +25,11 @@ public class StatsDisplay : Display, Observer<WeatherDataState>
   public void Update(WeatherDataState state)
   {
     this.temperatures.Add(state.Temperature);
+    this.Display();
+  }
+
+  public void Display()
+  {
+    Console.WriteLine(GetDisplayText());
   }
 }
