@@ -7,6 +7,9 @@ on:
 jobs:
   build-observer-pattern:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./observer"
 
     steps:
       - uses: actions/checkout@v2
@@ -15,11 +18,8 @@ jobs:
         with:
           dotnet-version: 6.0.x
       - name: Restore dependencies
-        working-directory: "./observer"
         run: dotnet restore
       - name: Build
-        working-directory: "./observer"
         run: dotnet build --no-restore
       - name: Test
-        working-directory: "./observer"
         run: dotnet test --no-build --verbosity normal
