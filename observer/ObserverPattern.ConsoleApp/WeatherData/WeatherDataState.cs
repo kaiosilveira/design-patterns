@@ -1,4 +1,4 @@
-namespace ObserverPattern.Domain;
+namespace ObserverPattern.Domain.Weather;
 
 public class WeatherDataState
 {

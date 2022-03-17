@@ -1,6 +1,6 @@
 using Xunit;
 using ObserverPattern.Observable;
-using ObserverPattern.Domain;
+using ObserverPattern.Domain.Weather;
 
 namespace ObserverPattern.Tests;
 

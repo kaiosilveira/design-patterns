@@ -1,6 +1,6 @@
 using ObserverPattern.Observable;
 
-namespace ObserverPattern.Domain;
+namespace ObserverPattern.Domain.Weather;
 
 public class WeatherData : Subject<WeatherDataState>
 {
