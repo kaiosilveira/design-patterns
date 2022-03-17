@@ -71,4 +71,5 @@ GoF's book also describes a more complex way of handling state changes, should t
 
 ## Working example
 
-For our working example we are going to implement a weather application.
+For our working example we implemented a weather application. This application is attached to an imaginary `WeatherStation` that is able to collect measurements and send them over to a `WeatherData` class, using the `SetMeasurements()` method. The `WeatherData` implements the Observer Pattern and it represents a `Subject`, so it's able to broadcast about its new updates to all the observers. For the observers we implemented `Display`'s. Each display has a different logic to render a final text, but they all share the same interface. Each display class also implements the `Observer` interface to be able to receive the updates from `WeatherData`. I had to use generics in the `Observer` interface definition so we can pass a `State` object, to encapsulate the measurements fields.
+This example was extracted from the Head First Design Patterns book, with some modifications.
