@@ -2,7 +2,7 @@ using Xunit;
 using System.Linq;
 using System.Collections.Generic;
 using ObserverPattern.Domain.Weather;
-using ObserverPattern.Domain.Displays;
+using ObserverPattern.Presentation.Displays;
 using System;
 
 namespace ObserverPattern.Tests;

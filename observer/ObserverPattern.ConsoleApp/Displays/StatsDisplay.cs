@@ -2,7 +2,7 @@ using ObserverPattern.Domain.Interfaces;
 using ObserverPattern.Domain.Weather;
 using ObserverPattern.Observable;
 
-namespace ObserverPattern.Domain.Displays;
+namespace ObserverPattern.Presentation.Displays;
 
 public class StatsDisplay : Display, Observer<WeatherDataState>
 {
