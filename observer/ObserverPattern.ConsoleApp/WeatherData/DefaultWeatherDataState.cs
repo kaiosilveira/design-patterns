@@ -1,4 +1,4 @@
-using ObserverPattern.Domain;
+using ObserverPattern.Domain.Weather;
 
 public class DefaultWeatherDataState : WeatherDataState
 {
