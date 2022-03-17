@@ -1,3 +1,5 @@
+[![CI](https://github.com/kaiosilveira/design-patterns/actions/workflows/dotnet.yml/badge.svg)](https://github.com/kaiosilveira/design-patterns/actions/workflows/dotnet.yml)
+
 # Design Patterns
 
 This repository was created to exercise my learnings from the Design Patterns book.
