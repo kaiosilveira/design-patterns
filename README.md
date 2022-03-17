@@ -1,18 +1,24 @@
 # Design Patterns
 
-This repository was created to exercise my learnings from the Design Patterns and Head First Design Patterns books. The idea is to create a subdirectory for each pattern present in those books and provide a working example of them. As I'm not exactly creative, some examples will be the same of the ones displayed in the books.
+This repository was created to exercise my learnings from the Design Patterns book.
+As I'm not exactly creative, at the beginning I found it hard to come up with real-world examples to implement, but thankfully the Head-First Design-Patterns book helped me with that. It also helped me to better fixate the patterns on my brain. So I'm reading both in parallel. For this reason, new patterns might come up in the order presented at Head-First Design Patterns book instead of the original Design Patterns book, as I'm using it as the main learning source and referring to the GoF book catalog as patterns emerge in the learning path.
+
+## Repository structure
+
+This repository is organizing with subdirectories for each pattern present in the book. Each subdirectory contains:
+
+- A console application package implementing the pattern
+- A test package implementing the corresponding tests
+
+At the `README.md` file of each pattern, you will find:
+
+- An overall view of the pattern
+- A "How-To" section, giving a top-level view of the structure
+- A "Working example" section, explaining the actual code implemented to exercise the pattern
 
 ## Language choice
 
 I decided to use C# (on top of .NET Core) as the programming language choice to implement the patterns, as it is a traditional, strongly-typed Object-Oriented language.
-
-## Directory and subdirectories structures
-
-The main directory is structured with a subdirectory for each pattern. Each subdirectory contains a `README.md` file explaining the general idea behind the pattern, followed by an explanation and some context on the working example.
-Each subdirectory will be a .NET solution with two projects:
-
-- A Console project, to hold the actual classes and a `Program.cs` file with the running working example
-- A Test project, to hold the tests related to the working example
 
 ## Pattern catalog
 
