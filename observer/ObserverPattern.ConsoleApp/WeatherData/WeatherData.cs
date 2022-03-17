@@ -19,7 +19,7 @@ public class WeatherData : Subject<WeatherDataState>
 
   public void Notify() => this.observers.ForEach(observer => observer.Update(this.state));
 
-  public void SetMeasurements(float temperature, float pressure, float humidity)
+  public void SetMeasurements(double temperature, double pressure, double humidity)
   {
     this.state = new WeatherDataState(temperature, pressure, humidity);
     this.MeasurementsChanged();

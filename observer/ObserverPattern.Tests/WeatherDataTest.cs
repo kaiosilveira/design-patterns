@@ -31,9 +31,9 @@ public class WeatherDataTest
   [Fact]
   public void TestRegistersAnObserver()
   {
-    float temperature = 21.3F;
-    float pressure = 1.0F;
-    float humidity = 49.5F;
+    double temperature = 21.3;
+    double pressure = 1.0F;
+    double humidity = 49.5F;
 
     var observer = new MyObserver();
     var weatherData = new WeatherData();
@@ -50,9 +50,9 @@ public class WeatherDataTest
   [Fact]
   public void TestDeregisterAnObserver()
   {
-    float temperature = 21.3F;
-    float pressure = 1.0F;
-    float humidity = 49.5F;
+    double temperature = 21.3;
+    double pressure = 1.0;
+    double humidity = 49.5;
 
     var observer = new MyObserver();
     var weatherData = new WeatherData();
@@ -64,7 +64,7 @@ public class WeatherDataTest
 
     weatherData.Detach(observer);
 
-    weatherData.SetMeasurements(temperature + 1.0F, pressure + 1.0F, humidity + 1.0F);
+    weatherData.SetMeasurements(temperature + 1.0, pressure + 1.0, humidity + 1.0);
 
     Assert.Equal(1, observer.NotificationsReceived);
   }
