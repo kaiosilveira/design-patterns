@@ -27,7 +27,7 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 **Creational patterns**
 
 - [Abstract Factory](abstract-factory/README.md)
-- [Abstract Factory](builder/README.md)
+- [Builder](builder/README.md)
 - [Factory Method](factory-method/README.md)
 - [Prototype](prototype/README.md)
 
