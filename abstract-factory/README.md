@@ -10,6 +10,79 @@ Concrete factories could help here: we could isolate the creation of the element
 
 ## Structure
 
+Below we have the class diagram representing the pattern structure:
+
+```mermaid
+classDiagram
+class AbstractFactory{
+    createProductA();
+    createProductB();
+}
+
+class ConcreteFactory1{
+    createProductA();
+    createProductB();
+}
+
+class ConcreteFactory2{
+    createProductA();
+    createProductB();
+}
+
+AbstractFactory<|--ConcreteFactory1
+AbstractFactory<|--ConcreteFactory2
+
+class AbstractProductA{
+    int prop
+}
+
+class ProductA1 {
+    int prop
+}
+
+class ProductA2 {
+    int prop
+}
+
+AbstractProductA<|--ProductA1
+AbstractProductA<|--ProductA2
+
+class AbstractProductB{
+    int prop
+}
+
+class ProductB1 {
+    int prop
+}
+
+class ProductB2 {
+    int prop
+}
+
+AbstractProductB<|--ProductB1
+AbstractProductB<|--ProductB2
+
+ConcreteFactory1..|>ProductA1
+ConcreteFactory1..|>ProductB1
+
+ConcreteFactory2..|>ProductA2
+ConcreteFactory2..|>ProductB2
+
+class Client{
+    AbstractProductA productA
+    AbstractProductB productB
+    AbstractFactory factory
+}
+
+Client-->AbstractProductA
+Client-->AbstractProductB
+Client-->AbstractFactory
+```
+
+## How-To
+
+Following up on the widgets example above, we could have an implementation like this:
+
 - Abstract widgets:
 
 ```csharp
