@@ -4,6 +4,33 @@ The prototype pattern provides a way to create copies of objects based on an exi
 
 **Book definition:** Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
+## Structure
+
+```mermaid
+classDiagram
+class Prototype {
+    Clone()
+}
+
+class ConcretePrototype1 {
+    Clone()
+}
+
+class ConcretePrototype2 {
+    Clone()
+}
+
+class Client {
+    Operation()
+}
+
+ConcretePrototype1 --|> Prototype: implements
+ConcretePrototype2 --|> Prototype: implements
+Client --> Prototype : has-a
+```
+
+A `Client` calls an `Operation()` to `Clone()` an object. Each `ConcretePrototype` implements logic to clone itself. All `ConcretePrototype`s implements the `Prototype` interface.
+
 ## How-To
 
 We start with an abstract Prototype class that defines a `Clone()` operation:
