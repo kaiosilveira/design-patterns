@@ -2,7 +2,38 @@
 
 Define a one to many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
-## How-to
+## Structure
+
+```mermaid
+classDiagram
+class Observer {
+    Update()
+}
+
+class ConcreteObserver {
+    Update()
+}
+
+class Subject {
+    Attach(Observer o)
+    Detach(Observer o)
+    Notify()
+}
+
+class ConcreteSubject {
+    GetState()
+    SetState()
+}
+
+ConcreteSubject--|>Subject : implements
+ConcreteObserver--|>Observer : implements
+Subject-->Observer : has-many
+
+```
+
+Notice that a `Subject` can have many `Observer`'s, each `Observer` has a `ConcreteObserver` implementation, that knows how to `Update()` themselves whenever the `Subject` notifies (`Notify()`) them.
+
+## How-To
 
 The implementation itself may vary depending on how much data we want to share between the two parts, but the top-level idea remains the same:
 
