@@ -4,6 +4,34 @@ The factory method pattern provides us a way to delegate the creation of objects
 
 **Book definition:** Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 
+## Structure
+
+```mermaid
+classDiagram
+class Creator {
+    FactoryMethod()
+    AnOperation()
+}
+
+ class ConcreteCreator {
+    ConcreteProduct FactoryMethod()
+ }
+
+ class Product {
+     int prop
+ }
+
+ class ConcreteProduct {
+     int prop
+ }
+
+ConcreteCreator--|>Creator
+ConcreteProduct--|>Product
+ConcreteCreator..|>ConcreteProduct
+```
+
+Notice that a `Creator` resorts to a `FactoryMethod()` so it can create the `Product`, but each `ConcreteCreator` should implement the `FactoryMethod()` to return the correct `ConcreteProduct` for the context.
+
 ## How-to
 
 - The abstract class for the product we want to create
