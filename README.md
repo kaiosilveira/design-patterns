@@ -34,6 +34,7 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 **Structural patterns**
 
 - [Composite](composite/README.md)
+- [Decorator](decorator/README.md)
 
 **Behavioral patterns**
 
