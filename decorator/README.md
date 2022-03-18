@@ -9,31 +9,31 @@ The decorator pattern allow us to compose objects while keeping the same top-lev
 ```mermaid
 classDiagram
 class Component{
-    methodA();
-    methodB();
+    MethodA();
+    MethodB();
 }
 
 class ConcreteComponent{
-    methodA();
-    methodB();
+    MethodA();
+    MethodB();
 }
 
 class Decorator{
     Component wrappedObj
-    methodA();
-    methodB();
+    MethodA();
+    MethodB();
 }
 
 class ConcreteDecoratorA{
     Component wrappedObj
-    methodA();
-    methodB();
+    MethodA();
+    MethodB();
 }
 
 class ConcreteDecoratorB{
     Component wrappedObj
-    methodA();
-    methodB();
+    MethodA();
+    MethodB();
 }
 
 Component<|--ConcreteComponent
@@ -41,6 +41,8 @@ Component<|--Decorator
 Decorator<|--ConcreteDecoratorA
 Decorator<|--ConcreteDecoratorB
 ```
+
+A client here would the `Component` without knowing wether it's a simple `ConcreteComponent` or a decorated one, because both of them implements the same abstract interface. Additionally, the decorator components (`ConcreteDecoratorA` and `ConcreteDecoratorB`) would implement their logic before or after calling `MethodA()` or `MethodB()` and the client would treat the result the same way.
 
 ## How-to
 
