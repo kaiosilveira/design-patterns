@@ -32,6 +32,8 @@ Builder<|--ConcreteBuilder
 ConcreteBuilder..>Product
 ```
 
+Notice that a `Director` has a method to `Construct()` the `Product`, but it delegates this task to the `Builder`. The builder in this case is a `ConcreteBuilder`, that allows for building parts gradually until the desired result is achieved. Then, the `Director` only needs to call `GetResult()` to get hold of the product just built.
+
 ## How-To
 
 A builder is commonly a class that's specialist in creating a particular kind of object, so we commonly have the following group of classes working together:
