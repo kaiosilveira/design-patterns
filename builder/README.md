@@ -4,6 +4,34 @@ The builder pattern provides a way to abstract away the complexities of instanti
 
 **Book definition:** Separate the construction of a complex object from its representation so that the same construction process can create different representations.
 
+## Structure
+
+Below we can find a class diagram of the pattern:
+
+```mermaid
+classDiagram
+class Product {
+    Part Part
+}
+
+class Director {
+    Product Construct()
+}
+
+class Builder {
+    BuildPart()
+}
+
+class ConcreteBuilder {
+    Part BuildPart()
+    Product GetResult()
+}
+
+Director*-->Builder
+Builder<|--ConcreteBuilder
+ConcreteBuilder..>Product
+```
+
 ## How-To
 
 A builder is commonly a class that's specialist in creating a particular kind of object, so we commonly have the following group of classes working together:
