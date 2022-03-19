@@ -26,17 +26,17 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 
 **Creational patterns**
 
-- [Abstract Factory](abstract-factory/README.md)
-- [Builder](builder/README.md)
-- [Factory Method](factory-method/README.md)
-- [Prototype](prototype/README.md)
+- [Abstract Factory](/abstract-factory)
+- [Builder](/builder)
+- [Factory Method](/factory-method)
+- [Prototype](/prototype)
 
 **Structural patterns**
 
-- [Composite](composite/README.md)
-- [Decorator](decorator/README.md)
+- [Composite](/composite)
+- [Decorator](/decorator)
 
 **Behavioral patterns**
 
-- [Strategy](strategy/README.md)
-- [Observer](observer/README.md)
+- [Strategy](/strategy)
+- [Observer](/observer)
