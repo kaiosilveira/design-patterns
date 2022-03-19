@@ -1,7 +1,7 @@
 
-using StarbuzzCoffee.Domain.Pricing;
+using StarbuzzCoffee.Pricing;
 
-namespace StarbuzzCoffee.Domain.Beverages.Condiments;
+namespace StarbuzzCoffee.Beverages.Condiments;
 
 public class Whip : CondimentDecorator
 {

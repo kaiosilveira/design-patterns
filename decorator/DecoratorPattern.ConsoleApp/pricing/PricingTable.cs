@@ -1,4 +1,4 @@
-namespace StarbuzzCoffee.Domain.Pricing;
+namespace StarbuzzCoffee.Pricing;
 
 public static class PricingTable
 {

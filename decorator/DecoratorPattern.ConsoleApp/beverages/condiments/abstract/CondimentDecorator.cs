@@ -1,4 +1,4 @@
-namespace StarbuzzCoffee.Domain.Beverages.Condiments;
+namespace StarbuzzCoffee.Beverages.Condiments;
 
 public class CondimentDecorator : Beverage
 {

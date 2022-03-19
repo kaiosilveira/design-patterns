@@ -1,6 +1,6 @@
-using StarbuzzCoffee.Domain.Pricing;
+using StarbuzzCoffee.Pricing;
 
-namespace StarbuzzCoffee.Domain.Beverages;
+namespace StarbuzzCoffee.Beverages;
 
 public class DarkRoast : Beverage
 {

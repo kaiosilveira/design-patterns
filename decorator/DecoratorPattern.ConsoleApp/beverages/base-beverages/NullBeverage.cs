@@ -1,4 +1,4 @@
-namespace StarbuzzCoffee.Domain.Beverages;
+namespace StarbuzzCoffee.Beverages;
 
 public class NullBeverage : Beverage
 {

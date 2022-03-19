@@ -1,6 +1,6 @@
 using Xunit;
-using StarbuzzCoffee.Domain.Beverages;
-using StarbuzzCoffee.Domain.Pricing;
+using StarbuzzCoffee.Beverages;
+using StarbuzzCoffee.Pricing;
 
 namespace DecoratorPattern.Tests;
 

@@ -1,7 +1,7 @@
 using Xunit;
-using StarbuzzCoffee.Domain.Beverages;
-using StarbuzzCoffee.Domain.Beverages.Condiments;
-using StarbuzzCoffee.Domain.Pricing;
+using StarbuzzCoffee.Beverages;
+using StarbuzzCoffee.Beverages.Condiments;
+using StarbuzzCoffee.Pricing;
 
 namespace StarbuzzCoffee.Tests;
 

@@ -1,5 +1,5 @@
-﻿using StarbuzzCoffee.Domain.Beverages;
-using StarbuzzCoffee.Domain.Beverages.Condiments;
+﻿using StarbuzzCoffee.Beverages;
+using StarbuzzCoffee.Beverages.Condiments;
 
 namespace StarbuzzCoffee.Program;
 

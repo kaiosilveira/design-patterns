@@ -1,8 +1,8 @@
 using Xunit;
-using StarbuzzCoffee.Domain.Beverages;
-using StarbuzzCoffee.Domain.Pricing;
+using StarbuzzCoffee.Beverages;
+using StarbuzzCoffee.Pricing;
 
-namespace DecoratorPattern.Tests;
+namespace StarbuzzCoffee.Tests;
 
 public class DecafTest
 {
@@ -19,6 +19,7 @@ public class DecafTest
     Assert.Equal(PricingTable.DECAF + .2, mediumDecaf.Cost());
   }
 
+  [Fact]
   public void TestPriceForLargeSize()
   {
     var largeDecaf = new Decaf(BeverageSize.VENTI);

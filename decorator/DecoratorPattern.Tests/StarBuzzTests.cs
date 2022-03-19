@@ -1,8 +1,8 @@
 using Xunit;
-using StarbuzzCoffee.Domain.Beverages;
-using StarbuzzCoffee.Domain.Beverages.Condiments;
+using StarbuzzCoffee.Beverages;
+using StarbuzzCoffee.Beverages.Condiments;
 
-namespace DecoratorPattern.Tests;
+namespace StarbuzzCoffee.Tests;
 
 public class CoffeeShopTest
 {
