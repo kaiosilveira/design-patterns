@@ -20,4 +20,12 @@ public class WhipTest
     var whip = new Whip(new NullBeverage());
     Assert.Equal("Whip", whip.GetDescription());
   }
+
+  [Fact]
+  public void TestComposeItsPriceWithAnotherBeverage()
+  {
+    var expresso = new Expresso();
+    var whip = new Whip(expresso);
+    Assert.Equal(PricingTable.EXPRESSO + PricingTable.WHIP, whip.Cost());
+  }
 }

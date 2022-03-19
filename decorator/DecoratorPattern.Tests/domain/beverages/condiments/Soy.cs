@@ -20,4 +20,12 @@ public class SoyTest
     var soy = new Soy(new NullBeverage());
     Assert.Equal("Soy", soy.GetDescription());
   }
+
+  [Fact]
+  public void TestComposeItsPriceWithAnotherBeverage()
+  {
+    var expresso = new Expresso();
+    var soy = new Soy(expresso);
+    Assert.Equal(PricingTable.EXPRESSO + PricingTable.SOY, soy.Cost());
+  }
 }

@@ -20,4 +20,12 @@ public class MilkTest
     var milk = new Milk(new NullBeverage());
     Assert.Equal("Milk", milk.GetDescription());
   }
+
+  [Fact]
+  public void TestComposeItsPriceWithAnotherBeverage()
+  {
+    var expresso = new Expresso();
+    var milk = new Milk(expresso);
+    Assert.Equal(PricingTable.EXPRESSO + PricingTable.MILK, milk.Cost());
+  }
 }

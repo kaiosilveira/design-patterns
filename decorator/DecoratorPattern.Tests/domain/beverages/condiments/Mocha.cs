@@ -20,4 +20,12 @@ public class MochaTest
     var mocha = new Mocha(new NullBeverage());
     Assert.Equal("Mocha", mocha.GetDescription());
   }
+
+  [Fact]
+  public void TestComposeItsPriceWithAnotherBeverage()
+  {
+    var expresso = new Expresso();
+    var mocha = new Mocha(expresso);
+    Assert.Equal(PricingTable.EXPRESSO + PricingTable.MOCHA, mocha.Cost());
+  }
 }
