@@ -1,4 +1,4 @@
-namespace FactoryMethodPattern.Pizzas;
+namespace PizzaStore.Pizzas;
 
 public class ChicagoStyleCheesePizza : Pizza
 {

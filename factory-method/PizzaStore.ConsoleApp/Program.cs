@@ -1,7 +1,7 @@
-﻿using FactoryMethodPattern.Pizzas;
-using FactoryMethodPattern.PizzaStores;
+﻿using PizzaStore.Pizzas;
+using PizzaStore.Stores;
 
-namespace FactoryMethodPattern.ConsoleApp;
+namespace PizzaStore.ConsoleApp;
 
 public class Program
 {

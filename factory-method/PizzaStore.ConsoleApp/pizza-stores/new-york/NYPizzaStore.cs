@@ -1,6 +1,6 @@
-using FactoryMethodPattern.Pizzas;
+using PizzaStore.Pizzas;
 
-namespace FactoryMethodPattern.PizzaStores;
+namespace PizzaStore.Stores;
 
 public class NYPizzaStore : PizzaStore
 {

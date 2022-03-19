@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FactoryMethodPattern.ConsoleApp\FactoryMethodPattern.ConsoleApp.csproj" />
+    <ProjectReference Include="..\PizzaStore.ConsoleApp\PizzaStore.ConsoleApp.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,8 +1,8 @@
 using Xunit;
-using FactoryMethodPattern.Pizzas;
-using FactoryMethodPattern.PizzaStores;
+using PizzaStore.Pizzas;
+using PizzaStore.Stores;
 
-namespace FactoryMethodPattern.Tests;
+namespace PizzaStore.Tests;
 
 public class ChicagoPizzaStoreTest
 {
