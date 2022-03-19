@@ -47,3 +47,21 @@ A client here would the `Component` without knowing wether it's a simple `Concre
 ## How-to
 
 ## Working example
+
+Starbuzz Coffee
+
+```bash
++-------------------+
+| Coffees           |
+| - House Blend .89 |
+| - Dark Roast .99  |
+| - Decaf 1.05      |
+| - Expresso 1.99   |
+|                   |
+| Condiments        |
+| - SteamedMilk .10 |
+| - Mocha .20       |
+| - Soy .15         |
+| - Whip .10        |
++-------------------+
+```
