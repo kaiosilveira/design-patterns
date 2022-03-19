@@ -1,5 +1,6 @@
 using Xunit;
 using StarbuzzCoffee.Domain.Beverages;
+using StarbuzzCoffee.Domain.Pricing;
 
 namespace DecoratorPattern.Tests;
 
@@ -15,7 +16,7 @@ public class DecafTest
   [Fact]
   public void TestHasPrice()
   {
-    Assert.Equal(1.05, decaf.Cost());
+    Assert.Equal(PricingTable.DECAF, decaf.Cost());
   }
 
   [Fact]

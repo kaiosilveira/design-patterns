@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages;
 
 public class DarkRoast : Beverage
@@ -9,6 +11,6 @@ public class DarkRoast : Beverage
 
   public override double Cost()
   {
-    return .99;
+    return PricingTable.DARK_ROAST;
   }
 }

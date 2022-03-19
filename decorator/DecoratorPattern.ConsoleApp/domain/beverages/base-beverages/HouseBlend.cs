@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages;
 
 public class HouseBlend : Beverage
@@ -9,6 +11,6 @@ public class HouseBlend : Beverage
 
   public override double Cost()
   {
-    return .89;
+    return PricingTable.HOUSE_BLEND;
   }
 }

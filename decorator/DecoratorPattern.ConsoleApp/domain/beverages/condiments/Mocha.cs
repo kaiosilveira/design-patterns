@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages.Condiments;
 
 public class Mocha : CondimentDecorator
@@ -11,6 +13,6 @@ public class Mocha : CondimentDecorator
 
   public override double Cost()
   {
-    return this.beverage.Cost() + .20;
+    return this.beverage.Cost() + PricingTable.MOCHA;
   }
 }

@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages;
 
 public class Decaf : Beverage
@@ -9,6 +11,6 @@ public class Decaf : Beverage
 
   public override double Cost()
   {
-    return 1.05;
+    return PricingTable.DECAF;
   }
 }

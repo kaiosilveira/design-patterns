@@ -1,4 +1,6 @@
 
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages.Condiments;
 
 public class Whip : CondimentDecorator
@@ -13,6 +15,6 @@ public class Whip : CondimentDecorator
 
   public override double Cost()
   {
-    return this.beverage.Cost() + .10;
+    return this.beverage.Cost() + PricingTable.WHIP;
   }
 }

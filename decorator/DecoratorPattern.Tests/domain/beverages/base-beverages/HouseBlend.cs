@@ -1,5 +1,6 @@
 using Xunit;
 using StarbuzzCoffee.Domain.Beverages;
+using StarbuzzCoffee.Domain.Pricing;
 
 namespace DecoratorPattern.Tests;
 
@@ -15,7 +16,7 @@ public class HouseBlendTest
   [Fact]
   public void TestHasPrice()
   {
-    Assert.Equal(.89, houseBlend.Cost());
+    Assert.Equal(PricingTable.HOUSE_BLEND, houseBlend.Cost());
   }
 
   [Fact]

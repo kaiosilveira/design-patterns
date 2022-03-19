@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages;
 
 public class Expresso : Beverage
@@ -9,6 +11,6 @@ public class Expresso : Beverage
 
   public override double Cost()
   {
-    return 1.99;
+    return PricingTable.EXPRESSO;
   }
 }

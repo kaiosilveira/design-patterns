@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages.Condiments;
 
 public class Soy : CondimentDecorator
@@ -12,6 +14,6 @@ public class Soy : CondimentDecorator
 
   public override double Cost()
   {
-    return this.beverage.Cost() + .15;
+    return this.beverage.Cost() + PricingTable.SOY;
   }
 }

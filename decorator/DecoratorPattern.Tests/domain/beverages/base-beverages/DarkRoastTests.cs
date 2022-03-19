@@ -1,5 +1,6 @@
 using Xunit;
 using StarbuzzCoffee.Domain.Beverages;
+using StarbuzzCoffee.Domain.Pricing;
 
 namespace DecoratorPattern.Tests;
 
@@ -15,7 +16,7 @@ public class DarkRoastTest
   [Fact]
   public void TestHasPrice()
   {
-    Assert.Equal(.99, darkRoast.Cost());
+    Assert.Equal(PricingTable.DARK_ROAST, darkRoast.Cost());
   }
 
   [Fact]

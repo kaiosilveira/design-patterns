@@ -1,3 +1,5 @@
+using StarbuzzCoffee.Domain.Pricing;
+
 namespace StarbuzzCoffee.Domain.Beverages.Condiments;
 
 public class Milk : CondimentDecorator
@@ -12,6 +14,6 @@ public class Milk : CondimentDecorator
 
   public override double Cost()
   {
-    return this.beverage.Cost() + .10;
+    return this.beverage.Cost() + PricingTable.MILK;
   }
 }
