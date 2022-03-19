@@ -6,22 +6,28 @@ namespace DecoratorPattern.Tests;
 
 public class DecafTest
 {
-  Decaf decaf;
-
-  public DecafTest()
+  [Fact]
+  public void TestPriceForSmallSize()
   {
-    this.decaf = new Decaf();
+    Assert.Equal(PricingTable.DECAF, new Decaf(BeverageSize.TALL).Cost());
   }
 
   [Fact]
-  public void TestHasPrice()
+  public void TestPriceForMediumSize()
   {
-    Assert.Equal(PricingTable.DECAF, decaf.Cost());
+    var mediumDecaf = new Decaf(BeverageSize.GRANDE);
+    Assert.Equal(PricingTable.DECAF + .2, mediumDecaf.Cost());
+  }
+
+  public void TestPriceForLargeSize()
+  {
+    var largeDecaf = new Decaf(BeverageSize.VENTI);
+    Assert.Equal(PricingTable.DECAF + .4, largeDecaf.Cost());
   }
 
   [Fact]
   public void TestHasDescription()
   {
-    Assert.Equal("Decaf", decaf.GetDescription());
+    Assert.Equal("Decaf", new Decaf().GetDescription());
   }
 }

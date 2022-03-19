@@ -6,22 +6,30 @@ namespace DecoratorPattern.Tests;
 
 public class DarkRoastTest
 {
-  DarkRoast darkRoast;
-
-  public DarkRoastTest()
+  [Fact]
+  public void TestPriceForSmallSize()
   {
-    this.darkRoast = new DarkRoast();
+    var smallDarkRoast = new DarkRoast(BeverageSize.TALL);
+    Assert.Equal(PricingTable.DARK_ROAST, smallDarkRoast.Cost());
   }
 
   [Fact]
-  public void TestHasPrice()
+  public void TestPriceForMediumSize()
   {
-    Assert.Equal(PricingTable.DARK_ROAST, darkRoast.Cost());
+    var mediumDarkRoast = new DarkRoast(BeverageSize.GRANDE);
+    Assert.Equal(PricingTable.DARK_ROAST + .2, mediumDarkRoast.Cost());
+  }
+
+  [Fact]
+  public void TestPriceForLargeSize()
+  {
+    var bigDarkRoast = new DarkRoast(BeverageSize.VENTI);
+    Assert.Equal(PricingTable.DARK_ROAST + .4, bigDarkRoast.Cost());
   }
 
   [Fact]
   public void TestHasDescription()
   {
-    Assert.Equal("Dark Roast Coffee", darkRoast.GetDescription());
+    Assert.Equal("Dark Roast Coffee", new DarkRoast().GetDescription());
   }
 }

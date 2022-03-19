@@ -4,13 +4,9 @@ namespace StarbuzzCoffee.Domain.Beverages;
 
 public class DarkRoast : Beverage
 {
-  public DarkRoast() : base()
+  public DarkRoast(BeverageSize size = BeverageSize.TALL)
+    : base(size, basePrice: PricingTable.DARK_ROAST)
   {
     this.Description = "Dark Roast Coffee";
-  }
-
-  public override double Cost()
-  {
-    return PricingTable.DARK_ROAST;
   }
 }
