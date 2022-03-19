@@ -32,7 +32,7 @@ ConcreteCreator..|>ConcreteProduct
 
 Notice that a `Creator` resorts to a `FactoryMethod()` so it can create the `Product`, but each `ConcreteCreator` should implement the `FactoryMethod()` to return the correct `ConcreteProduct` for the context.
 
-## How-to
+## How-To
 
 - The abstract class for the product we want to create
 
