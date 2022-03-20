@@ -149,10 +149,15 @@ public override View MakeView() => new IOSView();
 
 ## Working example
 
-As a working example, I've used another use case described in the book for the abstract factory: A maze game. In this game we would like to create different kinds of maze (simple, enchanted, bombed) and we want to hide tbe details of which concrete class that's being created, so the calling code could simply say "create this item", and the item would be created accordingly to its concrete factory.
-To accomplish this, I've created an abstract `MazeFactory` class, which is inherited by `BombedMazeFactory`, `EnchantedMazeFactory` and `SimpleMazeFactory`. As you can guess, `SimpleMazeFactory` returns regular objects, whilist `BombedMazeFactory` and `EnchantedMazeFactory` return stylized items according to its names.
+As working examples, we have two implementations: the first is a use case extracted from GoF's book, a Maze Game. The second one is extracted from the example in Head First Design Patterns, an Ingredient Factory implementation for the Pizza Store (expanded from the [Factory Method Pattern](../factory-method/)). Each of them are detailed below.
 
-The implementation itself is quite extensive, but the final result looks like this:
+### Maze Game
+
+In this game we would like to create different kinds of maze (simple, enchanted, bombed) and we want to hide tbe details of which concrete class that's being created, so the calling code could simply say "create this item", and the item would be created accordingly to its concrete factory.
+
+To accomplish this, I've created an abstract `MazeFactory` class, which is inherited by `BombedMazeFactory`, `EnchantedMazeFactory` and `SimpleMazeFactory`. As you can guess, `SimpleMazeFactory` returns regular objects, whilst `BombedMazeFactory` and `EnchantedMazeFactory` return stylized items according to its names.
+
+The implementation itself is quite extensive and can be viewed at the `maze-game` solution in this directory, but the final result looks like this:
 Code:
 
 ```csharp
@@ -178,7 +183,7 @@ public class Program
 
 Output:
 
-```
+```bash
 Using enchanted factory:
 ✨✨✨✨✨🪞✨✨✨✨✨
 ✨..................✨
