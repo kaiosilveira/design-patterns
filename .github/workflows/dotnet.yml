@@ -13,6 +13,7 @@ jobs:
           dir:
             [
               "./abstract-factory/maze-game",
+              "./abstract-factory/pizza-store",
               "./builder",
               "./composite",
               "./factory-method",
