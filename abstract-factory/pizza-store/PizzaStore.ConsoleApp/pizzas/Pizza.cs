@@ -1,28 +1,23 @@
+using PizzaStore.Pizzas.Ingredients;
+
 namespace PizzaStore.Pizzas;
 
 public abstract class Pizza
 {
   public string Name { get; private set; }
-  private string Dough { get; set; }
-  private string Sauce { get; set; }
-  private List<string> Toppings { get; set; }
+  public Dough? Dough { get; protected set; }
+  public Sauce? Sauce { get; protected set; }
+  public Cheese? Cheese { get; protected set; }
+  public Veggies[]? Veggies { get; protected set; }
+  public Pepperoni? Pepperoni { get; protected set; }
+  public Clams? Clam { get; protected set; }
 
-  public Pizza(string name, string dough, string sauce, List<string> toppings)
+  public Pizza(string name)
   {
     this.Name = name;
-    this.Dough = dough;
-    this.Sauce = sauce;
-    this.Toppings = toppings;
   }
 
-  public void Prepare()
-  {
-    Console.WriteLine($"Preparing {this.Name}");
-    Console.WriteLine("Tossing dough...");
-    Console.WriteLine("Adding sauce...");
-    Console.WriteLine("Adding toppings:");
-    Toppings.ForEach(Topping => Console.WriteLine($"    {Topping}"));
-  }
+  public abstract void Prepare();
 
   public virtual void Bake()
   {
