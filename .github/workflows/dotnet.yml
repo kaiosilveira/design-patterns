@@ -12,7 +12,7 @@ jobs:
         {
           dir:
             [
-              "./abstract-factory",
+              "./abstract-factory/maze-game",
               "./builder",
               "./composite",
               "./factory-method",
