@@ -30,6 +30,7 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 - [Builder](/builder)
 - [Factory Method](/factory-method)
 - [Prototype](/prototype)
+- [Singleton](/singleton)
 
 **Structural patterns**
 
