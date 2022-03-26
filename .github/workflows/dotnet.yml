@@ -14,6 +14,7 @@ jobs:
             [
               "./abstract-factory/maze-game",
               "./abstract-factory/pizza-store",
+              "./command/home-automation-inc",
               "./singleton/choc-o-holic",
               "./builder",
               "./composite",
