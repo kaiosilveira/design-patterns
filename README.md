@@ -41,3 +41,4 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 
 - [Strategy](/strategy)
 - [Observer](/observer)
+- [Command](/command)
