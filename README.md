@@ -36,6 +36,7 @@ I decided to use C# (on top of .NET Core) as the programming language choice to 
 
 - [Composite](/composite)
 - [Decorator](/decorator)
+- [Adapter](/adapter)
 
 **Behavioral patterns**
 
