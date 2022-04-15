@@ -1,6 +1,8 @@
 using Xunit;
 using HomeTheater.ConnectedDevices;
 
+namespace HomeTheater.Tests.ConnectedDevices;
+
 public class TunerTest
 {
   [Fact]
