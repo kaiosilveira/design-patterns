@@ -22,6 +22,16 @@ At the `README.md` file of each pattern, you will find:
 
 I decided to use C# (on top of .NET Core) as the programming language choice to implement the patterns, as it is a traditional, strongly-typed Object-Oriented language.
 
+## OO Principles
+These are the OO principles highlighted by the books:
+- Encapsulate what varies
+- Favor composition over inheritance
+- Program to interfaces, not implementations
+- Strive for loosely coupled designs between objects that interact
+- Classes should be open for extension and closed for modification
+- Depend on abstractions. Do not depend on concretions
+- Talk only to your friends
+
 ## Pattern catalog
 
 **Creational patterns**
