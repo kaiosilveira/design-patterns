@@ -13,16 +13,19 @@ public class Projector : Switchable
 
   public void On()
   {
+    Console.WriteLine("Top-O-Line projector on");
     this.IsOn = true;
   }
 
   public void Off()
   {
+    Console.WriteLine("Top-O-Line projector off");
     this.IsOn = false;
   }
 
   public void WideScreenMode()
   {
+    Console.WriteLine("Top-O-Line projector in widescreen mode (16x 9 aspect ratio)");
     this.ScreenMode = ScreenMode.Wide;
   }
 

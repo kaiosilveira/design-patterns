@@ -14,6 +14,7 @@ public class PopcornPopper : Switchable
   public void Off()
   {
     this.IsOn = false;
+    this.Popping = false;
     Console.WriteLine("Popcorn popper off");
   }
 

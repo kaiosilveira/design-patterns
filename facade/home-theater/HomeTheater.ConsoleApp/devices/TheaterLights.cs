@@ -16,13 +16,13 @@ public class TheaterLights : Switchable
   public void On()
   {
     this.IsOn = true;
-    Console.WriteLine("TheaterLights are on");
+    Console.WriteLine("Theater ceiling lights are on");
   }
 
   public void Off()
   {
     this.IsOn = false;
-    Console.WriteLine("TheaterLights are off");
+    Console.WriteLine("Theater ceiling lights are off");
   }
 
   public void Dim(int level)
@@ -33,6 +33,6 @@ public class TheaterLights : Switchable
     }
 
     this.Brightness = level;
-    Console.WriteLine($"Brightness set to {level}");
+    Console.WriteLine($"Theater ceiling lights dimming to {level}");
   }
 }

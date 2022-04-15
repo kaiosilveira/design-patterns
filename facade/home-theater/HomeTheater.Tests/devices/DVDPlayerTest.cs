@@ -25,9 +25,13 @@ public class DVDPlayerTest
   [Fact]
   public void TestPlay()
   {
+    var movieTitle = "Fight Club";
     var dvdPlayer = new DVDPlayer();
+
     dvdPlayer.On();
-    dvdPlayer.Play();
+    dvdPlayer.Play(movieTitle);
+
+    Assert.Equal(movieTitle, dvdPlayer.NowPlaying);
     Assert.Equal(MediaPlayingState.Playing, dvdPlayer.PlayingState);
   }
 
@@ -47,5 +51,17 @@ public class DVDPlayerTest
     dvdPlayer.On();
     dvdPlayer.Stop();
     Assert.Equal(MediaPlayingState.Stopped, dvdPlayer.PlayingState);
+  }
+
+  [Fact]
+  public void TestEject()
+  {
+    var dvdPlayer = new DVDPlayer();
+
+    dvdPlayer.On();
+    dvdPlayer.Eject();
+
+    Assert.False(dvdPlayer.HasDisk);
+    Assert.Equal("", dvdPlayer.NowPlaying);
   }
 }

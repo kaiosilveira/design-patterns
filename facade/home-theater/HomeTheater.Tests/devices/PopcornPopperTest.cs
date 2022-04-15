@@ -19,6 +19,7 @@ public class PopcornPopperTest
     var popper = new PopcornPopper();
     popper.Off();
     Assert.False(popper.IsOn);
+    Assert.False(popper.Popping);
   }
 
   [Fact]
