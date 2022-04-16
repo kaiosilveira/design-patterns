@@ -54,3 +54,4 @@ These are the OO principles highlighted by the books:
 - [Strategy](/strategy)
 - [Observer](/observer)
 - [Command](/command)
+- [Template method](/template-method)
