@@ -23,7 +23,9 @@ At the `README.md` file of each pattern, you will find:
 I decided to use C# (on top of .NET Core) as the programming language choice to implement the patterns, as it is a traditional, strongly-typed Object-Oriented language.
 
 ## OO Principles
+
 These are the OO principles highlighted by the books:
+
 - Encapsulate what varies
 - Favor composition over inheritance
 - Program to interfaces, not implementations
@@ -31,10 +33,15 @@ These are the OO principles highlighted by the books:
 - Classes should be open for extension and closed for modification
 - Depend on abstractions. Do not depend on concretions
 - Talk only to your friends
+- "Don't call us, we'll call you"
 
 ## Pattern catalog
 
 **Creational patterns**
+
+Creational design patterns abstract the instantiation process. They help make a system independent of how its objects are created, composed and represented.
+
+The creational design patterns presented at GoF's book are:
 
 - [Abstract Factory](/abstract-factory)
 - [Builder](/builder)
@@ -44,12 +51,20 @@ These are the OO principles highlighted by the books:
 
 **Structural patterns**
 
+Structural patterns are concerned with how classes and objects are composed to form larger structures.
+
+The structural design patterns presented at GoF's book are:
+
 - [Composite](/composite)
 - [Decorator](/decorator)
 - [Adapter](/adapter)
 - [Facade](/facade)
 
 **Behavioral patterns**
+
+Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. Behavioral patterns describe not just patterns of objects or classes but also the patterns of communication between them. These patterns characterize complex flow that's difficult to follow at run-time. They shift your focus away from flow of control to let you concentrate just on the way objects are interconnected.
+
+The behavioral design patterns presented at GoF's book are:
 
 - [Strategy](/strategy)
 - [Observer](/observer)
