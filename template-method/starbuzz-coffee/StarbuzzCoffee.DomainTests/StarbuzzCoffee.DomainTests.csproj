@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\StarbuzzCoffee.Domain\StarbuzzCoffee.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
