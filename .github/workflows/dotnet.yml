@@ -17,6 +17,7 @@ jobs:
               "./command/home-automation-inc",
               "./adapter/duck-adapter",
               "./singleton/choc-o-holic",
+              "./template-method/starbuzz-coffee",
               "./facade/home-theater",
               "./builder",
               "./composite",
