@@ -7,7 +7,7 @@ As I'm not exactly creative, at the beginning I found it hard to come up with re
 
 ## Repository structure
 
-This repository is organizing with subdirectories for each pattern present in the book. Each subdirectory contains:
+This repository is organized with subdirectories for each pattern presented in the book. Each subdirectory contains:
 
 - A console application package implementing the pattern
 - A test package implementing the corresponding tests
@@ -20,7 +20,7 @@ At the `README.md` file of each pattern, you will find:
 
 ## Language choice
 
-I decided to use C# (on top of .NET Core) as the programming language choice to implement the patterns, as it is a traditional, strongly-typed Object-Oriented language.
+I chose to use C# (on top of .NET Core) as the programming language to implement these patterns, as it is a traditional, strongly-typed Object-Oriented language.
 
 ## OO Principles
 
