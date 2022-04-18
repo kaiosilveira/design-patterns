@@ -18,6 +18,7 @@ jobs:
               "./adapter/duck-adapter",
               "./singleton/choc-o-holic",
               "./template-method/starbuzz-coffee",
+              "./iterator/objectville-food",
               "./facade/home-theater",
               "./builder",
               "./composite",
