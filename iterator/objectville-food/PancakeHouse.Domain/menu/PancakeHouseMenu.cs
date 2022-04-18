@@ -1,6 +1,10 @@
-namespace PancakeHouse.Domain.Menu;
+using ObjectvilleFood.Domain;
+using ObjectvilleFood.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Utils;
 
-public class PancakeHouseMenu
+namespace PancakeHouse.Domain.MenuDefinition;
+
+public class PancakeHouseMenu : Menu
 {
   private List<MenuItem> menuItems;
 
@@ -39,9 +43,9 @@ public class PancakeHouseMenu
     menuItems.Add(menuItem);
   }
 
-  public IEnumerable<MenuItem> GetMenuItems()
+  public Iterator<MenuItem> CreateIterator()
   {
-    return menuItems;
+    return new PancakeHouseMenuIterator(menuItems);
   }
 
   public int GetNumberOfItems()

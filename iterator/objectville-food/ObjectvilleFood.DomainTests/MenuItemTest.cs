@@ -1,7 +1,7 @@
 using Xunit;
-using PancakeHouse.Domain.Menu;
+using ObjectvilleFood.Domain.MenuDefinition;
 
-namespace PancakeHouse.DomainTests;
+namespace ObjectvilleFood.DomainTests;
 
 public class MenuItemTest
 {

@@ -1,6 +1,10 @@
-namespace ObjectvilleDiner.Domain.Menu;
+using ObjectvilleFood.Domain;
+using ObjectvilleFood.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Utils;
 
-public class DinerMenu
+namespace ObjectvilleDiner.Domain.MenuDefinition;
+
+public class DinerMenu : Menu
 {
   private const int MAX_ITEMS = 6;
   private int numberOfItems = 0;
@@ -29,9 +33,9 @@ public class DinerMenu
     }
   }
 
-  public IEnumerable<MenuItem> GetMenuItems()
+  public Iterator<MenuItem> CreateIterator()
   {
-    return this.menuItems;
+    return new DinerMenuIterator(menuItems);
   }
 
   public IEnumerable<MenuItem> GetVegetarianMenuItems()

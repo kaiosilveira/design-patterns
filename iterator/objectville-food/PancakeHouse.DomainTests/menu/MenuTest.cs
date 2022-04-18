@@ -1,5 +1,5 @@
 using Xunit;
-using PancakeHouse.Domain.Menu;
+using PancakeHouse.Domain.MenuDefinition;
 
 public class MenuTest
 {
@@ -8,5 +8,12 @@ public class MenuTest
   {
     var menu = new PancakeHouseMenu();
     Assert.Equal(4, menu.GetNumberOfItems());
+  }
+
+  [Fact]
+  public void TestCreateIterator()
+  {
+    var menu = new PancakeHouseMenu();
+    Assert.IsType<PancakeHouseMenuIterator>(menu.CreateIterator());
   }
 }

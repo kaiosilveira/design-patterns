@@ -1,5 +1,5 @@
 using Xunit;
-using ObjectvilleDiner.Domain.Menu;
+using ObjectvilleDiner.Domain.MenuDefinition;
 
 public class MenuTest
 {
@@ -8,5 +8,6 @@ public class MenuTest
   {
     var menu = new DinerMenu();
     Assert.Equal(6, menu.GetNumberOfItems());
+    Assert.IsType<DinerMenuIterator>(menu.CreateIterator());
   }
 }

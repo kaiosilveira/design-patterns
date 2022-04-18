@@ -1,4 +1,4 @@
-﻿namespace ObjectvilleFood.Domain;
+﻿namespace ObjectvilleFood.Domain.Utils;
 
 public interface Iterator<T>
 {
