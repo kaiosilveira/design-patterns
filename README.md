@@ -30,10 +30,11 @@ These are the OO principles highlighted by the books:
 - Favor composition over inheritance
 - Program to interfaces, not implementations
 - Strive for loosely coupled designs between objects that interact
-- Classes should be open for extension and closed for modification
-- Depend on abstractions. Do not depend on concretions
-- Talk only to your friends
-- "Don't call us, we'll call you"
+- Dependency Inversion Principle: Depend on abstractions. Do not depend on concretions
+- Principle of Least Knowledge: Talk only to your immediate friends
+- Open-Closed Principle: Classes should be open for extension and closed for modification
+- Holywood Principle: "Don't call us, we'll call you"
+- Single responsibility Principle: A class should have only one reason to change
 
 ## Pattern catalog
 
