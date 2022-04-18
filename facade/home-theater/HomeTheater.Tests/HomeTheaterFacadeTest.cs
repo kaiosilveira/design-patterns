@@ -36,7 +36,7 @@ public class HomeTheaterFacadeTest
     Assert.Equal(10, lights.Brightness);
 
     Assert.Equal(ScreenPosition.Down, screen.Position);
-    Assert.Equal(dvd.PlayingState, MediaPlayingState.Playing);
+    Assert.Equal(MediaPlayingState.Playing, dvd.PlayingState);
   }
 
   [Fact]
@@ -66,6 +66,6 @@ public class HomeTheaterFacadeTest
     Assert.False(lights.IsOn);
 
     Assert.Equal(ScreenPosition.Up, screen.Position);
-    Assert.Equal(dvd.PlayingState, MediaPlayingState.Stopped);
+    Assert.Equal(MediaPlayingState.Stopped, dvd.PlayingState);
   }
 }
