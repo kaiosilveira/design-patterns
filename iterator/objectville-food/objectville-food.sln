@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectvilleFood.DomainTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectvilleFood.Kiosk", "ObjectvilleFood.Kiosk\ObjectvilleFood.Kiosk.csproj", "{2D617386-7DDC-4CF7-8B5F-5A42430FAC41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectvilleCafe.Domain", "ObjectvilleCafe.Domain\ObjectvilleCafe.Domain.csproj", "{1971FE97-6F6D-4769-A4F5-A6B81A7261D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectvilleCafe.DomainTests", "ObjectvilleCafe.DomainTests\ObjectvilleCafe.DomainTests.csproj", "{E3C9D111-8E7E-46A2-840F-F1AB125594C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 		{2D617386-7DDC-4CF7-8B5F-5A42430FAC41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D617386-7DDC-4CF7-8B5F-5A42430FAC41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D617386-7DDC-4CF7-8B5F-5A42430FAC41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1971FE97-6F6D-4769-A4F5-A6B81A7261D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1971FE97-6F6D-4769-A4F5-A6B81A7261D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1971FE97-6F6D-4769-A4F5-A6B81A7261D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1971FE97-6F6D-4769-A4F5-A6B81A7261D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C9D111-8E7E-46A2-840F-F1AB125594C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C9D111-8E7E-46A2-840F-F1AB125594C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C9D111-8E7E-46A2-840F-F1AB125594C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C9D111-8E7E-46A2-840F-F1AB125594C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
