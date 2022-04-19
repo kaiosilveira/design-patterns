@@ -1,10 +1,9 @@
-using ObjectvilleFood.Domain;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 
 namespace ObjectvilleDiner.Domain.MenuDefinition;
 
-public class DinerMenu : Menu
+public class DinerMenu : Traversable
 {
   private const int MAX_ITEMS = 6;
   private int numberOfItems = 0;

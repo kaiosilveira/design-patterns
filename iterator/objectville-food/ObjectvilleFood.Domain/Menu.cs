@@ -1,8 +1,8 @@
-using ObjectvilleFood.Domain.Utils;
+using ObjectvilleFood.Domain.MenuDefinition;
 
-namespace ObjectvilleFood.Domain.MenuDefinition;
+namespace ObjectvilleFood.Domain.Utils;
 
-public interface Menu
+public interface Traversable
 {
   Iterator<MenuItem> CreateIterator();
 }

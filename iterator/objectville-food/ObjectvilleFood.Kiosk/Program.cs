@@ -6,10 +6,10 @@ using ObjectvilleDiner.Domain.MenuDefinition;
 namespace ObjectvilleFood.Kiosk;
 public class Waitress
 {
-  private Menu breakfastMenu;
-  private Menu lunchMenu;
+  private Traversable breakfastMenu;
+  private Traversable lunchMenu;
 
-  public Waitress(Menu pancakeHouseMenu, Menu dinerMenu)
+  public Waitress(Traversable pancakeHouseMenu, Traversable dinerMenu)
   {
     this.breakfastMenu = pancakeHouseMenu;
     this.lunchMenu = dinerMenu;

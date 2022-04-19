@@ -1,10 +1,9 @@
-using ObjectvilleFood.Domain;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 
 namespace PancakeHouse.Domain.MenuDefinition;
 
-public class PancakeHouseMenu : Menu
+public class PancakeHouseMenu : Traversable
 {
   private List<MenuItem> menuItems;
 
