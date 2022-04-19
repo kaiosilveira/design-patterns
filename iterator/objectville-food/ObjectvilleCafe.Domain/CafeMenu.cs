@@ -1,4 +1,5 @@
 ﻿using ObjectvilleFood.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Utils;
 
 namespace ObjectvilleCafe.Domain;
 
@@ -46,5 +47,10 @@ public class CafeMenu : Menu
   public override int GetNumberOfItems()
   {
     return this.menuItems.Count();
+  }
+
+  public override Iterator<MenuItem> CreateIterator()
+  {
+    return new CafeMenuIterator(this.menuItems);
   }
 }
