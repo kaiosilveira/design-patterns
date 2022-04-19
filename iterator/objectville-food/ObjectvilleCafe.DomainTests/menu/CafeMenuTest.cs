@@ -1,5 +1,5 @@
 using Xunit;
-using ObjectvilleCafe.Domain;
+using ObjectvilleCafe.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 using ObjectvilleFood.Domain.MenuDefinition;
 

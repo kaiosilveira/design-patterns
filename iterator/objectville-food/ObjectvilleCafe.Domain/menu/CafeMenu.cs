@@ -1,7 +1,7 @@
 ﻿using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 
-namespace ObjectvilleCafe.Domain;
+namespace ObjectvilleCafe.Domain.MenuDefinition;
 
 public class CafeMenu : Menu
 {
@@ -39,7 +39,7 @@ public class CafeMenu : Menu
     );
   }
 
-  public override void AddItem(MenuItem item)
+  protected override void AddItem(MenuItem item)
   {
     this.menuItems.Add(item.Name, item);
   }

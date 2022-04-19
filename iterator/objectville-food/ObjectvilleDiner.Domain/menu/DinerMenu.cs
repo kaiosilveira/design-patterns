@@ -3,7 +3,7 @@ using ObjectvilleFood.Domain.Utils;
 
 namespace ObjectvilleDiner.Domain.MenuDefinition;
 
-public class DinerMenu : Traversable
+public class DinerMenu : Menu
 {
   private const int MAX_ITEMS = 6;
   private int numberOfItems = 0;
@@ -12,13 +12,45 @@ public class DinerMenu : Traversable
   public DinerMenu()
   {
     this.menuItems = new MenuItem[MAX_ITEMS];
-    this.AddItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 299);
-    this.AddItem("BLT", "Bacon with lettuce & tomato on whole wheat", false, 299);
-    this.AddItem("Soup of the day", "Soup of the day, with a side of potato salad", false, 329);
-    this.AddItem("Hotdog", "A hot dog, with saurkraut, relish, onions, topped with cheese", false, 305);
+
+    this.AddItem(
+      new MenuItem(
+        name: "Vegetarian BLT",
+        description: "(Fakin') Bacon with lettuce & tomato on whole wheat",
+        isVegetarian: true,
+        price: 299
+      )
+    );
+
+    this.AddItem(
+      new MenuItem(
+        name: "BLT",
+        description: "Bacon with lettuce & tomato on whole wheat",
+        isVegetarian: false,
+        price: 299
+      )
+    );
+
+    this.AddItem(
+      new MenuItem(
+        name: "Soup of the day",
+        description: "Soup of the day, with a side of potato salad",
+        isVegetarian: false,
+        price: 329
+      )
+    );
+
+    this.AddItem(
+      new MenuItem(
+        name: "Hotdog",
+        description: "A hot dog, with saurkraut, relish, onions, topped with cheese",
+        isVegetarian: false,
+        price: 305
+      )
+    );
   }
 
-  public void AddItem(string name, string description, bool isVegetarian, int price)
+  protected override void AddItem(MenuItem item)
   {
     if (numberOfItems >= MAX_ITEMS)
     {
@@ -26,13 +58,12 @@ public class DinerMenu : Traversable
     }
     else
     {
-      MenuItem menuItem = new MenuItem(name, description, isVegetarian, price);
-      menuItems[numberOfItems] = menuItem;
+      menuItems[numberOfItems] = item;
       numberOfItems++;
     }
   }
 
-  public Iterator<MenuItem> CreateIterator()
+  public override Iterator<MenuItem> CreateIterator()
   {
     return new DinerMenuIterator(menuItems);
   }
@@ -42,7 +73,7 @@ public class DinerMenu : Traversable
     return this.menuItems.Where(item => item.IsVegetarian);
   }
 
-  public int GetNumberOfItems()
+  public override int GetNumberOfItems()
   {
     return this.menuItems.Count();
   }

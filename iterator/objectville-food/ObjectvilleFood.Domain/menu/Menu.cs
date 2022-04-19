@@ -4,7 +4,7 @@ namespace ObjectvilleFood.Domain.MenuDefinition;
 
 public abstract class Menu : Traversable
 {
-  public abstract void AddItem(MenuItem item);
+  protected abstract void AddItem(MenuItem item);
 
   public abstract Iterator<MenuItem> CreateIterator();
 

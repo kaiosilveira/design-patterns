@@ -4,6 +4,7 @@
     <ProjectReference Include="..\ObjectvilleDiner.Domain\ObjectvilleDiner.Domain.csproj" />
     <ProjectReference Include="..\PancakeHouse.Domain\PancakeHouse.Domain.csproj" />
     <ProjectReference Include="..\ObjectvilleFood.Domain\ObjectvilleFood.Domain.csproj" />
+    <ProjectReference Include="..\ObjectvilleCafe.Domain\ObjectvilleCafe.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
