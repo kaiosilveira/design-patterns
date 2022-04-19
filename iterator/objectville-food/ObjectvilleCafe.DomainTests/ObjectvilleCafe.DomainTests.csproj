@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ObjectvilleCafe.Domain\ObjectvilleCafe.Domain.csproj" />
+    <ProjectReference Include="..\ObjectvilleFood.Domain\ObjectvilleFood.Domain.csproj" />
   </ItemGroup>
 
 </Project>
