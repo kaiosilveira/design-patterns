@@ -1,3 +1,4 @@
+using ObjectvilleFood.Domain.Exceptions;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 
@@ -27,6 +28,11 @@ public class DinerMenuIterator : Iterator<MenuItem>
 
   public MenuItem Next()
   {
+    if (!this.HasNext())
+    {
+      throw new IteratorOutOfBoundsException();
+    }
+
     var menuItem = items[position];
     position = position + 1;
     return menuItem;

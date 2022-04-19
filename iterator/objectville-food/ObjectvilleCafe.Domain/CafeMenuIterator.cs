@@ -29,7 +29,7 @@ public class CafeMenuIterator : Iterator<MenuItem>
 
   public MenuItem Next()
   {
-    if (this.items.Count() == 0)
+    if (!this.HasNext())
     {
       throw new IteratorOutOfBoundsException();
     }

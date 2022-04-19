@@ -1,6 +1,7 @@
 using Xunit;
 using ObjectvilleDiner.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Exceptions;
 
 public class DinerMenuIteratorTest
 {
@@ -26,5 +27,12 @@ public class DinerMenuIteratorTest
     Assert.Equal(item2.Name, iterator.Next().Name);
 
     Assert.False(iterator.HasNext());
+  }
+
+  [Fact]
+  public void TestThrowsIfOutOfBounds()
+  {
+    var iterator = new DinerMenuIterator(new MenuItem[] { });
+    Assert.Throws<IteratorOutOfBoundsException>(() => iterator.Next());
   }
 }

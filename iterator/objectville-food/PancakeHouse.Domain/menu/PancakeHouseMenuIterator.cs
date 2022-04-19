@@ -1,3 +1,4 @@
+using ObjectvilleFood.Domain.Exceptions;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Utils;
 
@@ -26,6 +27,11 @@ public class PancakeHouseMenuIterator : Iterator<MenuItem>
 
   public MenuItem Next()
   {
+    if (!this.HasNext())
+    {
+      throw new IteratorOutOfBoundsException();
+    }
+
     var menuItem = menuItems.First();
     menuItems.RemoveAt(0);
     return menuItem;

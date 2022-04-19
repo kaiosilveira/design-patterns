@@ -2,6 +2,7 @@ using Xunit;
 using System.Collections.Generic;
 using PancakeHouse.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Exceptions;
 
 public class PancakeHouseMenuIteratorTest
 {
@@ -27,5 +28,12 @@ public class PancakeHouseMenuIteratorTest
     Assert.Equal(item2.Name, iterator.Next().Name);
 
     Assert.False(iterator.HasNext());
+  }
+
+  [Fact]
+  public void TestThrowsIfOutOfBounds()
+  {
+    var iterator = new PancakeHouseMenuIterator(new List<MenuItem>());
+    Assert.Throws<IteratorOutOfBoundsException>(() => iterator.Next());
   }
 }

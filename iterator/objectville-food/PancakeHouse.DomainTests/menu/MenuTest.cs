@@ -1,10 +1,12 @@
 using Xunit;
 using PancakeHouse.Domain.MenuDefinition;
+using ObjectvilleFood.Domain.Utils;
+using ObjectvilleFood.Domain.MenuDefinition;
 
 public class MenuTest
 {
   [Fact]
-  public void TestMenu()
+  public void TestGetNumberOfItems()
   {
     var menu = new PancakeHouseMenu();
     Assert.Equal(4, menu.GetNumberOfItems());
@@ -14,6 +16,6 @@ public class MenuTest
   public void TestCreateIterator()
   {
     var menu = new PancakeHouseMenu();
-    Assert.IsType<PancakeHouseMenuIterator>(menu.CreateIterator());
+    Assert.IsAssignableFrom<Iterator<MenuItem>>(menu.CreateIterator());
   }
 }
