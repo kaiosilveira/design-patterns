@@ -21,7 +21,7 @@ jobs:
               "./iterator/objectville-food",
               "./facade/home-theater",
               "./builder",
-              "./composite",
+              "./composite/objectville-food",
               "./factory-method",
               "./observer",
               "./prototype",
