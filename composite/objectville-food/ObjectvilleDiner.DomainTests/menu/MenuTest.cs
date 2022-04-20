@@ -7,6 +7,6 @@ public class MenuTest
   public void TestGetNumberOfItems()
   {
     var menu = new DinerMenu();
-    Assert.Equal(6, menu.GetNumberOfItems());
+    Assert.Equal(4, menu.GetNumberOfItems());
   }
 }

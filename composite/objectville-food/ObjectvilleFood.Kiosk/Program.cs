@@ -7,24 +7,16 @@ namespace ObjectvilleFood.Kiosk;
 
 public class Waitress
 {
-  private Menu breakfastMenu;
-  private Menu lunchMenu;
-  private Menu dinnerMenu;
+  private MenuComponent allMenus;
 
-  public Waitress(Menu breakfastMenu, Menu lunchMenu, Menu dinnerMenu)
+  public Waitress(MenuComponent menus)
   {
-    this.breakfastMenu = breakfastMenu;
-    this.lunchMenu = lunchMenu;
-    this.dinnerMenu = dinnerMenu;
+    this.allMenus = menus;
   }
 
   public void PrintMenu()
   {
-    breakfastMenu.Print();
-    Console.WriteLine("\n");
-    lunchMenu.Print();
-    Console.WriteLine("\n");
-    dinnerMenu.Print();
+    allMenus.Print();
   }
 }
 
@@ -32,7 +24,16 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    var waitress = new Waitress(new PancakeHouseMenu(), new DinerMenu(), new CafeMenu());
+    var allMenus = new Menu(name: "ALL MENUS", description: "All menus, combined");
+    var dinerMenu = new DinerMenu();
+
+    dinerMenu.Add(new DinerDessertMenu());
+    allMenus.Add(new PancakeHouseMenu());
+    allMenus.Add(dinerMenu);
+    allMenus.Add(new CafeMenu());
+
+    var waitress = new Waitress(allMenus);
+
     waitress.PrintMenu();
   }
 }

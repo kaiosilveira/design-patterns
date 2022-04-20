@@ -1,10 +1,10 @@
 namespace ObjectvilleFood.Domain.MenuDefinition;
 
-public abstract class Menu : MenuComponent
+public class Menu : MenuComponent
 {
   protected List<MenuComponent> menuComponents;
 
-  protected Menu(string name, string description)
+  public Menu(string name, string description)
     : base(name, description, isVegetarian: false, price: 0)
   {
     this.menuComponents = new List<MenuComponent>();
