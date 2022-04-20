@@ -1,17 +1,12 @@
 ﻿using ObjectvilleFood.Domain.MenuDefinition;
-using ObjectvilleFood.Domain.Utils;
 
 namespace ObjectvilleCafe.Domain.MenuDefinition;
 
 public class CafeMenu : Menu
 {
-  private Dictionary<string, MenuItem> menuItems;
-
-  public CafeMenu()
+  public CafeMenu() : base(name: "Dinner menu", description: "Objectville Cafe's dinner menu")
   {
-    this.menuItems = new Dictionary<string, MenuItem>();
-
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Veggie Burger and Air Fries",
         description: "Veggie burger on a whole wheat bun, lettuce, tomato, and fries",
@@ -20,7 +15,7 @@ public class CafeMenu : Menu
       )
     );
 
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Soup of the day",
         description: "A cup of the soup of the day, with a side salad",
@@ -29,7 +24,7 @@ public class CafeMenu : Menu
       )
     );
 
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Burrito",
         description: "A large burrito, with whole pinto beans, salsa, guacamole",
@@ -37,20 +32,5 @@ public class CafeMenu : Menu
         price: 429
       )
     );
-  }
-
-  protected override void AddItem(MenuItem item)
-  {
-    this.menuItems.Add(item.Name, item);
-  }
-
-  public override int GetNumberOfItems()
-  {
-    return this.menuItems.Count();
-  }
-
-  public override Iterator<MenuItem> CreateIterator()
-  {
-    return new CafeMenuIterator(this.menuItems);
   }
 }

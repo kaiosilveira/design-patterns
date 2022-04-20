@@ -9,7 +9,7 @@ public class MenuComponent
   public int Price { get; private set; }
   public bool IsVegetarian { get; private set; }
 
-  public MenuComponent(string name, string description, int price, bool isVegetarian)
+  public MenuComponent(string name, string description, bool isVegetarian, int price)
   {
     this.Name = name;
     this.Description = description;
@@ -22,12 +22,12 @@ public class MenuComponent
     throw new UnsupportedOperationException();
   }
 
-  public virtual void Remove()
+  public virtual void Remove(MenuComponent component)
   {
     throw new UnsupportedOperationException();
   }
 
-  public virtual void GetChild(int i)
+  public virtual MenuComponent GetChild(int i)
   {
     throw new UnsupportedOperationException();
   }

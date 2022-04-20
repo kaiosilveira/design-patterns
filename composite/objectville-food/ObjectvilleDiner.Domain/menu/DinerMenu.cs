@@ -1,19 +1,12 @@
 using ObjectvilleFood.Domain.MenuDefinition;
-using ObjectvilleFood.Domain.Utils;
 
 namespace ObjectvilleDiner.Domain.MenuDefinition;
 
 public class DinerMenu : Menu
 {
-  private const int MAX_ITEMS = 6;
-  private int numberOfItems = 0;
-  private MenuItem[] menuItems;
-
-  public DinerMenu()
+  public DinerMenu() : base(name: "Lunch Menu", description: "Objectville Diner's lunch menu")
   {
-    this.menuItems = new MenuItem[MAX_ITEMS];
-
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Vegetarian BLT",
         description: "(Fakin') Bacon with lettuce & tomato on whole wheat",
@@ -22,7 +15,7 @@ public class DinerMenu : Menu
       )
     );
 
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "BLT",
         description: "Bacon with lettuce & tomato on whole wheat",
@@ -31,7 +24,7 @@ public class DinerMenu : Menu
       )
     );
 
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Soup of the day",
         description: "Soup of the day, with a side of potato salad",
@@ -40,7 +33,7 @@ public class DinerMenu : Menu
       )
     );
 
-    this.AddItem(
+    this.Add(
       new MenuItem(
         name: "Hotdog",
         description: "A hot dog, with saurkraut, relish, onions, topped with cheese",
@@ -50,31 +43,8 @@ public class DinerMenu : Menu
     );
   }
 
-  protected override void AddItem(MenuItem item)
+  public IEnumerable<MenuComponent> GetVegetarianMenuItems()
   {
-    if (numberOfItems >= MAX_ITEMS)
-    {
-      Console.WriteLine("Sorry, menu is full! Can't add item to menu");
-    }
-    else
-    {
-      menuItems[numberOfItems] = item;
-      numberOfItems++;
-    }
-  }
-
-  public override Iterator<MenuItem> CreateIterator()
-  {
-    return new DinerMenuIterator(menuItems);
-  }
-
-  public IEnumerable<MenuItem> GetVegetarianMenuItems()
-  {
-    return this.menuItems.Where(item => item.IsVegetarian);
-  }
-
-  public override int GetNumberOfItems()
-  {
-    return this.menuItems.Count();
+    return this.menuComponents.Where(item => item.IsVegetarian);
   }
 }

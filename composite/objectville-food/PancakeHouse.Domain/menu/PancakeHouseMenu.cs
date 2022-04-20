@@ -1,17 +1,13 @@
 using ObjectvilleFood.Domain.MenuDefinition;
-using ObjectvilleFood.Domain.Utils;
 
 namespace PancakeHouse.Domain.MenuDefinition;
 
 public class PancakeHouseMenu : Menu
 {
-  private List<MenuItem> menuItems;
-
   public PancakeHouseMenu()
+    : base(name: "Breakfast Menu", description: "Pancake House's breakfast Menu")
   {
-    menuItems = new List<MenuItem>();
-
-    AddItem(
+    this.Add(
       new MenuItem(
         name: "K&B's Pancake Breakfast",
         description: "Pancakes with scrambled eggs, and toast",
@@ -20,7 +16,7 @@ public class PancakeHouseMenu : Menu
       )
     );
 
-    AddItem(
+    this.Add(
       new MenuItem(
         name: "Regular Pancake Breakfast",
         description: "Pancakes with fried eggs, sausage",
@@ -29,7 +25,7 @@ public class PancakeHouseMenu : Menu
       )
     );
 
-    AddItem(
+    this.Add(
       new MenuItem(
         name: "Blueberry Pancakes",
         description: "Pancakes made with fresh blueberries",
@@ -38,7 +34,7 @@ public class PancakeHouseMenu : Menu
       )
     );
 
-    AddItem(
+    this.Add(
       new MenuItem(
         name: "Waffles",
         description: "Waffles, with your choice of blueberries or strawberries",
@@ -46,20 +42,5 @@ public class PancakeHouseMenu : Menu
         price: 359
       )
     );
-  }
-
-  protected override void AddItem(MenuItem item)
-  {
-    menuItems.Add(item);
-  }
-
-  public override Iterator<MenuItem> CreateIterator()
-  {
-    return new PancakeHouseMenuIterator(menuItems);
-  }
-
-  public override int GetNumberOfItems()
-  {
-    return this.menuItems.Count();
   }
 }

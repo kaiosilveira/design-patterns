@@ -1,5 +1,4 @@
-﻿using ObjectvilleFood.Domain.Utils;
-using PancakeHouse.Domain.MenuDefinition;
+﻿using PancakeHouse.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleDiner.Domain.MenuDefinition;
 using ObjectvilleCafe.Domain.MenuDefinition;
@@ -21,24 +20,11 @@ public class Waitress
 
   public void PrintMenu()
   {
-    Console.WriteLine('\n' + "MENU\n----\nBREAKFAST");
-    PrintMenu(breakfastMenu.CreateIterator());
-
-    Console.WriteLine('\n' + "LUNCH");
-    PrintMenu(lunchMenu.CreateIterator());
-
-    Console.WriteLine('\n' + "DINNER");
-    PrintMenu(dinnerMenu.CreateIterator());
-  }
-
-  private void PrintMenu(Iterator<MenuItem> iterator)
-  {
-    while (iterator.HasNext())
-    {
-      MenuItem menuItem = iterator.Next();
-      var vegetarianText = menuItem.IsVegetarian ? "🍀" : "";
-      Console.WriteLine($"{menuItem.Name}: {menuItem.Description} [{menuItem.Price}] {vegetarianText}");
-    }
+    breakfastMenu.Print();
+    Console.WriteLine("\n");
+    lunchMenu.Print();
+    Console.WriteLine("\n");
+    dinnerMenu.Print();
   }
 }
 
