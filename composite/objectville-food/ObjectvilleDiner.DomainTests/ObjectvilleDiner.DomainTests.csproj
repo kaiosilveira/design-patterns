@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CompositePattern.Console\CompositePattern.Console.csproj" />
+    <ProjectReference Include="..\ObjectvilleDiner.Domain\ObjectvilleDiner.Domain.csproj" />
   </ItemGroup>
 
 </Project>

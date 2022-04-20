@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\ObjectvilleDiner.Domain\ObjectvilleDiner.Domain.csproj" />
+    <ProjectReference Include="..\PancakeHouse.Domain\PancakeHouse.Domain.csproj" />
+    <ProjectReference Include="..\ObjectvilleFood.Domain\ObjectvilleFood.Domain.csproj" />
+    <ProjectReference Include="..\ObjectvilleCafe.Domain\ObjectvilleCafe.Domain.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
