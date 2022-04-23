@@ -72,3 +72,4 @@ The behavioral design patterns presented at GoF's book are:
 - [Command](/command)
 - [Template method](/template-method)
 - [Iterator](/iterator)
+- [State](/state)
