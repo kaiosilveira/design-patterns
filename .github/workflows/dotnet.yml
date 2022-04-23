@@ -19,6 +19,7 @@ jobs:
               "./singleton/choc-o-holic",
               "./template-method/starbuzz-coffee",
               "./iterator/objectville-food",
+              "./state/MightyGumball",
               "./facade/home-theater",
               "./builder",
               "./composite/objectville-food",
