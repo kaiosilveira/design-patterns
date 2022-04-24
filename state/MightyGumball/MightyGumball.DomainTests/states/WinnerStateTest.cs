@@ -1,43 +1,48 @@
+using Xunit;
 using MightyGumball.Domain.Exceptions;
 using MightyGumball.Domain.GumballMachineStates;
 using MightyGumball.DomainTests.Machine;
-using Xunit;
 
 public class WinnerStateTest
 {
-  private TestingGumballMachine machine;
-  private WinnerState state;
-
-  public WinnerStateTest()
-  {
-    this.machine = new TestingGumballMachine(gumballCount: 5);
-    this.state = new WinnerState(this.machine);
-  }
 
   [Fact]
   public void TestInsertQuarter()
   {
-    Assert.Throws<GumballBeingSoldException>(() => this.state.InsertQuarter());
+    var machine = new TestingGumballMachine(gumballCount: 0);
+    var state = new SoldOutState(machine);
+
+    Assert.Throws<GumballBeingSoldException>(() => state.InsertQuarter());
   }
 
   [Fact]
   public void TestEjectQuarter()
   {
-    Assert.Throws<CrankAlreadyTurnedException>(() => this.state.EjectQuarter());
+    var machine = new TestingGumballMachine(gumballCount: 0);
+    var state = new SoldOutState(machine);
+
+    Assert.Throws<CrankAlreadyTurnedException>(() => state.EjectQuarter());
   }
 
   [Fact]
   public void TestTurnCrank()
   {
-    Assert.Throws<CrankAlreadyTurnedException>(() => this.state.TurnCrank());
+    var machine = new TestingGumballMachine(gumballCount: 0);
+    var state = new SoldOutState(machine);
+
+    Assert.Throws<CrankAlreadyTurnedException>(() => state.TurnCrank());
   }
 
   [Fact]
   public void TestDispense()
   {
-    this.state.Dispense();
-    Assert.Equal(4, this.machine.GumballCount);
-    Assert.IsType<NoQuarterState>(this.machine.GetState());
+    var machine = new TestingGumballMachine(gumballCount: 0);
+    var state = new SoldOutState(machine);
+
+    state.Dispense();
+
+    Assert.Equal(4, machine.GumballCount);
+    Assert.IsType<NoQuarterState>(machine.GetState());
   }
 
   [Fact]

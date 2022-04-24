@@ -5,37 +5,41 @@ using MightyGumball.Domain.Exceptions;
 
 public class NoQuarterStateTest
 {
-  private TestingGumballMachine machine;
-  private NoQuarterState state;
-
-  public NoQuarterStateTest()
-  {
-    this.machine = new TestingGumballMachine(gumballCount: 5);
-    this.state = new NoQuarterState(machine);
-  }
-
   [Fact]
   public void TestInsertQuarter()
   {
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new NoQuarterState(machine);
+
     state.InsertQuarter();
+
     Assert.IsType<HasQuarterState>(machine.GetState());
   }
 
   [Fact]
   public void TestEjectQuarter()
   {
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new NoQuarterState(machine);
+
     Assert.Throws<NoQuarterInsertedException>(() => state.EjectQuarter());
   }
 
   [Fact]
   public void TestTurnCrank()
   {
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new NoQuarterState(machine);
+
     Assert.Throws<NoQuarterInsertedException>(() => state.TurnCrank());
   }
 
   [Fact]
   public void TestDispense()
   {
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new NoQuarterState(machine);
+
     Assert.Throws<NoQuarterInsertedException>(() => state.Dispense());
   }
 }
