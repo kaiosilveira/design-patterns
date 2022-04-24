@@ -9,14 +9,20 @@ As I'm not exactly creative, at the beginning I found it hard to come up with re
 
 This repository is organized with subdirectories for each pattern presented in the book. Each subdirectory contains:
 
-- A console application package implementing the pattern
-- A test package implementing the corresponding tests
+- A `README.md` file
+- At least one .NET solution implementing the pattern with a working example
 
 At the `README.md` file of each pattern, you will find:
 
 - An overall view of the pattern
-- A "How-To" section, giving a top-level view of the structure
+- A diagram detailing the pattern structure
 - A "Working example" section, explaining the actual code implemented to exercise the pattern
+
+At the .NET solution you will find:
+
+- A `ProjectName.Domain` class library project, containing the classes and the domain logic
+- A `ProjectName.DomainTests` xunit project, containing the tests for the domain classes
+- A `ProjectName.ConsoleApp` console project, containing an executable for the working example
 
 ## Language choice
 
