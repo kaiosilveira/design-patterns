@@ -29,6 +29,6 @@ public class HasQuarterState : GumballMachineState
 
   public void Dispense()
   {
-    throw new NotImplementedException();
+    throw new NoGumballDispensedException();
   }
 }

@@ -1,7 +1,7 @@
+using Xunit;
 using MightyGumball.Domain.Exceptions;
 using MightyGumball.Domain.GumballMachineStates;
 using MightyGumball.DomainTests.Machine;
-using Xunit;
 
 public class HasQuarterStateTest
 {
@@ -32,5 +32,11 @@ public class HasQuarterStateTest
   {
     state.TurnCrank();
     Assert.IsType<SoldState>(machine.GetState());
+  }
+
+  [Fact]
+  public void TestDispense()
+  {
+    Assert.Throws<NoGumballDispensedException>(() => state.Dispense());
   }
 }
