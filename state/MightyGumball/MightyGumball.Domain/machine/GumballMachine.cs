@@ -42,8 +42,15 @@ public class GumballMachine
 
   public void TurnCrank()
   {
-    this.state.TurnCrank();
-    this.state.Dispense();
+    try
+    {
+      this.state.TurnCrank();
+      this.state.Dispense();
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
   }
 
   public void EjectQuarter()
