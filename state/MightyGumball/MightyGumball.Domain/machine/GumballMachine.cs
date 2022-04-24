@@ -30,6 +30,11 @@ public class GumballMachine
     this.state = state;
   }
 
+  public void Refill(int numberOfGumballs)
+  {
+    this.GumballCount = numberOfGumballs;
+  }
+
   public void ReleaseGumball()
   {
     this.GumballCount--;
@@ -42,15 +47,8 @@ public class GumballMachine
 
   public void TurnCrank()
   {
-    try
-    {
-      this.state.TurnCrank();
-      this.state.Dispense();
-    }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
+    this.state.TurnCrank();
+    this.state.Dispense();
   }
 
   public void EjectQuarter()

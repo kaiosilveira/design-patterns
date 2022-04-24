@@ -8,8 +8,8 @@ public class SoldStateTest
   [Fact]
   public void TestInsertQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 0);
-    var state = new SoldOutState(machine);
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new SoldState(machine);
 
     Assert.Throws<GumballBeingSoldException>(() => state.InsertQuarter());
   }
@@ -17,8 +17,8 @@ public class SoldStateTest
   [Fact]
   public void TestEjectQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 0);
-    var state = new SoldOutState(machine);
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new SoldState(machine);
 
     Assert.Throws<CrankAlreadyTurnedException>(() => state.EjectQuarter());
   }
@@ -26,8 +26,8 @@ public class SoldStateTest
   [Fact]
   public void TestTurnCrank()
   {
-    var machine = new TestingGumballMachine(gumballCount: 0);
-    var state = new SoldOutState(machine);
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new SoldState(machine);
 
     Assert.Throws<CrankAlreadyTurnedException>(() => state.TurnCrank());
   }
@@ -35,8 +35,8 @@ public class SoldStateTest
   [Fact]
   public void TestDispense()
   {
-    var machine = new TestingGumballMachine(gumballCount: 0);
-    var state = new SoldOutState(machine);
+    var machine = new TestingGumballMachine(gumballCount: 5);
+    var state = new SoldState(machine);
 
     state.Dispense();
 
