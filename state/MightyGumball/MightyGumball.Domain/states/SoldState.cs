@@ -2,11 +2,11 @@ using MightyGumball.Domain.Machine;
 
 namespace MightyGumball.Domain.GumballMachineStates;
 
-public class HasQuarterState : GumballMachineState
+public class SoldState : GumballMachineState
 {
-  private GumballMachine gumballMachine;
+  public GumballMachine gumballMachine;
 
-  public HasQuarterState(GumballMachine machine)
+  public SoldState(GumballMachine machine)
   {
     this.gumballMachine = machine;
   }

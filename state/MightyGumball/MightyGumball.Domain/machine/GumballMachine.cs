@@ -7,6 +7,7 @@ public class GumballMachine
   public int GumballCount { get; private set; }
   public GumballMachineState NoQuarter { get; private set; }
   public GumballMachineState HasQuarter { get; private set; }
+  public GumballMachineState Sold { get; private set; }
   protected GumballMachineState state;
 
   public GumballMachine(int gumballCount)
@@ -15,6 +16,7 @@ public class GumballMachine
 
     this.NoQuarter = new NoQuarterState(this);
     this.HasQuarter = new HasQuarterState(this);
+    this.Sold = new SoldState(this);
 
     this.state = this.NoQuarter;
   }

@@ -1,4 +1,5 @@
 
+using MightyGumball.Domain.Exceptions;
 using MightyGumball.Domain.Machine;
 
 namespace MightyGumball.Domain.GumballMachineStates;
@@ -16,5 +17,20 @@ public class NoQuarterState : GumballMachineState
   {
     Console.WriteLine("You have inserted a quarter");
     this.gumballMachine.SetState(this.gumballMachine.HasQuarter);
+  }
+
+  public void EjectQuarter()
+  {
+    throw new NoQuarterInsertedException();
+  }
+
+  public void TurnCrank()
+  {
+    throw new NoQuarterInsertedException();
+  }
+
+  public void Dispense()
+  {
+    throw new NotImplementedException();
   }
 }
