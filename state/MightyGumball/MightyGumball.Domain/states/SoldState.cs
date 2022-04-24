@@ -38,7 +38,9 @@ public class SoldState : GumballMachineState
     {
       this.gumballMachine.ReleaseGumball();
       this.gumballMachine.SetState(this.gumballMachine.SoldOut);
-    } else {
+    }
+    else
+    {
       throw new MachineOutOfGumballsException();
     }
   }
