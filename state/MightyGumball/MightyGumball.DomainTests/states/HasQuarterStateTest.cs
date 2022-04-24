@@ -5,11 +5,25 @@ using Xunit;
 
 public class HasQuarterStateTest
 {
+  private HasQuarterState state;
+  private TestingGumballMachine machine;
+
+  public HasQuarterStateTest()
+  {
+    this.machine = new TestingGumballMachine(gumballCount: 5);
+    this.state = new HasQuarterState(machine);
+  }
+
   [Fact]
   public void TestInsertQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
-    var state = new HasQuarterState(machine);
     Assert.Throws<QuarterAlreadyInsertedException>(() => state.InsertQuarter());
+  }
+
+  [Fact]
+  public void TestEjectQuarter()
+  {
+    state.EjectQuarter();
+    Assert.IsType<NoQuarterState>(machine.GetState());
   }
 }

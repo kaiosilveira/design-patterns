@@ -19,7 +19,7 @@ public class HasQuarterState : GumballMachineState
 
   public void EjectQuarter()
   {
-    throw new NotImplementedException();
+    this.gumballMachine.SetState(this.gumballMachine.NoQuarter);
   }
 
   public void TurnCrank()
