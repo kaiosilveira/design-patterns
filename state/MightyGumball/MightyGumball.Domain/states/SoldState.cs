@@ -29,6 +29,7 @@ public class SoldState : GumballMachineState
 
   public void Dispense()
   {
+    Console.WriteLine("Dispensing gumball");
     if (this.gumballMachine.GumballCount > 1)
     {
       this.gumballMachine.ReleaseGumball();

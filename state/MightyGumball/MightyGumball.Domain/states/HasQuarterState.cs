@@ -19,11 +19,13 @@ public class HasQuarterState : GumballMachineState
 
   public void EjectQuarter()
   {
+    Console.WriteLine("Quarter ejected");
     this.gumballMachine.SetState(this.gumballMachine.NoQuarter);
   }
 
   public void TurnCrank()
   {
+    Console.WriteLine("You have turned the crank");
     this.gumballMachine.SetState(this.gumballMachine.Sold);
   }
 

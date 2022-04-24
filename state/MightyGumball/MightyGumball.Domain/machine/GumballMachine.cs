@@ -32,4 +32,20 @@ public class GumballMachine
   {
     this.GumballCount--;
   }
+
+  public void InsertQuarter()
+  {
+    this.state.InsertQuarter();
+  }
+
+  public void TurnCrank()
+  {
+    this.state.TurnCrank();
+    this.state.Dispense();
+  }
+
+  public void EjectQuarter()
+  {
+    this.state.EjectQuarter();
+  }
 }

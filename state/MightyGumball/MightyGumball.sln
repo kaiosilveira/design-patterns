@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumball.Domain", "Mig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumball.DomainTests", "MightyGumball.DomainTests\MightyGumball.DomainTests.csproj", "{A525492F-D58D-4D8D-8DAA-0BDB6022800D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightGumball.ConsoleApp", "MightGumball.ConsoleApp\MightGumball.ConsoleApp.csproj", "{9603DCF0-7735-4AA2-A2E9-6EE4DE2FEFB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{A525492F-D58D-4D8D-8DAA-0BDB6022800D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A525492F-D58D-4D8D-8DAA-0BDB6022800D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A525492F-D58D-4D8D-8DAA-0BDB6022800D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9603DCF0-7735-4AA2-A2E9-6EE4DE2FEFB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9603DCF0-7735-4AA2-A2E9-6EE4DE2FEFB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9603DCF0-7735-4AA2-A2E9-6EE4DE2FEFB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9603DCF0-7735-4AA2-A2E9-6EE4DE2FEFB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
