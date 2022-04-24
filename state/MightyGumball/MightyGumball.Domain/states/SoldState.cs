@@ -1,3 +1,4 @@
+using MightyGumball.Domain.Exceptions;
 using MightyGumball.Domain.Machine;
 
 namespace MightyGumball.Domain.GumballMachineStates;
@@ -11,23 +12,34 @@ public class SoldState : GumballMachineState
     this.gumballMachine = machine;
   }
 
-  public void Dispense()
+  public void InsertQuarter()
   {
-    throw new NotImplementedException();
+    throw new GumballBeingSoldException();
   }
 
   public void EjectQuarter()
   {
-    throw new NotImplementedException();
-  }
-
-  public void InsertQuarter()
-  {
-    throw new NotImplementedException();
+    throw new CrankAlreadyTurnedException();
   }
 
   public void TurnCrank()
   {
-    throw new NotImplementedException();
+    throw new CrankAlreadyTurnedException();
+  }
+
+  public void Dispense()
+  {
+    if (this.gumballMachine.GumballCount > 1)
+    {
+      this.gumballMachine.ReleaseGumball();
+      this.gumballMachine.SetState(this.gumballMachine.NoQuarter);
+    }
+    else if (this.gumballMachine.GumballCount == 1)
+    {
+      this.gumballMachine.ReleaseGumball();
+      this.gumballMachine.SetState(this.gumballMachine.SoldOut);
+    } else {
+      throw new MachineOutOfGumballsException();
+    }
   }
 }
