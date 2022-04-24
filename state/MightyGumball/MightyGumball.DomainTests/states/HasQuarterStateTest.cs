@@ -26,4 +26,11 @@ public class HasQuarterStateTest
     state.EjectQuarter();
     Assert.IsType<NoQuarterState>(machine.GetState());
   }
+
+  [Fact]
+  public void TestTurnCrank()
+  {
+    state.TurnCrank();
+    Assert.IsType<SoldState>(machine.GetState());
+  }
 }

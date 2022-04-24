@@ -24,7 +24,7 @@ public class HasQuarterState : GumballMachineState
 
   public void TurnCrank()
   {
-    throw new NotImplementedException();
+    this.gumballMachine.SetState(this.gumballMachine.Sold);
   }
 
   public void Dispense()
