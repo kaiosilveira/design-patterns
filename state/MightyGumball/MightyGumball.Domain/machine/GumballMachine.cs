@@ -9,16 +9,18 @@ public class GumballMachine
   public GumballMachineState HasQuarter { get; private set; }
   public GumballMachineState Sold { get; private set; }
   public GumballMachineState SoldOut { get; private set; }
+  public WinnerState Winner { get; private set; }
   protected GumballMachineState state;
 
-  public GumballMachine(int gumballCount)
+  public GumballMachine(int gumballCount, int winningChance = 10)
   {
     this.GumballCount = gumballCount;
 
-    this.NoQuarter = new NoQuarterState(this);
-    this.HasQuarter = new HasQuarterState(this);
-    this.Sold = new SoldState(this);
-    this.SoldOut = new SoldOutState(this);
+    this.NoQuarter = new NoQuarterState(machine: this);
+    this.HasQuarter = new HasQuarterState(machine: this, winningChance);
+    this.Sold = new SoldState(machine: this);
+    this.SoldOut = new SoldOutState(machine: this);
+    this.Winner = new WinnerState(machine: this);
 
     this.state = this.NoQuarter;
   }
