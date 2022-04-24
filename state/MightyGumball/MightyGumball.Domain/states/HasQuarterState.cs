@@ -1,3 +1,4 @@
+using MightyGumball.Domain.Exceptions;
 using MightyGumball.Domain.Machine;
 
 namespace MightyGumball.Domain.GumballMachineStates;
@@ -11,9 +12,9 @@ public class HasQuarterState : GumballMachineState
     this.gumballMachine = machine;
   }
 
-  public void Dispense()
+  public void InsertQuarter()
   {
-    throw new NotImplementedException();
+    throw new QuarterAlreadyInsertedException();
   }
 
   public void EjectQuarter()
@@ -21,12 +22,12 @@ public class HasQuarterState : GumballMachineState
     throw new NotImplementedException();
   }
 
-  public void InsertQuarter()
+  public void TurnCrank()
   {
     throw new NotImplementedException();
   }
 
-  public void TurnCrank()
+  public void Dispense()
   {
     throw new NotImplementedException();
   }
