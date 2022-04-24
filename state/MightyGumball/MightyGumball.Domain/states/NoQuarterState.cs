@@ -31,6 +31,6 @@ public class NoQuarterState : GumballMachineState
 
   public void Dispense()
   {
-    throw new NotImplementedException();
+    throw new NoQuarterInsertedException();
   }
 }
