@@ -1,4 +1,5 @@
-﻿using MightyGumball.Domain.Machine;
+﻿using MightyGumball.Monitoring;
+using MightyGumball.Monitoring.Machines;
 
 namespace MightyGumball.ConsoleApp;
 
@@ -6,12 +7,10 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    var machine = new GumballMachine(location: "Lisbon", gumballCount: 50);
+    var handler = new StaticHttpClientHandler(new List<string>() { "Lisbon", "100" });
+    var machine = new RemoteGumballMachine(id: "lisbon-machine", http: new HttpClient(handler));
+    var monitor = new GumballMachineMonitor(machine);
 
-    for (int i = 0; i < 10; i++)
-    {
-      machine.InsertQuarter();
-      machine.TurnCrank();
-    }
+    Console.WriteLine(monitor.CreateReport());
   }
 }

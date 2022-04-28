@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\MightyGumball.Domain\MightyGumball.Domain.csproj" />
+    <ProjectReference Include="..\MightyGumball.Monitoring\MightyGumball.Monitoring.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
