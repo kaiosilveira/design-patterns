@@ -85,7 +85,7 @@ Proxy -- request --> RealSubject
 
 **Remote Proxy**
 
-The working example for the remote proxy is an application to monitor the current inventory of the gumball machines implemented in the [State Pattern](../state/). This `GumballMachineMonitor` is responsible to create a report containing the location of the machine and its current inventory of gumballs. The main purpose of this implementation is to demonstrate how remote proxies can stand in for remote objects. To accomplish this, an interface for `GumballMachine` was introduced. This interface contains methods to `GetLocation()` and `GetGumballCount()`. The `GumballMachineMonitor` expects a `GumballMachine` to be passed to its constructor and will use these methods to extract the information needed to create the report. Check out the `GumballMachine` interface below:
+The working example for the remote proxy is an application to monitor the current inventory of the gumball machines implemented in the [State Pattern](../state/). This `GumballMachineMonitor` is responsible for creating a report containing the location of the machine and its current inventory of gumballs. The main purpose of this implementation is to demonstrate how remote proxies can stand in for remote objects. To accomplish this, an interface for `GumballMachine` was introduced. This interface contains methods to `GetLocation()` and `GetGumballCount()`. The `GumballMachineMonitor` expects a `GumballMachine` to be passed to its constructor and will use these methods to extract the information needed to create the report. Check out the `GumballMachine` interface below:
 
 ```csharp
 public interface GumballMachine
@@ -156,3 +156,5 @@ public class Program
 As it wasn't desirable to go over the wire and fetch some real data for the example, a `StaticHttpClientHandler` was introduced to yield the responses and allow the code to work.
 
 **Note:** Nowadays this kind of implementation is discouraged and can be seen as an anti-pattern. This is due to the complexities and the dangers of remote calls. The recommended practice is to isolate the remote calls in specialized objects and test all the corner cases and possible exceptions thoroughly.
+
+Check out [MightyGumball](MightyGumball/) for the complete implementation.
