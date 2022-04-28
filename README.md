@@ -66,6 +66,7 @@ The structural design patterns presented at GoF's book are:
 - [Decorator](/decorator)
 - [Adapter](/adapter)
 - [Facade](/facade)
+- [Proxy](/proxy)
 
 **Behavioral patterns**
 
