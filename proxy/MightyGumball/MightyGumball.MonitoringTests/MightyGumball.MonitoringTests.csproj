@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MightyGumball.Domain\MightyGumball.Domain.csproj" />
+    <ProjectReference Include="..\MightyGumball.Monitoring\MightyGumball.Monitoring.csproj" />
   </ItemGroup>
 
 </Project>

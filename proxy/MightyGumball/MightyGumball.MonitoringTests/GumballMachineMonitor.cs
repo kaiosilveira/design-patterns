@@ -1,24 +1,8 @@
 using Xunit;
 using MightyGumball.Domain.Machine;
+using MightyGumball.Monitoring;
 
 namespace MightyGumball.MonitoringTests;
-
-public class GumballMachineMonitor
-{
-  private GumballMachine machine;
-
-  public GumballMachineMonitor(GumballMachine machine)
-  {
-    this.machine = machine;
-  }
-
-  public string CreateReport()
-  {
-    var location = this.machine.Location;
-    var count = this.machine.GumballCount;
-    return $"Gumball Machine: {this.machine.Location} | Current Inventory: {count}";
-  }
-}
 
 public class GumballMachineMonitorTest
 {
