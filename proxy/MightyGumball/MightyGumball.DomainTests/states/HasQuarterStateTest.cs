@@ -8,7 +8,7 @@ public class HasQuarterStateTest
   [Fact]
   public void TestInsertQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new HasQuarterState(machine, winningChance: 0);
     Assert.Throws<QuarterAlreadyInsertedException>(() => state.InsertQuarter());
   }
@@ -16,7 +16,7 @@ public class HasQuarterStateTest
   [Fact]
   public void TestEjectQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new HasQuarterState(machine, winningChance: 0);
     state.EjectQuarter();
     Assert.IsType<NoQuarterState>(machine.GetState());
@@ -25,7 +25,7 @@ public class HasQuarterStateTest
   [Fact]
   public void TestTurnCrank()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new HasQuarterState(machine, winningChance: 0);
 
     state.TurnCrank();
@@ -36,7 +36,7 @@ public class HasQuarterStateTest
   [Fact]
   public void TestWinner()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new HasQuarterState(machine, winningChance: 100);
 
     state.TurnCrank();
@@ -47,7 +47,7 @@ public class HasQuarterStateTest
   [Fact]
   public void TestDispense()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new HasQuarterState(machine, winningChance: 0);
     Assert.Throws<NoGumballDispensedException>(() => state.Dispense());
   }

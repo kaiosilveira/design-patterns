@@ -8,7 +8,7 @@ public class NoQuarterStateTest
   [Fact]
   public void TestInsertQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new NoQuarterState(machine);
 
     state.InsertQuarter();
@@ -19,7 +19,7 @@ public class NoQuarterStateTest
   [Fact]
   public void TestEjectQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new NoQuarterState(machine);
 
     Assert.Throws<NoQuarterInsertedException>(() => state.EjectQuarter());
@@ -28,7 +28,7 @@ public class NoQuarterStateTest
   [Fact]
   public void TestTurnCrank()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new NoQuarterState(machine);
 
     Assert.Throws<NoQuarterInsertedException>(() => state.TurnCrank());
@@ -37,7 +37,7 @@ public class NoQuarterStateTest
   [Fact]
   public void TestDispense()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new NoQuarterState(machine);
 
     Assert.Throws<NoQuarterInsertedException>(() => state.Dispense());

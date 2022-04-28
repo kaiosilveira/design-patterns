@@ -5,7 +5,7 @@ namespace MightyGumball.DomainTests.Machine;
 
 class TestingGumballMachine : GumballMachine
 {
-  public TestingGumballMachine(int gumballCount = 5) : base(gumballCount) { }
+  public TestingGumballMachine(string location, int gumballCount = 5) : base(location, gumballCount) { }
 
   public GumballMachineState GetState()
   {

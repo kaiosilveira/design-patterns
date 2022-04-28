@@ -8,7 +8,7 @@ public class GumballMachineTest
   [Fact]
   public void TestReleaseGumball()
   {
-    var machine = new TestingGumballMachine(gumballCount: 1);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     machine.ReleaseGumball();
     Assert.Equal(0, machine.GumballCount);
   }
@@ -16,7 +16,7 @@ public class GumballMachineTest
   [Fact]
   public void TestRefill()
   {
-    var machine = new TestingGumballMachine(gumballCount: 0);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 0);
 
     machine.Refill(numberOfGumballs: 10);
 

@@ -8,7 +8,7 @@ public class SoldStateTest
   [Fact]
   public void TestInsertQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new SoldState(machine);
 
     Assert.Throws<GumballBeingSoldException>(() => state.InsertQuarter());
@@ -17,7 +17,7 @@ public class SoldStateTest
   [Fact]
   public void TestEjectQuarter()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new SoldState(machine);
 
     Assert.Throws<CrankAlreadyTurnedException>(() => state.EjectQuarter());
@@ -26,7 +26,7 @@ public class SoldStateTest
   [Fact]
   public void TestTurnCrank()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new SoldState(machine);
 
     Assert.Throws<CrankAlreadyTurnedException>(() => state.TurnCrank());
@@ -35,7 +35,7 @@ public class SoldStateTest
   [Fact]
   public void TestDispense()
   {
-    var machine = new TestingGumballMachine(gumballCount: 5);
+    var machine = new TestingGumballMachine(location: "Lisbon", gumballCount: 5);
     var state = new SoldState(machine);
 
     state.Dispense();
@@ -47,7 +47,7 @@ public class SoldStateTest
   [Fact]
   public void TestDispenseLastGumball()
   {
-    var machineWithOneGumball = new TestingGumballMachine(gumballCount: 1);
+    var machineWithOneGumball = new TestingGumballMachine(location: "Lisbon", gumballCount: 1);
     var state = new SoldState(machineWithOneGumball);
 
     state.Dispense();
@@ -59,7 +59,7 @@ public class SoldStateTest
   [Fact]
   public void TestThrowsIfNoGumballsAvailable()
   {
-    var machineOutOfGumballs = new TestingGumballMachine(gumballCount: 0);
+    var machineOutOfGumballs = new TestingGumballMachine(location: "Lisbon", gumballCount: 0);
     var state = new SoldState(machineOutOfGumballs);
 
     Assert.Throws<MachineOutOfGumballsException>(() => state.Dispense());

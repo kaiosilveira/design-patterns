@@ -4,6 +4,7 @@ namespace MightyGumball.Domain.Machine;
 
 public class GumballMachine
 {
+  public string Location { get; private set; }
   public int GumballCount { get; private set; }
   public GumballMachineState NoQuarter { get; private set; }
   public GumballMachineState HasQuarter { get; private set; }
@@ -12,9 +13,10 @@ public class GumballMachine
   public WinnerState Winner { get; private set; }
   protected GumballMachineState state;
 
-  public GumballMachine(int gumballCount, int winningChance = 10)
+  public GumballMachine(string location, int gumballCount, int winningChance = 10)
   {
     this.GumballCount = gumballCount;
+    this.Location = location;
 
     this.NoQuarter = new NoQuarterState(machine: this);
     this.HasQuarter = new HasQuarterState(machine: this, winningChance);
