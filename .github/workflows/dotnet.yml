@@ -23,6 +23,7 @@ jobs:
               "./facade/home-theater",
               "./builder",
               "./composite/objectville-food",
+              "./proxy/MightyGumball",
               "./factory-method",
               "./observer",
               "./prototype",
