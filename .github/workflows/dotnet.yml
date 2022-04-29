@@ -23,6 +23,7 @@ jobs:
               "./state/MightyGumball",
               "./facade/home-theater",
               "./proxy/MightyGumball",
+              "./proxy/ExpensiveMath",
               "./builder",
               "./factory-method",
               "./observer",
