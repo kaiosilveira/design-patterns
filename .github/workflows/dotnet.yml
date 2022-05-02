@@ -24,6 +24,7 @@ jobs:
               "./facade/home-theater",
               "./proxy/MightyGumball",
               "./proxy/ExpensiveMath",
+              "./proxy/ObjectvilleMatchmaking",
               "./builder",
               "./factory-method",
               "./observer",
