@@ -9,10 +9,9 @@ The adapter pattern provides us with a way to create alternative interface repre
 ```mermaid
 classDiagram
 
-class Client { }
+class Client
 class Target {
     <<interface>>
-
     request();
 }
 
@@ -24,11 +23,11 @@ class Adaptee {
     specificRequest();
 }
 
-Client --> Target : has-a
-Adapter --> Target : implements
-Adapter --> Adaptee : delegate-to
+Target <-- Client : has-a
+Target <|-- Adapter : implements
+Adaptee <-- Adapter  : delegates-to
 ```
 
 ## Working example
 
-As it looks like I'm not creative enough and the authors of Head-First Design Patterns, in this case, were not that creative as well, the working example is pretty simple: We have a `Duck` interface and a `Turkey` interface, and we adapted a `Turkey` object to behave like a `Duck`.
+As it looks like I'm not creative enough and the authors of Head-First Design Patterns, in this case, were not that creative as well, the working example is pretty simple: We have a `Duck` interface and a `Turkey` interface, and we adapted a `Turkey` object to behave like a `Duck`. Check out [duck-adapter](./duck-adapter/) for implementation details.
