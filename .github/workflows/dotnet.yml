@@ -25,6 +25,7 @@ jobs:
               "./proxy/MightyGumball",
               "./proxy/ExpensiveMath",
               "./proxy/ObjectvilleMatchmaking",
+              "./bridge/UniversalRemoteControl",
               "./builder",
               "./factory-method",
               "./observer",
