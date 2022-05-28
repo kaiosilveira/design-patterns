@@ -1,3 +1,9 @@
+# Universal remote control
+
+This project focuses on exposing a universal interface for a remote control. It detaches the abstraction of the remote control of its many implementations, allowing them to vary independently.
+
+## Class diagram
+
 ```mermaid
 classDiagram
 
@@ -6,6 +12,7 @@ class TV {
     Off()
     TuneChannel()
 }
+
 class RemoteControl {
     TV implementor
     On()
