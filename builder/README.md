@@ -27,9 +27,9 @@ class ConcreteBuilder {
     Product GetResult()
 }
 
-Director*-->Builder
-Builder<|--ConcreteBuilder
-ConcreteBuilder..>Product
+Director*-->Builder : delegates-to
+Builder<|--ConcreteBuilder : implements
+ConcreteBuilder..>Product : creates-a
 ```
 
 Notice that a `Director` has a method to `Construct()` the `Product`, but it delegates this task to the `Builder`. The builder in this case is a `ConcreteBuilder`, that allows for building parts gradually until the desired result is achieved. Then, the `Director` only needs to call `GetResult()` to get hold of the product just built.
@@ -70,9 +70,12 @@ class ProductBuilder {
 }
 ```
 
-## Working example
+## Working examples
 
-As our working example, we're going to implement a book builder in a slightly different fashion: Our builder is going to be a Fluent Builder. There main different between a regular builder and a fluent one is that it keeps returning itself until the `Build()` method is called, this allow for method chaining in a graceful way while keeping all the part-building approach working as in the regular ones.
+There are two simple examples to exercise this pattern. The first one is a [VirtualBookshelf](./VirtualBookshelf/), which implements a slightly modified version of the Builder Pattern: the fluent builder. The second one is a VacationBuilder, which implements a builder for a composite `Vacation` object.
+
+**VirtualBookshelf**
+This project implements a book builder in a slightly different fashion: Our builder is going to be fluent. The main difference between a regular builder and a fluent one is that it keeps returning itself until the `Build()` method is called (check out the sequence diagram at the project's README for more details), this allows for method chaining in a graceful way while keeping all the part-building approach working as in the regular ones.
 
 Our book is going to have the following fields:
 
