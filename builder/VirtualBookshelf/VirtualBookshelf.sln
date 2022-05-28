@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBookshelf.Domain", "VirtualBookshelf.Domain\VirtualBookshelf.Domain.csproj", "{BDC66D52-D415-4300-8976-C07DA5EE4260}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualBookshelf.DomainTests", "VirtualBookshelf.DomainTests\VirtualBookshelf.DomainTests.csproj", "{AF90ECB9-652F-4188-8F98-4836B8F492ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDC66D52-D415-4300-8976-C07DA5EE4260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDC66D52-D415-4300-8976-C07DA5EE4260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDC66D52-D415-4300-8976-C07DA5EE4260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDC66D52-D415-4300-8976-C07DA5EE4260}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8B67BB-6C0F-4FBD-9023-D00E60497C74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8B67BB-6C0F-4FBD-9023-D00E60497C74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8B67BB-6C0F-4FBD-9023-D00E60497C74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8B67BB-6C0F-4FBD-9023-D00E60497C74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF90ECB9-652F-4188-8F98-4836B8F492ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF90ECB9-652F-4188-8F98-4836B8F492ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF90ECB9-652F-4188-8F98-4836B8F492ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF90ECB9-652F-4188-8F98-4836B8F492ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
