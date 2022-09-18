@@ -75,6 +75,7 @@ class ProductBuilder {
 There are two simple examples to exercise this pattern. The first one is a [VirtualBookshelf](./VirtualBookshelf/), which implements a slightly modified version of the Builder Pattern: the fluent builder. The second one is a VacationBuilder, which implements a builder for a composite `Vacation` object.
 
 **VirtualBookshelf**
+
 This project implements a book builder in a slightly different fashion: Our builder is going to be fluent. The main difference between a regular builder and a fluent one is that it keeps returning itself until the `Build()` method is called (check out the sequence diagram at the project's README for more details), this allows for method chaining in a graceful way while keeping all the part-building approach working as in the regular ones.
 
 Our book is going to have the following fields:
