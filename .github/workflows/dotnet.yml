@@ -27,6 +27,7 @@ jobs:
               "./proxy/ObjectvilleMatchmaking",
               "./bridge/UniversalRemoteControl",
               "./builder/VirtualBookshelf",
+              "./builder/Patternsland",
               "./factory-method",
               "./observer",
               "./prototype",
