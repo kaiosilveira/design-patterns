@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patternsland.DomainTests", "Patternsland.DomainTests\Patternsland.DomainTests.csproj", "{BBB9C745-DEE3-447E-AE7F-667C34EE5BD3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BBB9C745-DEE3-447E-AE7F-667C34EE5BD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB9C745-DEE3-447E-AE7F-667C34EE5BD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB9C745-DEE3-447E-AE7F-667C34EE5BD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB9C745-DEE3-447E-AE7F-667C34EE5BD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
