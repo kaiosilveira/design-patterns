@@ -26,10 +26,10 @@ public class VacationDayBuilderTest
   {
     var date = DateTime.Now;
     var builder = new VacationDayBuilder();
-    var parkReservation = new ParkReservation(
+    var parkReservation = new Reservation(
       reservationDate: date,
       ownerIdentification: "1234",
-      park: new Park(name: "Patternsland")
+      place: new Park(name: "Patternsland")
     );
 
     builder.SetDate(date);

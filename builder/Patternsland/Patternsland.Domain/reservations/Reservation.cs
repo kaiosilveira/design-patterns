@@ -2,7 +2,7 @@ using Patternsland.Domain.Reservations.ReservableBusinessPlaces;
 
 namespace Patternsland.Domain.Reservations;
 
-public abstract class Reservation
+public class Reservation
 {
   public readonly DateTime ReservationDate;
   public readonly string OwnerIdentification;
