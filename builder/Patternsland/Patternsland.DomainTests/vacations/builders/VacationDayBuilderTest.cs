@@ -1,6 +1,6 @@
 using System;
-using System.Linq;
 using Xunit;
+
 using Patternsland.Domain;
 using Patternsland.Domain.Reservations;
 using Patternsland.Domain.Reservations.ReservableBusinessPlaces;
