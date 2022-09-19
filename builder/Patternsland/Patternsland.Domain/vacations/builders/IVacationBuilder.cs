@@ -6,5 +6,5 @@ public interface IVacationBuilder
 {
   void AddReservationsForDay(DateTime date, IList<Reservation> reservations);
 
-  Planner GetVacationPlanner();
+  VacationPlanner GetVacationPlanner();
 }

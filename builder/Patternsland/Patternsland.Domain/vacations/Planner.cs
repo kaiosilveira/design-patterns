@@ -1,10 +1,10 @@
 namespace Patternsland.Domain;
 
-public class Planner
+public class VacationPlanner
 {
   public IList<VacationDay> VacationDays { get; private set; }
 
-  public Planner(IList<VacationDay> vacationDays)
+  public VacationPlanner(IList<VacationDay> vacationDays)
   {
     this.VacationDays = vacationDays;
   }

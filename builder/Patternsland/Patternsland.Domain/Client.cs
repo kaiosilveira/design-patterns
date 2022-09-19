@@ -9,7 +9,7 @@ public class Client
     this.vacationBuilder = vacationBuilder;
   }
 
-  Planner ConstructPlanner()
+  VacationPlanner ConstructPlanner()
   {
     return this.vacationBuilder.GetVacationPlanner();
   }
