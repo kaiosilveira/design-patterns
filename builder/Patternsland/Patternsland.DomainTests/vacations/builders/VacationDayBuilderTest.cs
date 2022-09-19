@@ -38,11 +38,15 @@ public class VacationDayBuilderTest
     var vacationDay = builder.GetVacationDay();
 
     var reservationForVacationDay = vacationDay.GetReservationsFor(date);
-    Assert.Equal(1, reservationForVacationDay.Count());
 
-    var createdReservation = reservationForVacationDay.First();
-    Assert.Equal(createdReservation.Place.Name, parkReservation.Place.Name);
-    Assert.Equal(createdReservation.ReservationDate, parkReservation.ReservationDate);
+    Assert.Collection(
+      reservationForVacationDay,
+      createdReservation =>
+      {
+        Assert.Equal(createdReservation.Place.Name, parkReservation.Place.Name);
+        Assert.Equal(createdReservation.ReservationDate, parkReservation.ReservationDate);
+      }
+    );
   }
 
   [Fact]
