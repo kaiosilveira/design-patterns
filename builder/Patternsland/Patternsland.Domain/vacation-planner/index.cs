@@ -1,3 +1,5 @@
+using Patternsland.Domain.Reservations;
+
 namespace Patternsland.Domain;
 
 public class VacationDay

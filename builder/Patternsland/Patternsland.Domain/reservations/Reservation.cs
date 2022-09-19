@@ -1,4 +1,6 @@
-namespace Patternsland.Domain;
+using Patternsland.Domain.Reservations.ReservableBusinessPlaces;
+
+namespace Patternsland.Domain.Reservations;
 
 public abstract class Reservation
 {

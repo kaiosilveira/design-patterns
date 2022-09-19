@@ -1,4 +1,4 @@
-namespace Patternsland.Domain;
+namespace Patternsland.Domain.Reservations.ReservableBusinessPlaces;
 
 public class Park : ReservableBusinessPlace
 {
