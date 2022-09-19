@@ -33,7 +33,6 @@ public class VacationDayBuilderTest
     );
 
     builder.SetDate(date);
-    var hotel = new Hotel(name: "Grand Facadian");
     builder.AddReservation(parkReservation);
 
     var vacationDay = builder.GetVacationDay();
