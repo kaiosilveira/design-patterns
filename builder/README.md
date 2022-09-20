@@ -6,7 +6,7 @@ The builder pattern provides a way to abstract away the complexities of instanti
 
 ## Structure
 
-Below we can find a class diagram of the pattern:
+The **Builder Pattern** has many flavours and its structure may vary drastically depending on the approach taken by the engineer/ team implementing it, but the most common understanding of it involves a client (`Director`) delegating to a `Builder` the task of `Construct`ing a `Product`. In a good OO fashion, the `Builder` itself is probably just an interface, implemented by a `ConcreteBuilder` somewhere in the system and injected back into the `Director` at instantiation time. The delegation itself involves asking the `Builder` to `BuildPart`s of the complex `Product` being built. Then, once the `Director` is done with its specifications regarding the product, it simply calls `GetResult` on the `Builder` to get the final `Product`. The class diagram below shows how these classes interact with each other and sheds some light on this explanation:
 
 ```mermaid
 classDiagram
@@ -20,6 +20,7 @@ class Director {
 
 class Builder {
     BuildPart()
+    Product GetResult()
 }
 
 class ConcreteBuilder {
@@ -32,68 +33,6 @@ Builder<|--ConcreteBuilder : implements
 ConcreteBuilder..>Product : creates-a
 ```
 
-Notice that a `Director` has a method to `Construct()` the `Product`, but it delegates this task to the `Builder`. The builder in this case is a `ConcreteBuilder`, that allows for building parts gradually until the desired result is achieved. Then, the `Director` only needs to call `GetResult()` to get hold of the product just built.
+## Working example
 
-## How-To
-
-A builder is commonly a class that's specialist in creating a particular kind of object, so we commonly have the following group of classes working together:
-
-```csharp
-class Part {
-  public Part() {}
-}
-
-class Product {
-  public Product() {}
-
-  public void AddPart(Part part)
-  {
-    this._part = part;
-  }
-}
-
-class ProductBuilder {
-  public ProductBuilder()
-  {
-    this._currentProduct = new Product();
-  }
-
-  public void buildPart()
-  {
-    this._currentProduct.AddPart(new Part());
-  }
-
-  public Product getProduct()
-  {
-    return this._currentProduct;
-  }
-}
-```
-
-## Working examples
-
-There are two simple examples to exercise this pattern. The first one is a [VirtualBookshelf](./VirtualBookshelf/), which implements a slightly modified version of the Builder Pattern: the fluent builder. The second one is a VacationBuilder, which implements a builder for a composite `Vacation` object.
-
-**VirtualBookshelf**
-
-This project implements a book builder in a slightly different fashion: Our builder is going to be fluent. The main difference between a regular builder and a fluent one is that it keeps returning itself until the `Build()` method is called (check out the sequence diagram at the project's README for more details), this allows for method chaining in a graceful way while keeping all the part-building approach working as in the regular ones.
-
-Our book is going to have the following fields:
-
-- ISBN
-- Title
-- Author
-- Distributor
-- Price
-
-And the result would look like this:
-
-```csharp
-    var result = new BookBuilder()
-      .From(author)
-      .By(publisher)
-      .WithTitle(title)
-      .WithISBN(isbn)
-      .WithPrice(price)
-      .Build();
-```
+A hypothetical vacation planning system was implemented as the working example for this pattern, it's inspired by the brief description presented in the Builder Pattern Description section in the Head First Design Patterns book. This system is responsible for allowing users to plan their vacations, defining reservations for the places they want to visit and defining specific dates for such visits. For the detailed explanation on how the builder pattern was used in this project, please refer to [Patternsland](./Patternsland).
