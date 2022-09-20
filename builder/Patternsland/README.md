@@ -57,8 +57,8 @@ class IVacationBuilder {
 <<interface>> IVacationBuilder
 
 class IVacationDayBuilder {
-    void AddReservation(Reservation reservation);
-    void SetDate(DateTime date);
+    IVacationDayBuilder AddReservation(Reservation reservation);
+    IVacationDayBuilder SetDate(DateTime date);
     VacationDay GetVacationDay();
 }
 
@@ -83,11 +83,20 @@ VacationBuilder --|> IVacationBuilder : implements
 VacationBuilder --> VacationPlanner : produces
 ```
 
-As you may have noticed, there is also a sub-builder called `VacationDayBuilder` which allows the `VacationBuilder` itself to construct `VacationDay`s in an easier and more straightforward way.
+As you may have noticed, there is also a sub-builder called `VacationDayBuilder` which allows the `VacationBuilder` itself to construct `VacationDay`s in an easier and more straightforward way. `VacationDayBuilder` is a different builder flavour, it's what's called a Fluent Builder. Fluent because it allows us to chain calls to its methods, almost creating a text sentence expressing the intention of the client when using it. A good example of it in practice is shown below:
 
-### Usage
+```csharp
+var vacationDay = new VacationDayBuilder()
+    .SetDate(date)
+    .AddReservation(parkReservation)
+    .GetVacationDay();
+```
 
-A typical usage for the builder mentioned above would involve defining a date, instantiating the builder and pointing it to the selected date, creating some reservations and attaching them to the builder and finally asking for the Planner object. The code below is a good picture of this idea:
+I personally prefer this kind of approach, even for complex objects, as it allows you to be completely specific about the fields you want in the final object, ignoring optionals when applicable.
+
+### VacationBuilder usage
+
+A typical usage for the `VacationBuilder` would involve defining a `date`, instantiating the builder and pointing it to the selected date, creating some `reservations` and attaching them to the builder and, finally, asking for the resulting `Planner` object. The code below is a good picture of this idea:
 
 ```csharp
 var date = DateTime.Now;
