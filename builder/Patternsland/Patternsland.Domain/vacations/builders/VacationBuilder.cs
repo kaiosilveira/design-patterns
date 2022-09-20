@@ -14,8 +14,8 @@ public class VacationBuilder : IVacationBuilder
   public void AddReservationsForDay(DateTime date, IList<Reservation> reservations)
   {
     var dayBuilder = new VacationDayBuilder();
+    dayBuilder.SetDate(date);
     reservations.ToList().ForEach(reservation => dayBuilder.AddReservation(reservation));
-
     this.vacationDays.Add(dayBuilder.GetVacationDay());
   }
 
