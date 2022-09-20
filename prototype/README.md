@@ -2,8 +2,6 @@
 
 The prototype pattern provides a way to create copies of objects based on an existing object.
 
-**Book definition:** Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-
 ## Structure
 
 ```mermaid

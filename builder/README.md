@@ -2,8 +2,6 @@
 
 The builder pattern provides a way to abstract away the complexities of instantiating objects, allowing classes to change independently and in a more flexible fashion without impacting many clients.
 
-**Book definition:** Separate the construction of a complex object from its representation so that the same construction process can create different representations.
-
 ## Structure
 
 The **Builder Pattern** has many flavours and its structure may vary drastically depending on the approach taken by the engineer/ team implementing it, but the most common understanding of it involves a client (`Director`) delegating to a `Builder` the task of `Construct`ing a `Product`. In a good OO fashion, the `Builder` itself is probably just an interface, implemented by a `ConcreteBuilder` somewhere in the system and injected back into the `Director` at instantiation time. The delegation itself involves asking the `Builder` to `BuildPart`s of the complex `Product` being built. Then, once the `Director` is done with its specifications regarding the product, it simply calls `GetResult` on the `Builder` to get the final `Product`. The class diagram below shows how these classes interact with each other and sheds some light on this explanation:

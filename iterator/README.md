@@ -1,6 +1,6 @@
 # Iterator
 
-**Book definition:** Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
+Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 
 ## Structure
 

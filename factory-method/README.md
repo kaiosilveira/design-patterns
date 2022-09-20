@@ -2,8 +2,6 @@
 
 The factory method pattern provides us a way to delegate the creation of objects to subclasses, while keeping the intent of the superclass clear.
 
-**Book definition:** Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
-
 ## Structure
 
 ```mermaid

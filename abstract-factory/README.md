@@ -1,7 +1,5 @@
 # Abstract Factory Pattern
 
-**Book definition**: Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
-
 The abstract factory pattern provides us a way of handling groups of objects that are conceptually dependent of each other in a way that allow for replacement of the whole group. This is accomplished by hiding their concrete classes' implementations and relying on factory classes for each subclass implementation.
 
 For instance: Imagine that we are building an application that should work on multiple mobile operational systems. This application would have a set of widgets for each OS, such as `Button`, `TextBox`, `View`, etc. We could simply go and create each of those for each operational system, but how do we make sure that the correct button would be displayed in the correct OS, for example? We could end up with an Android button being displayed in an iOS.
