@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patternsland.DomainTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patternsland.Domain", "Patternsland.Domain\Patternsland.Domain.csproj", "{95882B74-5D37-4194-921D-C0269798B754}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Patternsland.Console", "Patternsland.Console\Patternsland.Console.csproj", "{9702FAD2-9FE2-4979-B1C4-E6B1CE3BABF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{95882B74-5D37-4194-921D-C0269798B754}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95882B74-5D37-4194-921D-C0269798B754}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95882B74-5D37-4194-921D-C0269798B754}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9702FAD2-9FE2-4979-B1C4-E6B1CE3BABF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9702FAD2-9FE2-4979-B1C4-E6B1CE3BABF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9702FAD2-9FE2-4979-B1C4-E6B1CE3BABF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9702FAD2-9FE2-4979-B1C4-E6B1CE3BABF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
