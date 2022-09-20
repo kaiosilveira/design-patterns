@@ -25,17 +25,16 @@ public class VacationDayBuilderTest
   public void TestBuildsVacationDayWithOneReservation()
   {
     var date = DateTime.Now;
-    var builder = new VacationDayBuilder();
     var parkReservation = new Reservation(
       reservationDate: date,
       ownerIdentification: "1234",
       place: new Park(name: "Patternsland")
     );
 
-    builder.SetDate(date);
-    builder.AddReservation(parkReservation);
-
-    var vacationDay = builder.GetVacationDay();
+    var vacationDay = new VacationDayBuilder()
+      .SetDate(date)
+      .AddReservation(parkReservation)
+      .GetVacationDay();
 
     var reservationForVacationDay = vacationDay.GetReservationsFor(date);
 

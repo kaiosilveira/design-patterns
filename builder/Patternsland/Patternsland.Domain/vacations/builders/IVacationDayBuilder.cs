@@ -5,7 +5,7 @@ namespace Patternsland.Domain;
 
 public interface IVacationDayBuilder
 {
-  void AddReservation(Reservation reservation);
-  void SetDate(DateTime date);
+  IVacationDayBuilder AddReservation(Reservation reservation);
+  IVacationDayBuilder SetDate(DateTime date);
   VacationDay GetVacationDay();
 }

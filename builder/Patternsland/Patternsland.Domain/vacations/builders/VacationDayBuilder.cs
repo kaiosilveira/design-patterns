@@ -12,14 +12,16 @@ public class VacationDayBuilder : IVacationDayBuilder
     this.Reservations = new List<Reservation>();
   }
 
-  public void SetDate(DateTime date)
+  public IVacationDayBuilder SetDate(DateTime date)
   {
     this.Date = date;
+    return this;
   }
 
-  public void AddReservation(Reservation reservation)
+  public IVacationDayBuilder AddReservation(Reservation reservation)
   {
     this.Reservations.Add(reservation);
+    return this;
   }
 
   public VacationDay GetVacationDay()
