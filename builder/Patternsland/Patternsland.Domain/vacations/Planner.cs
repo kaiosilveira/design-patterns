@@ -1,4 +1,4 @@
-namespace Patternsland.Domain;
+namespace Patternsland.Domain.Vacations;
 
 public class VacationPlanner
 {

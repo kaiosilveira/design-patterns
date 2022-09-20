@@ -1,6 +1,6 @@
 using Patternsland.Domain.Reservations;
 
-namespace Patternsland.Domain;
+namespace Patternsland.Domain.Vacations.Builders;
 
 public interface IVacationBuilder
 {

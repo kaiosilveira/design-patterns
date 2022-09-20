@@ -1,3 +1,6 @@
+using Patternsland.Domain.Vacations;
+using Patternsland.Domain.Vacations.Builders;
+
 namespace Patternsland.Domain;
 
 public class Client

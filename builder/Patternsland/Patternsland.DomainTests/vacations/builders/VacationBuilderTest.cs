@@ -1,9 +1,10 @@
 using System;
+using Xunit;
+
 using System.Collections.Generic;
-using Patternsland.Domain;
 using Patternsland.Domain.Reservations;
 using Patternsland.Domain.Reservations.ReservableBusinessPlaces;
-using Xunit;
+using Patternsland.Domain.Vacations.Builders;
 
 public class VacationBuilderTest
 {
