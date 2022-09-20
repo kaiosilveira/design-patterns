@@ -115,7 +115,9 @@ builder.AddReservationsForDay(date, reservations);
 var planner = builder.GetVacationPlanner();
 ```
 
-In the code above, an user would have a reservation for today and this reservation would include the Grand Facadian hotel and the Patternsland park.
+In the code above, a user would have a reservation for today and this reservation would include the Grand Facadian hotel and the Patternsland park.
+
+A more complete example can be seen implemented in the [Patternsland.Console/Program.cs](./Patternsland.Console/Program.cs) console app.
 
 ## Testing
 
