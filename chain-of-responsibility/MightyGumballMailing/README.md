@@ -96,3 +96,62 @@ emails.ForEach(email => spamMailHandler.HandleIncomingEmail(email));
 ```
 
 This decoupling of the handler of a given request from it's initiator helps avoiding large and complex switch statements, although it adds considerable complexity and a potential for the creation of a large number of implementation classes.
+
+## Testing
+
+Simple unit tests were added to cover the behavior of each handler and the way they delegate the calls to their successors when applicable. To keep the scope short enough and the tests as precise as possible, `Moq` was used to mock the behavior of `MailService`. A simple test for a handler would look like this:
+
+```csharp
+[Fact]
+  public void TestHandlesComplaintEmail()
+  {
+    var mockedMailSvc = new Mock<MailService>();
+    var mockedSuccessorMailHandler = new Mock<MailHandler>();
+    var email = new Email(
+      // email props defined here
+    );
+
+    var handler = new ComplaintMailHandler(
+      mailService: mockedMailSvc.Object,
+      successor: mockedSuccessorMailHandler.Object
+    );
+
+    handler.HandleIncomingEmail(email);
+
+    mockedMailSvc.Verify(instance => instance.ForwardToLegalDepartment(email), Times.Once());
+  }
+
+  [Fact]
+  public void TestDoesNothingIfEmailTypeIsNotComplaintAndThereIsNoSuccessor()
+  {
+    var mockedMailSvc = new Mock<MailService>();
+    var email = new Email(
+      // email props defined here
+    );
+
+    var handler = new ComplaintMailHandler(mailService: mockedMailSvc.Object, successor: null);
+
+    handler.HandleIncomingEmail(email);
+  }
+
+  [Fact]
+  public void TestDelegatesHandlingToSuccessorIfMailTypeIsNotComplaint()
+  {
+    var mockedMailSvc = new Mock<MailService>();
+    var mockedSuccessorMailHandler = new Mock<MailHandler>();
+    var email = new Email(
+      // email props defined here
+    );
+
+    var handler = new ComplaintMailHandler(
+      mailService: mockedMailSvc.Object,
+      successor: mockedSuccessorMailHandler.Object
+    );
+
+    handler.HandleIncomingEmail(email);
+
+    mockedSuccessorMailHandler.Verify(instance => instance.HandleIncomingEmail(email), Times.Once());
+  }
+```
+
+The code above implements tests to cover the happy path for when the email has the handler's expected type (`Complaint` in this case) and makes sure that it calls the correct method on `MailService` to `ForwardToLegalDepartment`. Another test was added to cover the case when for some reason a successor isn't specified for `ComplaintHandler`, and a third test was added to make sure that the successor is being invoked correctly when the email type is different than the one the that handler is able to handle.
