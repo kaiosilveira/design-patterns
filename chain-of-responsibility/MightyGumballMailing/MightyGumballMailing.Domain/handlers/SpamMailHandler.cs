@@ -7,9 +7,9 @@ namespace MightyGumballMailing.Domain.Handlers;
 public class SpamMailHandler : MailHandler
 {
   private readonly MailService mailService;
-  private readonly MailHandler successor;
+  private readonly MailHandler? successor;
 
-  public SpamMailHandler(MailService mailService, MailHandler successor)
+  public SpamMailHandler(MailService mailService, MailHandler? successor)
   {
     this.mailService = mailService;
     this.successor = successor;
@@ -23,7 +23,7 @@ public class SpamMailHandler : MailHandler
     }
     else
     {
-      this.successor.HandleIncomingEmail(email);
+      this.successor?.HandleIncomingEmail(email);
     }
   }
 }

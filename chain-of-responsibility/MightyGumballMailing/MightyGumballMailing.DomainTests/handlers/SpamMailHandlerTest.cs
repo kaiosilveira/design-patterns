@@ -32,6 +32,22 @@ public class SpamMailHandlerTest
   }
 
   [Fact]
+  public void TestDoesNothingIfEmailTypeIsNotSpamAndThereIsNoSuccessor()
+  {
+    var mockedMailSvc = new Mock<MailService>();
+    var email = new Email(
+      id: "abcd-1234",
+      type: EmailType.UNKNOWN,
+      subject: "Candidate application - Sr Software Engineer",
+      body: "Hello, I would like to apply to the senior software engineer role"
+    );
+
+    var handler = new SpamMailHandler(mailService: mockedMailSvc.Object, successor: null);
+
+    handler.HandleIncomingEmail(email);
+  }
+
+  [Fact]
   public void TestDelegatesHandlingToSuccessorIfMailTypeIsNotSpam()
   {
     var mockedMailSvc = new Mock<MailService>();
