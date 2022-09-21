@@ -1,4 +1,8 @@
-﻿namespace MightyGumballMailing.Domain;
+﻿using MightyGumballMailing.Domain.Entities;
+using MightyGumballMailing.Domain.Enumerators;
+using MightyGumballMailing.Domain.Repositories;
+
+namespace MightyGumballMailing.Domain.Handlers;
 
 public class SpamMailHandler : MailHandler
 {

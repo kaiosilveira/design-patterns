@@ -1,4 +1,4 @@
-namespace MightyGumballMailing.Domain;
+namespace MightyGumballMailing.Domain.Repositories;
 
 public interface MailRepository
 {

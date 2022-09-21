@@ -1,6 +1,9 @@
 using Xunit;
 using Moq;
-using MightyGumballMailing.Domain;
+using MightyGumballMailing.Domain.Repositories;
+using MightyGumballMailing.Domain.Handlers;
+using MightyGumballMailing.Domain.Entities;
+using MightyGumballMailing.Domain.Enumerators;
 
 namespace MightyGumballMailing.DomainTests;
 

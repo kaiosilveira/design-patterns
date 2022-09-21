@@ -1,4 +1,6 @@
-namespace MightyGumballMailing.Domain;
+using MightyGumballMailing.Domain.Enumerators;
+
+namespace MightyGumballMailing.Domain.Entities;
 
 public class Email
 {

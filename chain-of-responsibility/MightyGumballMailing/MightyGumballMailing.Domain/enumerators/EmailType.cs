@@ -1,4 +1,4 @@
-namespace MightyGumballMailing.Domain;
+namespace MightyGumballMailing.Domain.Enumerators;
 
 public enum EmailType
 {
