@@ -7,4 +7,5 @@ public interface MailService
   void ForwardToCEO(Email email);
   void ForwardToLegalDepartment(Email email);
   void MoveToJunk(string emailId);
+  void MoveToInbox(Email email);
 }
