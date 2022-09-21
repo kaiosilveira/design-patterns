@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumballMailing.DomainTests", "MightyGumballMailing.DomainTests\MightyGumballMailing.DomainTests.csproj", "{B2CD584B-DFA0-449E-BC88-3DB84D92C6E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumballMailing.Domain", "MightyGumballMailing.Domain\MightyGumballMailing.Domain.csproj", "{141786B4-CD2B-40DC-A698-090C9ECFACCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2CD584B-DFA0-449E-BC88-3DB84D92C6E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2CD584B-DFA0-449E-BC88-3DB84D92C6E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2CD584B-DFA0-449E-BC88-3DB84D92C6E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2CD584B-DFA0-449E-BC88-3DB84D92C6E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
