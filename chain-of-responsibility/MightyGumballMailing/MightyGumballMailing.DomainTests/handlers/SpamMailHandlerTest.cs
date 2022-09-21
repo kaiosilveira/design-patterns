@@ -1,9 +1,9 @@
 using Xunit;
 using Moq;
-using MightyGumballMailing.Domain.Repositories;
 using MightyGumballMailing.Domain.Handlers;
 using MightyGumballMailing.Domain.Entities;
 using MightyGumballMailing.Domain.Enumerators;
+using MightyGumballMailing.Domain.Services;
 
 namespace MightyGumballMailing.DomainTests;
 
@@ -12,7 +12,7 @@ public class SpamMailHandlerTest
   [Fact]
   public void TestHandlesSpamEmail()
   {
-    var mockedMailRepo = new Mock<MailRepository>();
+    var mockedMailSvc = new Mock<MailService>();
     var mockedSuccessorMailHandler = new Mock<MailHandler>();
     var email = new Email(
       id: "abcd-1234",
@@ -22,19 +22,19 @@ public class SpamMailHandlerTest
     );
 
     var handler = new SpamMailHandler(
-      mailRepository: mockedMailRepo.Object,
+      mailService: mockedMailSvc.Object,
       successor: mockedSuccessorMailHandler.Object
     );
 
     handler.HandleIncomingEmail(email);
 
-    mockedMailRepo.Verify(instance => instance.MoveToJunk(email.Id), Times.Once());
+    mockedMailSvc.Verify(instance => instance.MoveToJunk(email.Id), Times.Once());
   }
 
   [Fact]
   public void TestDelegatesHandlingToSuccessorIfMailTypeIsNotSpam()
   {
-    var mockedMailRepo = new Mock<MailRepository>();
+    var mockedMailSvc = new Mock<MailService>();
     var mockedSuccessorMailHandler = new Mock<MailHandler>();
     var email = new Email(
       id: "abcd-1234",
@@ -44,7 +44,7 @@ public class SpamMailHandlerTest
     );
 
     var handler = new SpamMailHandler(
-      mailRepository: mockedMailRepo.Object,
+      mailService: mockedMailSvc.Object,
       successor: mockedSuccessorMailHandler.Object
     );
 
