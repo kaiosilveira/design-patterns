@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumballMailing.Domain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumballMailing.Domain", "MightyGumballMailing.Domain\MightyGumballMailing.Domain.csproj", "{141786B4-CD2B-40DC-A698-090C9ECFACCB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MightyGumballMailing.ConsoleApp", "MightyGumballMailing.ConsoleApp\MightyGumballMailing.ConsoleApp.csproj", "{3DC2D895-7389-401A-AC98-E4C700DCEA42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{141786B4-CD2B-40DC-A698-090C9ECFACCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC2D895-7389-401A-AC98-E4C700DCEA42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC2D895-7389-401A-AC98-E4C700DCEA42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC2D895-7389-401A-AC98-E4C700DCEA42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC2D895-7389-401A-AC98-E4C700DCEA42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
