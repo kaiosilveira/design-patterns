@@ -26,6 +26,7 @@ jobs:
               "./proxy/ExpensiveMath",
               "./proxy/ObjectvilleMatchmaking",
               "./bridge/UniversalRemoteControl",
+              "chain-of-responsibility/MightyGumballMailing",
               "./builder/Patternsland",
               "./factory-method",
               "./observer",
