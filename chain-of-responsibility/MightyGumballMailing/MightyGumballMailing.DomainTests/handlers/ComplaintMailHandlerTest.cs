@@ -32,7 +32,7 @@ public class ComplaintMailHandlerTest
   }
 
   [Fact]
-  public void TestDoesNothingIfEmailTypeIsNotComplaintAndThereIsSuccessor()
+  public void TestDoesNothingIfEmailTypeIsNotComplaintAndThereIsNoSuccessor()
   {
     var mockedMailSvc = new Mock<MailService>();
     var email = new Email(
