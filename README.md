@@ -82,6 +82,8 @@ Behavioral patterns are concerned with algorithms and the assignment of responsi
 
 The behavioral design patterns presented at GoF's book are:
 
+- [Chain of Responsibility](/chain-of-responsibility/): Helps avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+
 - [Strategy](/strategy): Defines a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
 
 - [Observer](/observer): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
