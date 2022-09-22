@@ -16,6 +16,13 @@ public class PixelOutOfBoundsException : Exception
   { }
 }
 
+public class GlyphNotFoundException : Exception
+{
+  public GlyphNotFoundException(int x, int y)
+    : base(message: $"No glyph was found at ({x}, {y})")
+  { }
+}
+
 public class LandscapeManager
 {
   private readonly int xSize;
@@ -55,7 +62,7 @@ public class LandscapeManager
   public void SetHeight(int x, int y, int height)
   {
     this.ValidateScreenCoords(x, y);
-    var baseGlyph = this.matrix[x][y];
+    var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
     var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), baseGlyph.GetName(), height);
     this.matrix[x][y] = unsharedGlyph;
   }
