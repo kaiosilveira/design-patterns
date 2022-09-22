@@ -20,35 +20,35 @@ public class ScreenTest
 
     var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
 
-    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(0, 1, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(0, 2, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(0, 3, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(0, 4, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(0, 1, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
+    landscapeManager.Add(0, 2, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(0, 3, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
+    landscapeManager.Add(0, 4, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
 
-    landscapeManager.Add(1, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(1, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 2, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 4, GlyphRegistry.GLYPHS["🟫"]);
+    landscapeManager.Add(1, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(1, 1, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(1, 2, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(1, 3, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(1, 4, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
 
-    landscapeManager.Add(2, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(2, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(2, 2, GlyphRegistry.GLYPHS["🏠"]);
-    landscapeManager.Add(2, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(2, 4, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(2, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(2, 1, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(2, 2, GlyphRegistry.GLYPHS[SupportedGlyphs.HOUSE]);
+    landscapeManager.Add(2, 3, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(2, 4, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
 
-    landscapeManager.Add(3, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(3, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 2, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 4, GlyphRegistry.GLYPHS["🟫"]);
+    landscapeManager.Add(3, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(3, 1, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(3, 2, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(3, 3, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
+    landscapeManager.Add(3, 4, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
 
-    landscapeManager.Add(4, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(4, 1, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(4, 2, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(4, 3, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(4, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(4, 1, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
+    landscapeManager.Add(4, 2, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
+    landscapeManager.Add(4, 3, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
+    landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
 
     var scheme = landscapeManager.GetGlyphMap();
     var screen = new ConcreteScreen(xSize: 5, ySize: 5);

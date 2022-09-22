@@ -10,7 +10,7 @@ public class LandscapeManager_InspectTest
   [Fact]
   public void TestInspectGlyph()
   {
-    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var glyph = GlyphRegistry.GLYPHS[SupportedGlyphs.TREE];
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
     manager.Add(0, 0, glyph);
 

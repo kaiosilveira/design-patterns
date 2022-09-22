@@ -28,7 +28,7 @@ public class ConcreteScreen : Screen
       var row = glyphMap[i];
       for (int j = 0; j < row.Length; j++)
       {
-        var item = row[j] ?? GlyphRegistry.GLYPHS["🟫"];
+        var item = row[j] ?? GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE];
         item.Display(x: i, y: j, screen: this);
       }
     }

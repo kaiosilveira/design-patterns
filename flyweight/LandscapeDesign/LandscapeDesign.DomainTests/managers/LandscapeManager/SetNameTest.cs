@@ -11,7 +11,7 @@ public class LandscapeManager_SetNameTest
   public void TestChangesTheNameOfGlyph()
   {
     var landscapeManager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
-    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
     landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
 
     var updatedItem = landscapeManager.Inspect(x: 0, y: 0);

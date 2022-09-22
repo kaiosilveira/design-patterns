@@ -11,7 +11,7 @@ public class LandscapeManager_SetHeightTest
   public void TestChangesTheHeightOfGlyph()
   {
     var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
-    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
     landscapeManager.SetHeight(x: 0, y: 0, height: 3);
 
     var updatedItem = landscapeManager.Inspect(x: 0, y: 0);

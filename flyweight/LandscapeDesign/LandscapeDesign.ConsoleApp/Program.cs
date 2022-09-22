@@ -56,17 +56,17 @@ public class Program
 
       if (key == ConsoleKey.T)
       {
-        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["🌳"]);
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
       }
 
       if (key == ConsoleKey.W)
       {
-        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["⬜"]);
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
       }
 
       if (key == ConsoleKey.H)
       {
-        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["🏠"]);
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.HOUSE]);
       }
 
       input = Convert.ToString(key);

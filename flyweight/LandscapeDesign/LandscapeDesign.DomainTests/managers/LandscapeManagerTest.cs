@@ -36,7 +36,7 @@ public class LandscapeManagerTest
   [Fact]
   public void TestAddsGlyphToScheme()
   {
-    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var glyph = GlyphRegistry.GLYPHS[SupportedGlyphs.TREE];
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
     manager.Add(x: 0, y: 0, glyph);
 
@@ -48,7 +48,7 @@ public class LandscapeManagerTest
   [Fact]
   public void TestThrowsExceptionIfTryingToAddGlyphToInexistentPosition()
   {
-    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var glyph = GlyphRegistry.GLYPHS[SupportedGlyphs.TREE];
     var manager = new LandscapeManager(new ScreenRect(xLength: 1, yLength: 1));
     Assert.Throws<PixelOutOfBoundsException>(() => manager.Add(5, 5, glyph));
   }
@@ -58,7 +58,7 @@ public class LandscapeManagerTest
   {
     var landscapeManager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
 
-    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
 
     landscapeManager.SetHeight(x: 0, y: 0, height: 3);
     landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
