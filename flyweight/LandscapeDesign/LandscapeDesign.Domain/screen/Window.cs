@@ -34,6 +34,19 @@ public class Window
     }
   }
 
+  public void Paint()
+  {
+    for (int i = 0; i < this.matrix.Length; i++)
+    {
+      var row = this.matrix[i];
+      for (int j = 0; j < row.Length; j++)
+      {
+        Console.Write(row[j]);
+      }
+      Console.Write("\n");
+    }
+  }
+
   private string[][] SetupMatrix(int xSize, int ySize)
   {
     var temp = new string[xSize][];
