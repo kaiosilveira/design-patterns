@@ -1,6 +1,6 @@
 namespace LandscapeDesign.Domain.Glyphs;
 
-public class UnsharedGlyph : Glyph
+public class UnsharedGlyph : FlyweightGlyph
 {
   private int height;
 

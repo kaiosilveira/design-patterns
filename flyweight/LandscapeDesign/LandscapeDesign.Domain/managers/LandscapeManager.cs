@@ -11,7 +11,7 @@ public class InvalidMatrixBoundsException : Exception
 
 public class LandscapeManager
 {
-  private Glyph[][] matrix;
+  private FlyweightGlyph[][] matrix;
 
   public LandscapeManager(int xSize, int ySize)
   {
@@ -23,12 +23,12 @@ public class LandscapeManager
     this.matrix = this.SetupMatrix(xSize, ySize);
   }
 
-  public Glyph[][] GetDrawingScheme()
+  public FlyweightGlyph[][] GetDrawingScheme()
   {
     return this.matrix;
   }
 
-  public void Add(int x, int y, Glyph item)
+  public void Add(int x, int y, FlyweightGlyph item)
   {
     this.matrix[x][y] = item;
   }
@@ -47,18 +47,18 @@ public class LandscapeManager
     this.matrix[x][y] = unsharedGlyph;
   }
 
-  public Glyph Inspect(int x, int y)
+  public FlyweightGlyph Inspect(int x, int y)
   {
     return this.matrix[x][y];
   }
 
-  private Glyph[][] SetupMatrix(int xSize, int ySize)
+  private FlyweightGlyph[][] SetupMatrix(int xSize, int ySize)
   {
-    var temp = new Glyph[xSize][];
+    var temp = new FlyweightGlyph[xSize][];
 
     for (int i = 0; i < ySize; i++)
     {
-      temp[i] = new Glyph[ySize];
+      temp[i] = new FlyweightGlyph[ySize];
     }
 
     return temp;

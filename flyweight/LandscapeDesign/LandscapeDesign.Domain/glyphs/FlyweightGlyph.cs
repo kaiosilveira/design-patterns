@@ -2,13 +2,13 @@ using LandscapeDesign.Domain.Screens;
 
 namespace LandscapeDesign.Domain.Glyphs;
 
-public class Glyph
+public class FlyweightGlyph
 {
   private readonly string character;
   private readonly string unicodeValue;
   private string name;
 
-  public Glyph(string character, string unicodeValue, string name)
+  public FlyweightGlyph(string character, string unicodeValue, string name)
   {
     this.character = character;
     this.unicodeValue = unicodeValue;
