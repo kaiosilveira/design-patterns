@@ -51,7 +51,7 @@ public class ScreenTest
     var scheme = landscapeManager.GetDrawingScheme();
     var screen = new ConcreteScreen(xSize: 5, ySize: 5);
     var result = screen.GetDrawingScheme();
-    screen.SetScheme(scheme);
+    screen.SetupDisplay(scheme);
     screen.Paint();
 
     Assert.Equal(expected, result);

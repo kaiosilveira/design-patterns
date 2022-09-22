@@ -5,6 +5,6 @@ namespace LandscapeDesign.Domain.Screens;
 public interface Screen
 {
   public void Add(int x, int y, string item);
-  public void SetScheme(Glyph[][] scheme);
+  public void SetupDisplay(Glyph[][] scheme);
   public void Paint();
 }

@@ -4,28 +4,28 @@ namespace LandscapeDesign.Domain.Screens;
 
 public class ConcreteScreen : Screen
 {
-  private string[][] matrix;
+  private string[][] symbolMap;
 
   public ConcreteScreen(int xSize, int ySize)
   {
-    this.matrix = this.SetupMatrix(xSize, ySize);
+    this.symbolMap = this.SetupSymbolMap(xSize, ySize);
   }
 
   public string[][] GetDrawingScheme()
   {
-    return this.matrix;
+    return this.symbolMap;
   }
 
   public void Add(int x, int y, string item)
   {
-    this.matrix[x][y] = item;
+    this.symbolMap[x][y] = item;
   }
 
-  public void SetScheme(Glyph[][] scheme)
+  public void SetupDisplay(Glyph[][] glyphMap)
   {
-    for (int i = 0; i < scheme.Length; i++)
+    for (int i = 0; i < glyphMap.Length; i++)
     {
-      var row = scheme[i];
+      var row = glyphMap[i];
       for (int j = 0; j < row.Length; j++)
       {
         var item = row[j];
@@ -36,9 +36,9 @@ public class ConcreteScreen : Screen
 
   public void Paint()
   {
-    for (int i = 0; i < this.matrix.Length; i++)
+    for (int i = 0; i < this.symbolMap.Length; i++)
     {
-      var row = this.matrix[i];
+      var row = this.symbolMap[i];
       for (int j = 0; j < row.Length; j++)
       {
         Console.Write(row[j]);
@@ -47,7 +47,7 @@ public class ConcreteScreen : Screen
     }
   }
 
-  private string[][] SetupMatrix(int xSize, int ySize)
+  private string[][] SetupSymbolMap(int xSize, int ySize)
   {
     var result = new string[xSize][];
 
