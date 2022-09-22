@@ -2,11 +2,11 @@
 
 namespace LandscapeDesign.Domain.Screens;
 
-public class ConcreteWindow : Window
+public class ConcreteScreen : Screen
 {
   private string[][] matrix;
 
-  public ConcreteWindow(int xSize, int ySize)
+  public ConcreteScreen(int xSize, int ySize)
   {
     this.matrix = this.SetupMatrix(xSize, ySize);
   }

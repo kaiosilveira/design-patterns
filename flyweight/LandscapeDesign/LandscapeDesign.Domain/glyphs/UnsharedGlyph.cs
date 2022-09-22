@@ -18,9 +18,9 @@ public class UnsharedGlyph : Glyph
     this.character = character;
   }
 
-  public void Display(int x, int y, Window window)
+  public void Display(int x, int y, Screen screen)
   {
-    window.Add(x, y, this.character);
+    screen.Add(x, y, this.character);
   }
 
   public string GetChar()

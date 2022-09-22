@@ -8,7 +8,7 @@ public class UnsharedGlyphTest
   [Fact]
   public void TestDisplay()
   {
-    var mockedWindow = new Mock<Window>();
+    var mockedScreen = new Mock<Screen>();
     var glyph = new UnsharedGlyph(
       character: "🟫",
       unicodeValue: "U+1F7EB",
@@ -16,8 +16,8 @@ public class UnsharedGlyphTest
       height: 3
     );
 
-    glyph.Display(x: 0, y: 0, window: mockedWindow.Object);
+    glyph.Display(x: 0, y: 0, screen: mockedScreen.Object);
 
-    mockedWindow.Verify(instance => instance.Add(0, 0, "🟫"), Times.Once());
+    mockedScreen.Verify(instance => instance.Add(0, 0, "🟫"), Times.Once());
   }
 }

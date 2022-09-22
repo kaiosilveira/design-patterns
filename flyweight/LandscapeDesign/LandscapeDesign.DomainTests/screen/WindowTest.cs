@@ -3,7 +3,7 @@ using LandscapeDesign.Domain.Glyphs;
 using LandscapeDesign.Domain.Managers;
 using LandscapeDesign.Domain.Screens;
 
-public class WindowTest
+public class ScreenTest
 {
   [Fact]
   public void TestPaint()
@@ -49,10 +49,10 @@ public class WindowTest
     landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS["🌳"]);
 
     var scheme = landscapeManager.GetDrawingScheme();
-    var window = new ConcreteWindow(xSize: 5, ySize: 5);
-    var result = window.GetDrawingScheme();
-    window.SetScheme(scheme);
-    window.Paint();
+    var screen = new ConcreteScreen(xSize: 5, ySize: 5);
+    var result = screen.GetDrawingScheme();
+    screen.SetScheme(scheme);
+    screen.Paint();
 
     Assert.Equal(expected, result);
   }
