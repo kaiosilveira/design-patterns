@@ -1,4 +1,5 @@
 using LandscapeDesign.Domain.Glyphs;
+using LandscapeDesign.Domain.Screens;
 
 namespace LandscapeDesign.Domain.Managers;
 
@@ -6,6 +7,7 @@ public class LandscapeManager
 {
   private readonly int xSize;
   private readonly int ySize;
+  private readonly ScreenRect screenRect;
   private Glyph[][] matrix;
 
   public LandscapeManager(int xSize, int ySize)
@@ -17,6 +19,22 @@ public class LandscapeManager
 
     this.xSize = xSize;
     this.ySize = ySize;
+    this.screenRect = new ScreenRect(xSize, ySize);
+    this.matrix = this.SetupMatrix(xSize, ySize);
+  }
+
+  public LandscapeManager(ScreenRect rect)
+  {
+    this.screenRect = rect;
+
+    if (rect.XLength == 0 || rect.YLength == 0)
+    {
+      throw new InvalidMatrixBoundsException();
+    }
+
+    this.screenRect = rect;
+    this.xSize = rect.XLength;
+    this.ySize = rect.YLength;
     this.matrix = this.SetupMatrix(xSize, ySize);
   }
 
