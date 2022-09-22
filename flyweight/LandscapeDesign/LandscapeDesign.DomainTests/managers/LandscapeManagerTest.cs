@@ -13,6 +13,18 @@ public class LandscapeManagerTest
   }
 
   [Fact]
+  public void TestAddsGlyphToScheme()
+  {
+    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var manager = new LandscapeManager(xSize: 1, ySize: 1);
+    manager.Add(0, 0, glyph);
+
+    var scheme = manager.GetDrawingScheme();
+
+    Assert.Equal(glyph, scheme[0][0]);
+  }
+
+  [Fact]
   public void TestReturnsAnEmptyMatrixIfNothingWasAdded()
   {
     var manager = new LandscapeManager(xSize: 1, ySize: 1);
