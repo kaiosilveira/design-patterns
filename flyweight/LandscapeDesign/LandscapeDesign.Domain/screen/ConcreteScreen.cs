@@ -49,13 +49,13 @@ public class ConcreteScreen : Screen
 
   private string[][] SetupMatrix(int xSize, int ySize)
   {
-    var temp = new string[xSize][];
+    var result = new string[xSize][];
 
     for (int i = 0; i < ySize; i++)
     {
-      temp[i] = new string[ySize];
+      result[i] = new string[ySize];
     }
 
-    return temp;
+    return result;
   }
 }
