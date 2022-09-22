@@ -42,4 +42,14 @@ public class UnsharedGlyph : Glyph
   {
     return this.unicodeValue;
   }
+
+  public static Glyph FromExisting(Glyph glyph, string? name, int? height)
+  {
+    return new UnsharedGlyph(
+      glyph.GetChar(),
+      glyph.GetUnicodeValue(),
+      name ?? glyph.GetName(),
+      height ?? glyph.GetHeight()
+    );
+  }
 }

@@ -36,4 +36,24 @@ public class UnsharedGlyphTest
 
     mockedScreen.Verify(instance => instance.Add(0, 0, "🟫"), Times.Once());
   }
+
+  [Fact]
+  public void TestCreatesNewInstanceBasedOnExistingGlyph()
+  {
+    var newHeight = 3;
+    var newName = "My custom name";
+    var mockedScreen = new Mock<Screen>();
+    var existingGlyph = new FlyweightGlyph(
+      character: "🟫",
+      unicodeValue: "U+1F7EB",
+      name: "Brown Square"
+    );
+
+    var newGlyph = UnsharedGlyph.FromExisting(existingGlyph, name: newName, height: newHeight);
+
+    Assert.Equal(newName, newGlyph.GetName());
+    Assert.Equal(newHeight, newGlyph.GetHeight());
+    Assert.Equal(existingGlyph.GetChar(), newGlyph.GetChar());
+    Assert.Equal(existingGlyph.GetUnicodeValue(), newGlyph.GetUnicodeValue());
+  }
 }
