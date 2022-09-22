@@ -28,6 +28,7 @@ jobs:
               "./bridge/UniversalRemoteControl",
               "chain-of-responsibility/MightyGumballMailing",
               "./builder/Patternsland",
+              "./flyweight/LandscapeDesign",
               "./factory-method",
               "./observer",
               "./prototype",
