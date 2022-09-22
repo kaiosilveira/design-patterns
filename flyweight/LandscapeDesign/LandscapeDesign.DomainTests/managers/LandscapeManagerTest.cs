@@ -41,21 +41,6 @@ public class LandscapeManagerTest
   }
 
   [Fact]
-  public void TestInspectGlyph()
-  {
-    var glyph = GlyphRegistry.GLYPHS["🌳"];
-    var manager = new LandscapeManager(xSize: 1, ySize: 1);
-    manager.Add(0, 0, glyph);
-
-    var resultingGlyph = manager.Inspect(x: 0, y: 0);
-
-    Assert.Equal(glyph.GetName(), resultingGlyph.GetName());
-    Assert.Equal(glyph.GetChar(), resultingGlyph.GetChar());
-    Assert.Equal(glyph.GetUnicodeValue(), resultingGlyph.GetUnicodeValue());
-    Assert.Equal(glyph.GetHeight(), resultingGlyph.GetHeight());
-  }
-
-  [Fact]
   public void TestConvertsGlyphToUnsharedIfCustomPropertiesAreAdded()
   {
     var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);

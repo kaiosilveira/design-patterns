@@ -49,7 +49,8 @@ public class LandscapeManager
 
   public Glyph Inspect(int x, int y)
   {
-    return this.matrix[x][y];
+    this.ValidateScreenCoords(x, y);
+    return this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
   }
 
   private Glyph[][] SetupMatrix(int xSize, int ySize)

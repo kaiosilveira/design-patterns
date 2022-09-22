@@ -16,7 +16,6 @@ public class LandscapeManager_SetNameTest
     Assert.Equal("My special tree", updatedItem.GetName());
   }
 
-
   [Fact]
   public void TestThrowsExceptionIfTryingToSetHeightInInvalidScreenPosition()
   {
