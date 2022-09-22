@@ -54,7 +54,8 @@ public class LandscapeManager
 
   public void SetName(int x, int y, string name)
   {
-    var baseGlyph = this.matrix[x][y];
+    this.ValidateScreenCoords(x, y);
+    var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
     var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), name, baseGlyph.GetHeight());
     this.matrix[x][y] = unsharedGlyph;
   }
