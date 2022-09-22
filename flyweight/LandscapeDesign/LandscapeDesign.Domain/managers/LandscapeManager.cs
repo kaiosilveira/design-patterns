@@ -10,19 +10,6 @@ public class LandscapeManager
   private readonly ScreenRect screenRect;
   private Glyph[][] matrix;
 
-  public LandscapeManager(int xSize, int ySize)
-  {
-    if (xSize == 0 || ySize == 0)
-    {
-      throw new InvalidMatrixBoundsException();
-    }
-
-    this.xSize = xSize;
-    this.ySize = ySize;
-    this.screenRect = new ScreenRect(xSize, ySize);
-    this.matrix = this.SetupMatrix(xSize, ySize);
-  }
-
   public LandscapeManager(ScreenRect rect)
   {
     this.screenRect = rect;
@@ -73,14 +60,14 @@ public class LandscapeManager
 
   private Glyph[][] SetupMatrix(int xSize, int ySize)
   {
-    var temp = new Glyph[xSize][];
+    var result = new Glyph[ySize][];
 
-    for (int i = 0; i < ySize; i++)
+    for (int i = 0; i < xSize; i++)
     {
-      temp[i] = new Glyph[ySize];
+      result[i] = new Glyph[ySize];
     }
 
-    return temp;
+    return result;
   }
 
   private void ValidateScreenCoords(int x, int y)
