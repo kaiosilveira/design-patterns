@@ -5,6 +5,8 @@ using LandscapeDesign.Domain.Screens;
 
 public class ScreenTest
 {
+  public readonly ScreenRect DEFAULT_5x5_SCREEN_RECT = new ScreenRect(xLength: 5, yLength: 5);
+
   [Fact]
   public void TestPaint()
   {
@@ -16,7 +18,7 @@ public class ScreenTest
       new string[] { "🌳", "🟫", "🌳", "🟫", "🌳" },
     };
 
-    var landscapeManager = new LandscapeManager(new ScreenRect(xLength: 5, yLength: 5));
+    var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
 
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
     landscapeManager.Add(0, 1, GlyphRegistry.GLYPHS["🟫"]);
@@ -48,12 +50,30 @@ public class ScreenTest
     landscapeManager.Add(4, 3, GlyphRegistry.GLYPHS["🟫"]);
     landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS["🌳"]);
 
-    var scheme = landscapeManager.GetDrawingScheme();
+    var scheme = landscapeManager.GetGlyphMap();
     var screen = new ConcreteScreen(xSize: 5, ySize: 5);
-    var result = screen.GetDrawingScheme();
+    var result = screen.GetSymbolMap();
+
     screen.SetupDisplay(scheme);
-    screen.Paint();
 
     Assert.Equal(expected, result);
+  }
+
+  [Fact]
+  public void TestPaintsBrownSquaresIfLandscapeIsEmpty()
+  {
+    string[][] expected = {
+      new string[] { "🟫", "🟫", "🟫", "🟫", "🟫" },
+      new string[] { "🟫", "🟫", "🟫", "🟫", "🟫" },
+      new string[] { "🟫", "🟫", "🟫", "🟫", "🟫" },
+      new string[] { "🟫", "🟫", "🟫", "🟫", "🟫" },
+      new string[] { "🟫", "🟫", "🟫", "🟫", "🟫" },
+    };
+
+    var manager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
+    var screen = new ConcreteScreen(xSize: 5, ySize: 5);
+    screen.SetupDisplay(manager.GetGlyphMap());
+
+    Assert.Equal(expected, screen.GetSymbolMap());
   }
 }

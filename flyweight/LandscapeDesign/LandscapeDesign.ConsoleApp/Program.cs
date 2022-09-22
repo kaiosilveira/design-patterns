@@ -27,7 +27,7 @@ public class Program
     );
 
     var screen = new ConcreteScreen(xSize: numberOfRows, ySize: numberOfCols);
-    var scheme = landscapeManager.GetDrawingScheme();
+    var scheme = landscapeManager.GetGlyphMap();
     screen.SetupDisplay(scheme);
     screen.Paint();
   }

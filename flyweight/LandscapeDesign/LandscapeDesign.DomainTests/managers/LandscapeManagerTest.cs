@@ -29,7 +29,7 @@ public class LandscapeManagerTest
   public void TestReturnsAnEmptyMatrixIfNothingWasAdded()
   {
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
-    var scheme = manager.GetDrawingScheme();
+    var scheme = manager.GetGlyphMap();
     Assert.Null(scheme[0][0]);
   }
 
@@ -40,7 +40,7 @@ public class LandscapeManagerTest
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
     manager.Add(x: 0, y: 0, glyph);
 
-    var scheme = manager.GetDrawingScheme();
+    var scheme = manager.GetGlyphMap();
 
     Assert.Equal(glyph, scheme[0][0]);
   }

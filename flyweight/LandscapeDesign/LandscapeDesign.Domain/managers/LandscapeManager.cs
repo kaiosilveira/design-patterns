@@ -8,7 +8,7 @@ public class LandscapeManager
   private readonly int xSize;
   private readonly int ySize;
   private readonly ScreenRect screenRect;
-  private Glyph[][] matrix;
+  private Glyph[][] glyphMap;
 
   public LandscapeManager(ScreenRect rect)
   {
@@ -22,40 +22,40 @@ public class LandscapeManager
     this.screenRect = rect;
     this.xSize = rect.XLength;
     this.ySize = rect.YLength;
-    this.matrix = this.SetupMatrix(xSize, ySize);
+    this.glyphMap = this.SetupMatrix(xSize, ySize);
   }
 
-  public Glyph[][] GetDrawingScheme()
+  public Glyph[][] GetGlyphMap()
   {
-    return this.matrix;
+    return this.glyphMap;
   }
 
   public void Add(int x, int y, Glyph item)
   {
     this.ValidateScreenCoords(x, y);
-    this.matrix[x][y] = item;
+    this.glyphMap[x][y] = item;
   }
 
   public void SetName(int x, int y, string name)
   {
     this.ValidateScreenCoords(x, y);
-    var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
+    var baseGlyph = this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
     var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name, baseGlyph.GetHeight());
-    this.matrix[x][y] = unsharedGlyph;
+    this.glyphMap[x][y] = unsharedGlyph;
   }
 
   public void SetHeight(int x, int y, int height)
   {
     this.ValidateScreenCoords(x, y);
-    var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
+    var baseGlyph = this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
     var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name: null, height);
-    this.matrix[x][y] = unsharedGlyph;
+    this.glyphMap[x][y] = unsharedGlyph;
   }
 
   public Glyph Inspect(int x, int y)
   {
     this.ValidateScreenCoords(x, y);
-    return this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
+    return this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
   }
 
   private Glyph[][] SetupMatrix(int xSize, int ySize)
