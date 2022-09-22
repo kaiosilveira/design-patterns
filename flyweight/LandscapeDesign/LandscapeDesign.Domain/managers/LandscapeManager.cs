@@ -2,27 +2,6 @@ using LandscapeDesign.Domain.Glyphs;
 
 namespace LandscapeDesign.Domain.Managers;
 
-public class InvalidMatrixBoundsException : Exception
-{
-  public InvalidMatrixBoundsException()
-    : base(message: "Invalid matrix size provided for Landscape Manager")
-  { }
-}
-
-public class PixelOutOfBoundsException : Exception
-{
-  public PixelOutOfBoundsException(int x, int y)
-    : base(message: $"({x}, {y}) is not a valid pixel position for the current screen")
-  { }
-}
-
-public class GlyphNotFoundException : Exception
-{
-  public GlyphNotFoundException(int x, int y)
-    : base(message: $"No glyph was found at ({x}, {y})")
-  { }
-}
-
 public class LandscapeManager
 {
   private readonly int xSize;
