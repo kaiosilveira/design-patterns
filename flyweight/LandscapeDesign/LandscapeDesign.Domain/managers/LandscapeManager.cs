@@ -47,7 +47,7 @@ public class LandscapeManager
     this.matrix[x][y] = unsharedGlyph;
   }
 
-  public Glyph Describe(int x, int y)
+  public Glyph Inspect(int x, int y)
   {
     return this.matrix[x][y];
   }

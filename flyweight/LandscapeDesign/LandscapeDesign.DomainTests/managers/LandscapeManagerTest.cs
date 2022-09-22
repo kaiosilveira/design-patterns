@@ -33,7 +33,7 @@ public class LandscapeManagerTest
   }
 
   [Fact]
-  public void TestDescribesGlyph()
+  public void TestInspectGlyph()
   {
     var glyph = GlyphRegistry.GLYPHS["🌳"];
     var manager = new LandscapeManager(xSize: 1, ySize: 1);
@@ -55,7 +55,7 @@ public class LandscapeManagerTest
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
     landscapeManager.SetHeight(x: 0, y: 0, height: 3);
 
-    var updatedItem = landscapeManager.Describe(x: 0, y: 0);
+    var updatedItem = landscapeManager.Inspect(x: 0, y: 0);
 
     Assert.Equal(3, updatedItem.GetHeight());
   }
@@ -67,7 +67,7 @@ public class LandscapeManagerTest
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
     landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
 
-    var updatedItem = landscapeManager.Describe(x: 0, y: 0);
+    var updatedItem = landscapeManager.Inspect(x: 0, y: 0);
 
     Assert.Equal("My special tree", updatedItem.GetName());
   }
@@ -82,7 +82,7 @@ public class LandscapeManagerTest
     landscapeManager.SetHeight(x: 0, y: 0, height: 3);
     landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
 
-    var updatedItem = landscapeManager.Describe(x: 0, y: 0);
+    var updatedItem = landscapeManager.Inspect(x: 0, y: 0);
 
     Assert.IsType<UnsharedGlyph>(updatedItem);
     Assert.Equal(3, updatedItem.GetHeight());
