@@ -1,6 +1,8 @@
 using Xunit;
 using System;
-using LandscapeDesign.Domain;
+using LandscapeDesign.Domain.Glyphs;
+using LandscapeDesign.Domain.Screens;
+using LandscapeDesign.Domain.Managers;
 
 namespace LandscapeDesign.DomainTests;
 

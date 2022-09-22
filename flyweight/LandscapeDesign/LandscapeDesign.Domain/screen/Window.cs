@@ -1,4 +1,6 @@
-﻿namespace LandscapeDesign.Domain;
+﻿using LandscapeDesign.Domain.Glyphs;
+
+namespace LandscapeDesign.Domain.Screens;
 
 public class Window
 {

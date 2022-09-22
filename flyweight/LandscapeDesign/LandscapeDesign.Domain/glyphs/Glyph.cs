@@ -1,4 +1,6 @@
-namespace LandscapeDesign.Domain;
+using LandscapeDesign.Domain.Screens;
+
+namespace LandscapeDesign.Domain.Glyphs;
 
 public class Glyph
 {

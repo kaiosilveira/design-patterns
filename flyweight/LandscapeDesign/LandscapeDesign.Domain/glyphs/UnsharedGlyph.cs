@@ -1,4 +1,4 @@
-namespace LandscapeDesign.Domain;
+namespace LandscapeDesign.Domain.Glyphs;
 
 public class UnsharedGlyph : Glyph
 {
