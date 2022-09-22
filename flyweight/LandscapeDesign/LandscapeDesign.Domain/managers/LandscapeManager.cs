@@ -41,11 +41,7 @@ public class LandscapeManager
 
   public void Add(int x, int y, Glyph item)
   {
-    if (this.xSize < x || this.ySize < y)
-    {
-      throw new PixelOutOfBoundsException(x, y);
-    }
-
+    this.ValidateScreenCoords(x, y);
     this.matrix[x][y] = item;
   }
 
@@ -58,11 +54,7 @@ public class LandscapeManager
 
   public void SetHeight(int x, int y, int height)
   {
-    if (this.xSize < x || this.ySize < y)
-    {
-      throw new PixelOutOfBoundsException(x, y);
-    }
-
+    this.ValidateScreenCoords(x, y);
     var baseGlyph = this.matrix[x][y];
     var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), baseGlyph.GetName(), height);
     this.matrix[x][y] = unsharedGlyph;
@@ -83,5 +75,13 @@ public class LandscapeManager
     }
 
     return temp;
+  }
+
+  private void ValidateScreenCoords(int x, int y)
+  {
+    if (this.xSize < x || this.ySize < y)
+    {
+      throw new PixelOutOfBoundsException(x, y);
+    }
   }
 }
