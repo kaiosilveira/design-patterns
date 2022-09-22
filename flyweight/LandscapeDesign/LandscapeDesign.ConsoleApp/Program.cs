@@ -6,29 +6,70 @@ public class Program
 {
   public static void Main(string[] args)
   {
-    var numberOfRows = 26;
-    var numberOfCols = 26;
+    Console.WriteLine("Welcome to the LandscapeDesign app. Let's start by defining the size of your landscape");
+    Console.Write("X axis size:");
+    var numberOfCols = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Y axis size:");
+    var numberOfRows = Convert.ToInt32(Console.ReadLine());
+
     var landscapeManager = new LandscapeManager(
       new ScreenRect(xLength: numberOfRows, yLength: numberOfCols)
     );
 
-    for (int i = 0; i < numberOfRows; i++)
+    Console.WriteLine("Cool, all set! 🏠");
+
+    var input = "";
+    var currentPositionX = 0;
+    var currentPositionY = 0;
+
+    while (input != "q")
     {
-      for (int j = 0; j < numberOfCols; j++)
+      Console.Clear();
+      Console.WriteLine("Interactive mode active. Press 'q' anytime to quit...");
+      Console.WriteLine($"Last key typed: {input}");
+      Console.WriteLine($"Current position: ({currentPositionX}, {currentPositionY})");
+      var screen = new ConcreteScreen(xSize: numberOfRows, ySize: numberOfCols);
+      var scheme = landscapeManager.GetGlyphMap();
+      screen.SetupDisplay(scheme);
+      screen.Paint();
+
+      var key = Console.ReadKey().Key;
+      if (key == ConsoleKey.RightArrow)
       {
-        landscapeManager.Add(x: i, y: j, GlyphRegistry.GLYPHS["🌳"]);
+        currentPositionY++;
       }
+
+      if (key == ConsoleKey.LeftArrow)
+      {
+        currentPositionY--;
+      }
+
+      if (key == ConsoleKey.DownArrow)
+      {
+        currentPositionX++;
+      }
+
+      if (key == ConsoleKey.UpArrow)
+      {
+        currentPositionX--;
+      }
+
+      if (key == ConsoleKey.T)
+      {
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["🌳"]);
+      }
+
+      if (key == ConsoleKey.W)
+      {
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["⬜"]);
+      }
+
+      if (key == ConsoleKey.H)
+      {
+        landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS["🏠"]);
+      }
+
+      input = Convert.ToString(key);
     }
-
-    landscapeManager.Add(
-      x: (numberOfRows - 1) / 2,
-      y: (numberOfCols - 1) / 2,
-      GlyphRegistry.GLYPHS["🏠"]
-    );
-
-    var screen = new ConcreteScreen(xSize: numberOfRows, ySize: numberOfCols);
-    var scheme = landscapeManager.GetGlyphMap();
-    screen.SetupDisplay(scheme);
-    screen.Paint();
   }
 }

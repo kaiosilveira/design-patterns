@@ -36,6 +36,12 @@ public class LandscapeManager
     this.glyphMap[x][y] = item;
   }
 
+  public void SetItem(int x, int y, Glyph item)
+  {
+    this.ValidateScreenCoords(x, y);
+    this.glyphMap[x][y] = item;
+  }
+
   public void SetName(int x, int y, string name)
   {
     this.ValidateScreenCoords(x, y);
