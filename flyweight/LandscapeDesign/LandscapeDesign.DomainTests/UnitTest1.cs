@@ -106,7 +106,6 @@ public class Glyph
   private readonly string unicodeValue;
   private string name;
 
-
   public Glyph(string character, string unicodeValue, string name)
   {
     this.character = character;
@@ -243,39 +242,11 @@ public class UnitTest1
     var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
 
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(0, 1, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(0, 2, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(0, 3, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(0, 4, GlyphRegistry.GLYPHS["🌳"]);
 
-    landscapeManager.Add(1, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(1, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 2, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(1, 4, GlyphRegistry.GLYPHS["🟫"]);
+    landscapeManager.SetHeight(x: 0, y: 0, height: 3);
+    landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
 
-    landscapeManager.Add(2, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(2, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(2, 2, GlyphRegistry.GLYPHS["🏠"]);
-    landscapeManager.Add(2, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(2, 4, GlyphRegistry.GLYPHS["🌳"]);
-
-    landscapeManager.Add(3, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(3, 1, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 2, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 3, GlyphRegistry.GLYPHS["⬜"]);
-    landscapeManager.Add(3, 4, GlyphRegistry.GLYPHS["🟫"]);
-
-    landscapeManager.Add(4, 0, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(4, 1, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(4, 2, GlyphRegistry.GLYPHS["🌳"]);
-    landscapeManager.Add(4, 3, GlyphRegistry.GLYPHS["🟫"]);
-    landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS["🌳"]);
-
-    landscapeManager.SetHeight(x: 4, y: 1, height: 3);
-    landscapeManager.SetName(x: 4, y: 1, name: "My special tree");
-
-    var updatedItem = landscapeManager.Describe(x: 4, y: 1);
+    var updatedItem = landscapeManager.Describe(x: 0, y: 0);
 
     Assert.IsType<UnsharedGlyph>(updatedItem);
     Assert.Equal(3, updatedItem.GetHeight());
