@@ -6,6 +6,22 @@ using LandscapeDesign.Domain.Screens;
 public class UnsharedGlyphTest
 {
   [Fact]
+  public void TestSetup()
+  {
+    var glyph = new UnsharedGlyph(
+      character: "🟫",
+      unicodeValue: "U+1F7EB",
+      name: "Brown Square",
+      height: 3
+    );
+
+    Assert.Equal("🟫", glyph.GetChar());
+    Assert.Equal("Brown Square", glyph.GetName());
+    Assert.Equal("U+1F7EB", glyph.GetUnicodeValue());
+    Assert.Equal(3, glyph.GetHeight());
+  }
+
+  [Fact]
   public void TestDisplay()
   {
     var mockedScreen = new Mock<Screen>();
