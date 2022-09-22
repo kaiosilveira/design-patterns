@@ -2,12 +2,23 @@ using LandscapeDesign.Domain.Glyphs;
 
 namespace LandscapeDesign.Domain.Managers;
 
+public class InvalidMatrixBoundsException : Exception
+{
+  public InvalidMatrixBoundsException() : base(message: "Invalid matrix size provided for Landscape Manager")
+  { }
+}
+
 public class LandscapeManager
 {
   private Glyph[][] matrix;
 
   public LandscapeManager(int xSize, int ySize)
   {
+    if (xSize == 0 || ySize == 0)
+    {
+      throw new InvalidMatrixBoundsException();
+    }
+
     this.matrix = this.SetupMatrix(xSize, ySize);
   }
 

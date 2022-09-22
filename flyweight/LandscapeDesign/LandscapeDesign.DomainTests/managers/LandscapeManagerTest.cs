@@ -7,6 +7,12 @@ namespace LandscapeDesign.DomainTests;
 public class LandscapeManagerTest
 {
   [Fact]
+  public void TestThrowsAnErrorIfMatrixWouldContainSizeZero()
+  {
+    Assert.Throws<InvalidMatrixBoundsException>(() => new LandscapeManager(xSize: 0, ySize: 0));
+  }
+
+  [Fact]
   public void TestReturnsAnEmptyMatrixIfNothingWasAdded()
   {
     var manager = new LandscapeManager(xSize: 1, ySize: 1);
