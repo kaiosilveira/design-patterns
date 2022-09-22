@@ -49,7 +49,7 @@ public class WindowTest
     landscapeManager.Add(4, 4, GlyphRegistry.GLYPHS["🌳"]);
 
     var scheme = landscapeManager.GetDrawingScheme();
-    var window = new Window(xSize: 5, ySize: 5);
+    var window = new ConcreteWindow(xSize: 5, ySize: 5);
     var result = window.GetDrawingScheme();
     window.SetScheme(scheme);
     window.Paint();
