@@ -47,8 +47,7 @@ public class LandscapeManagerTest
     var manager = new LandscapeManager(xSize: 1, ySize: 1);
     manager.Add(0, 0, glyph);
 
-    var scheme = manager.GetDrawingScheme();
-    var resultingGlyph = scheme[0][0];
+    var resultingGlyph = manager.Inspect(x: 0, y: 0);
 
     Assert.Equal(glyph.GetName(), resultingGlyph.GetName());
     Assert.Equal(glyph.GetChar(), resultingGlyph.GetChar());
