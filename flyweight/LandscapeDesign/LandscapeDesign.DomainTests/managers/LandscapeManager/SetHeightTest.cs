@@ -1,13 +1,16 @@
 using Xunit;
 using LandscapeDesign.Domain.Glyphs;
 using LandscapeDesign.Domain.Managers;
+using LandscapeDesign.Domain.Screens;
 
 public class LandscapeManager_SetHeightTest
 {
+  public readonly ScreenRect DEFAULT_5x5_SCREEN_RECT = new ScreenRect(xLength: 5, yLength: 5);
+
   [Fact]
   public void TestChangesTheHeightOfGlyph()
   {
-    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
     landscapeManager.SetHeight(x: 0, y: 0, height: 3);
 
@@ -19,7 +22,7 @@ public class LandscapeManager_SetHeightTest
   [Fact]
   public void TestThrowsExceptionIfTryingToSetHeightInInvalidScreenPosition()
   {
-    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
     Assert.Throws<PixelOutOfBoundsException>(
       () => landscapeManager.SetHeight(x: 10, y: 10, height: 3)
     );
@@ -28,7 +31,7 @@ public class LandscapeManager_SetHeightTest
   [Fact]
   public void TestThrowsExceptionIfTryingToSetHeightToAnInexistentGlyph()
   {
-    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
     Assert.Throws<GlyphNotFoundException>(
       () => landscapeManager.SetHeight(x: 0, y: 0, height: 3)
     );

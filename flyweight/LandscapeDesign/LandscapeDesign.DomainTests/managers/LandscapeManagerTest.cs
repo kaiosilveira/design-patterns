@@ -7,17 +7,22 @@ namespace LandscapeDesign.DomainTests;
 
 public class LandscapeManagerTest
 {
-  public readonly ScreenRect DEFAULT_1x1_SCREEN_RECT;
+  public readonly ScreenRect DEFAULT_1x1_SCREEN_RECT = new ScreenRect(xLength: 1, yLength: 1);
 
-  public LandscapeManagerTest()
+  [Fact]
+  public void TestThrowsAnErrorIfMatrixWouldContainWidthZero()
   {
-    this.DEFAULT_1x1_SCREEN_RECT = new ScreenRect(xLength: 1, yLength: 1);
+    Assert.Throws<InvalidMatrixBoundsException>(
+      () => new LandscapeManager(new ScreenRect(xLength: 0, yLength: 1))
+    );
   }
 
   [Fact]
-  public void TestThrowsAnErrorIfMatrixWouldContainSizeZero()
+  public void TestThrowsAnErrorIfMatrixWouldContainHeightZero()
   {
-    Assert.Throws<InvalidMatrixBoundsException>(() => new LandscapeManager(xSize: 0, ySize: 0));
+    Assert.Throws<InvalidMatrixBoundsException>(
+      () => new LandscapeManager(new ScreenRect(xLength: 1, yLength: 0))
+    );
   }
 
   [Fact]
@@ -44,7 +49,7 @@ public class LandscapeManagerTest
   public void TestThrowsExceptionIfTryingToAddGlyphToInexistentPosition()
   {
     var glyph = GlyphRegistry.GLYPHS["🌳"];
-    var manager = new LandscapeManager(xSize: 1, ySize: 1);
+    var manager = new LandscapeManager(new ScreenRect(xLength: 1, yLength: 1));
     Assert.Throws<PixelOutOfBoundsException>(() => manager.Add(5, 5, glyph));
   }
 

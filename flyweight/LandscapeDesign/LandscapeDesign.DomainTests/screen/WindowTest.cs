@@ -16,7 +16,7 @@ public class ScreenTest
       new string[] { "🌳", "🟫", "🌳", "🟫", "🌳" },
     };
 
-    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    var landscapeManager = new LandscapeManager(new ScreenRect(xLength: 5, yLength: 5));
 
     landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
     landscapeManager.Add(0, 1, GlyphRegistry.GLYPHS["🟫"]);
