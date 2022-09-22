@@ -33,6 +33,14 @@ public class LandscapeManagerTest
   }
 
   [Fact]
+  public void TestThrowsExceptionIfTryingToAddGlyphToInexistentPosition()
+  {
+    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var manager = new LandscapeManager(xSize: 1, ySize: 1);
+    Assert.Throws<PixelOutOfBoundsException>(() => manager.Add(5, 5, glyph));
+  }
+
+  [Fact]
   public void TestInspectGlyph()
   {
     var glyph = GlyphRegistry.GLYPHS["🌳"];

@@ -9,8 +9,17 @@ public class InvalidMatrixBoundsException : Exception
   { }
 }
 
+public class PixelOutOfBoundsException : Exception
+{
+  public PixelOutOfBoundsException(int x, int y)
+    : base(message: $"({x}, {y}) is not a valid pixel position for the current screen")
+  { }
+}
+
 public class LandscapeManager
 {
+  private readonly int xSize;
+  private readonly int ySize;
   private Glyph[][] matrix;
 
   public LandscapeManager(int xSize, int ySize)
@@ -20,6 +29,8 @@ public class LandscapeManager
       throw new InvalidMatrixBoundsException();
     }
 
+    this.xSize = xSize;
+    this.ySize = ySize;
     this.matrix = this.SetupMatrix(xSize, ySize);
   }
 
@@ -30,6 +41,11 @@ public class LandscapeManager
 
   public void Add(int x, int y, Glyph item)
   {
+    if (this.xSize < x || this.ySize < y)
+    {
+      throw new PixelOutOfBoundsException(x, y);
+    }
+
     this.matrix[x][y] = item;
   }
 
