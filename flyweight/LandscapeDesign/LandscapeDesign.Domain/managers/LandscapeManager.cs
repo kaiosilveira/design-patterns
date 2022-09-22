@@ -53,7 +53,7 @@ public class LandscapeManager
   {
     this.ValidateScreenCoords(x, y);
     var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
-    var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), name, baseGlyph.GetHeight());
+    var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name, baseGlyph.GetHeight());
     this.matrix[x][y] = unsharedGlyph;
   }
 
@@ -61,7 +61,7 @@ public class LandscapeManager
   {
     this.ValidateScreenCoords(x, y);
     var baseGlyph = this.matrix[x][y] ?? throw new GlyphNotFoundException(x, y);
-    var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), baseGlyph.GetName(), height);
+    var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name: null, height);
     this.matrix[x][y] = unsharedGlyph;
   }
 
