@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeDesign.DomainTests", "LandscapeDesign.DomainTests\LandscapeDesign.DomainTests.csproj", "{382429F6-2369-4458-99B6-AD3EC3E62E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeDesign.ConsoleApp", "LandscapeDesign.ConsoleApp\LandscapeDesign.ConsoleApp.csproj", "{B9234C49-F63C-4CC9-8748-83F147DE2C00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{382429F6-2369-4458-99B6-AD3EC3E62E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{382429F6-2369-4458-99B6-AD3EC3E62E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{382429F6-2369-4458-99B6-AD3EC3E62E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{382429F6-2369-4458-99B6-AD3EC3E62E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
