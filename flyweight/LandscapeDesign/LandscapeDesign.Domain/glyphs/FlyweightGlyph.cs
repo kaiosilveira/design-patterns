@@ -2,7 +2,7 @@ using LandscapeDesign.Domain.Screens;
 
 namespace LandscapeDesign.Domain.Glyphs;
 
-public class FlyweightGlyph
+public class FlyweightGlyph : Glyph
 {
   private readonly string character;
   private readonly string unicodeValue;
@@ -20,22 +20,22 @@ public class FlyweightGlyph
     window.Add(x, y, this.character);
   }
 
-  public virtual int GetHeight()
+  public int GetHeight()
   {
     return 1;
   }
 
-  public virtual string GetChar()
+  public string GetChar()
   {
     return this.character;
   }
 
-  public virtual string GetUnicodeValue()
+  public string GetUnicodeValue()
   {
     return this.unicodeValue;
   }
 
-  public virtual string GetName()
+  public string GetName()
   {
     return this.name;
   }

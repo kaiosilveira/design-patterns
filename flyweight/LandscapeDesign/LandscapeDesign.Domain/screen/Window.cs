@@ -21,7 +21,7 @@ public class Window
     this.matrix[x][y] = item;
   }
 
-  public void SetScheme(FlyweightGlyph[][] scheme)
+  public void SetScheme(Glyph[][] scheme)
   {
     for (int i = 0; i < scheme.Length; i++)
     {
