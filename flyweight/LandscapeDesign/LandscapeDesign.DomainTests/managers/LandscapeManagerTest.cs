@@ -61,6 +61,18 @@ public class LandscapeManagerTest
   }
 
   [Fact]
+  public void TestChangesTheNameOfGlyph()
+  {
+    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    landscapeManager.Add(0, 0, GlyphRegistry.GLYPHS["🌳"]);
+    landscapeManager.SetName(x: 0, y: 0, name: "My special tree");
+
+    var updatedItem = landscapeManager.Describe(x: 0, y: 0);
+
+    Assert.Equal("My special tree", updatedItem.GetName());
+  }
+
+  [Fact]
   public void TestConvertsGlyphToUnsharedIfCustomPropertiesAreAdded()
   {
     var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
