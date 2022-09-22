@@ -25,6 +25,22 @@ public class LandscapeManagerTest
   }
 
   [Fact]
+  public void TestDescribesGlyph()
+  {
+    var glyph = GlyphRegistry.GLYPHS["🌳"];
+    var manager = new LandscapeManager(xSize: 1, ySize: 1);
+    manager.Add(0, 0, glyph);
+
+    var scheme = manager.GetDrawingScheme();
+    var resultingGlyph = scheme[0][0];
+
+    Assert.Equal(glyph.GetName(), resultingGlyph.GetName());
+    Assert.Equal(glyph.GetChar(), resultingGlyph.GetChar());
+    Assert.Equal(glyph.GetUnicodeValue(), resultingGlyph.GetUnicodeValue());
+    Assert.Equal(glyph.GetHeight(), resultingGlyph.GetHeight());
+  }
+
+  [Fact]
   public void TestReturnsAnEmptyMatrixIfNothingWasAdded()
   {
     var manager = new LandscapeManager(xSize: 1, ySize: 1);
