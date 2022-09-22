@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeDesign.DomainTests
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeDesign.ConsoleApp", "LandscapeDesign.ConsoleApp\LandscapeDesign.ConsoleApp.csproj", "{B9234C49-F63C-4CC9-8748-83F147DE2C00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LandscapeDesign.Domain", "LandscapeDesign.Domain\LandscapeDesign.Domain.csproj", "{449F204D-4DD6-4485-B4A5-448FA58A5B4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9234C49-F63C-4CC9-8748-83F147DE2C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{449F204D-4DD6-4485-B4A5-448FA58A5B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{449F204D-4DD6-4485-B4A5-448FA58A5B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{449F204D-4DD6-4485-B4A5-448FA58A5B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{449F204D-4DD6-4485-B4A5-448FA58A5B4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LandscapeDesign.Domain\LandscapeDesign.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
