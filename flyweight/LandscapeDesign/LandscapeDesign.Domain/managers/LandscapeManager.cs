@@ -58,6 +58,11 @@ public class LandscapeManager
 
   public void SetHeight(int x, int y, int height)
   {
+    if (this.xSize < x || this.ySize < y)
+    {
+      throw new PixelOutOfBoundsException(x, y);
+    }
+
     var baseGlyph = this.matrix[x][y];
     var unsharedGlyph = new UnsharedGlyph(baseGlyph.GetChar(), baseGlyph.GetUnicodeValue(), baseGlyph.GetName(), height);
     this.matrix[x][y] = unsharedGlyph;

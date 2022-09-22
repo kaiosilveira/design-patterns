@@ -68,6 +68,15 @@ public class LandscapeManagerTest
   }
 
   [Fact]
+  public void TestThrowsExceptionIfTryingToSetHeightInInvalidScreenPosition()
+  {
+    var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
+    Assert.Throws<PixelOutOfBoundsException>(
+      () => landscapeManager.SetHeight(x: 10, y: 10, height: 3)
+    );
+  }
+
+  [Fact]
   public void TestChangesTheNameOfGlyph()
   {
     var landscapeManager = new LandscapeManager(xSize: 5, ySize: 5);
