@@ -74,7 +74,7 @@ The structural design patterns presented at GoF's book are:
 
 - [Facade](/facade): Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
 
-- [Flyweight](/flyweight): Use sharing to support large numbers of fine-grained objects efficiently. 🚧 **WORK IN PROGRESS** 🚧
+- [Flyweight](/flyweight): Use sharing to support large numbers of fine-grained objects efficiently.
 
 - [Proxy](/proxy): Provides a surrogate or placeholder for another object to control access to it.
 
