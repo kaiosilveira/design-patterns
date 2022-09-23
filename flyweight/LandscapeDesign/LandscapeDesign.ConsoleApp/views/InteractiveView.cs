@@ -40,50 +40,28 @@ public class InteractiveView : TerminalView
     input = Convert.ToString(key);
 
     if (key == ConsoleKey.RightArrow && currentPositionY < numberOfCols - 1)
-    {
       currentPositionY++;
-    }
 
     if (key == ConsoleKey.LeftArrow && currentPositionY > 0)
-    {
       currentPositionY--;
-    }
 
     if (key == ConsoleKey.DownArrow && currentPositionX < numberOfRows - 1)
-    {
       currentPositionX++;
-    }
 
     if (key == ConsoleKey.UpArrow && currentPositionX > 0)
-    {
       currentPositionX--;
-    }
 
     if (key == ConsoleKey.T)
-    {
       landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.TREE]);
-    }
 
     if (key == ConsoleKey.W)
-    {
       landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.WHITE_SQUARE]);
-    }
 
     if (key == ConsoleKey.B)
-    {
       landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE]);
-    }
 
     if (key == ConsoleKey.H)
-    {
       landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.HOUSE]);
-    }
-
-    var currentView = appState.CurrentView;
-    if (key == ConsoleKey.E)
-    {
-      currentView = TerminalViews.EDIT_ITEM;
-    }
 
     return new ApplicationState(
       landscapeManager,
@@ -91,7 +69,7 @@ public class InteractiveView : TerminalView
       currentPositionY,
       lastCommand: input ?? appState.LastCommand,
       rect: appState.Rect,
-      currentView
+      currentView: key == ConsoleKey.E ? TerminalViews.EDIT_ITEM : appState.CurrentView
     );
   }
 }
