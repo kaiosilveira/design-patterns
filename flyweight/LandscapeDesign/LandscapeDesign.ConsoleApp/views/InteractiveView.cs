@@ -14,13 +14,13 @@ public class InteractiveView
 
   public ApplicationState Render()
   {
-    var landscapeManager = appState.landscapeManager;
-    var currentPositionX = appState.currentPositionX;
-    var currentPositionY = appState.currentPositionY;
-    var numberOfRows = appState.rect.XLength;
-    var numberOfCols = appState.rect.YLength;
+    var landscapeManager = appState.LandscapeManager;
+    var currentPositionX = appState.CurrentPositionX;
+    var currentPositionY = appState.CurrentPositionY;
+    var numberOfRows = appState.Rect.XLength;
+    var numberOfCols = appState.Rect.YLength;
 
-    var input = appState.lastCommand;
+    var input = appState.LastCommand;
     Console.WriteLine("Interactive mode active. Press 'q' anytime to quit...");
     Console.WriteLine($"Last key typed: {input}");
     Console.WriteLine($"Current position: ({currentPositionX}, {currentPositionY})");
@@ -79,7 +79,7 @@ public class InteractiveView
       landscapeManager.SetItem(x: currentPositionX, y: currentPositionY, GlyphRegistry.GLYPHS[SupportedGlyphs.HOUSE]);
     }
 
-    var currentView = appState.currentView;
+    var currentView = appState.CurrentView;
     if (key == ConsoleKey.E)
     {
       currentView = TerminalViews.EDIT_ITEM;
@@ -89,8 +89,8 @@ public class InteractiveView
       landscapeManager,
       currentPositionX,
       currentPositionY,
-      lastCommand: input ?? appState.lastCommand,
-      rect: appState.rect,
+      lastCommand: input ?? appState.LastCommand,
+      rect: appState.Rect,
       currentView
     );
   }

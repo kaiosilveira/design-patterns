@@ -5,12 +5,12 @@ namespace LandscapeDesign.ConsoleApp;
 
 public class ApplicationState
 {
-  public readonly int currentPositionX;
-  public readonly int currentPositionY;
-  public readonly string lastCommand;
-  public readonly TerminalViews currentView;
-  public readonly LandscapeManager landscapeManager;
-  public readonly ScreenRect rect;
+  public readonly int CurrentPositionX;
+  public readonly int CurrentPositionY;
+  public readonly string LastCommand;
+  public readonly TerminalViews CurrentView;
+  public readonly LandscapeManager LandscapeManager;
+  public readonly ScreenRect Rect;
 
   public ApplicationState(
     LandscapeManager landscapeManager,
@@ -21,11 +21,11 @@ public class ApplicationState
     TerminalViews currentView
   )
   {
-    this.landscapeManager = landscapeManager;
-    this.currentPositionX = currentPosX;
-    this.currentPositionY = currentPosY;
-    this.rect = rect;
-    this.currentView = currentView;
-    this.lastCommand = lastCommand;
+    this.LandscapeManager = landscapeManager;
+    this.CurrentPositionX = currentPosX;
+    this.CurrentPositionY = currentPosY;
+    this.Rect = rect;
+    this.CurrentView = currentView;
+    this.LastCommand = lastCommand;
   }
 }

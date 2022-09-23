@@ -11,10 +11,10 @@ public class EditItemView
   public ApplicationState Render()
   {
     Console.WriteLine("Edition mode active. Type 'q!' to go back to interactive mode");
-    var landscapeManager = appState.landscapeManager;
-    var currentPositionX = appState.currentPositionX;
-    var currentPositionY = appState.currentPositionY;
-    var currentView = appState.currentView;
+    var landscapeManager = appState.LandscapeManager;
+    var currentPositionX = appState.CurrentPositionX;
+    var currentPositionY = appState.CurrentPositionY;
+    var currentView = appState.CurrentView;
 
     var currentGlyph = landscapeManager.Inspect(x: currentPositionX, y: currentPositionY);
     Console.WriteLine($"Current editing {currentGlyph.GetName()} at ({currentPositionX}, {currentPositionY})");
@@ -32,8 +32,8 @@ public class EditItemView
       landscapeManager,
       currentPositionX,
       currentPositionY,
-      lastCommand: newName ?? appState.lastCommand,
-      rect: appState.rect,
+      lastCommand: newName ?? appState.LastCommand,
+      rect: appState.Rect,
       currentView: TerminalViews.INTERACTIVE
     );
   }

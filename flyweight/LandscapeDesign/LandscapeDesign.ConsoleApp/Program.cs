@@ -26,10 +26,10 @@ public class Program
       currentView: TerminalViews.INTERACTIVE
     );
 
-    while (appState.lastCommand != "q")
+    while (appState.LastCommand != "q")
     {
       Console.Clear();
-      switch (appState.currentView)
+      switch (appState.CurrentView)
       {
         case TerminalViews.EDIT_ITEM:
           appState = new EditItemView(appState).Render();
