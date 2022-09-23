@@ -29,6 +29,7 @@ jobs:
               "chain-of-responsibility/MightyGumballMailing",
               "./builder/Patternsland",
               "./flyweight/LandscapeDesign",
+              "./interpreter/BoolExParser",
               "./factory-method",
               "./observer",
               "./prototype",
