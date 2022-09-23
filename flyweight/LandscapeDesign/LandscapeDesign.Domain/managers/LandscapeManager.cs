@@ -45,7 +45,11 @@ public class LandscapeManager
   public void SetName(int x, int y, string name)
   {
     this.ValidateScreenCoords(x, y);
-    var baseGlyph = this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
+
+    var baseGlyph = this.glyphMap[x][y];
+    if (baseGlyph.GetChar() == GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE].GetChar())
+      throw new DefaultGlyphNotEditableException(x, y);
+
     var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name, baseGlyph.GetHeight());
     this.glyphMap[x][y] = unsharedGlyph;
   }
@@ -53,7 +57,11 @@ public class LandscapeManager
   public void SetHeight(int x, int y, int height)
   {
     this.ValidateScreenCoords(x, y);
+
     var baseGlyph = this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
+    if (baseGlyph.GetChar() == GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE].GetChar())
+      throw new DefaultGlyphNotEditableException(x, y);
+
     var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name: null, height);
     this.glyphMap[x][y] = unsharedGlyph;
   }
@@ -71,6 +79,10 @@ public class LandscapeManager
     for (int i = 0; i < xSize; i++)
     {
       result[i] = new Glyph[ySize];
+      for (int j = 0; j < ySize; j++)
+      {
+        result[i][j] = GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE];
+      }
     }
 
     return result;

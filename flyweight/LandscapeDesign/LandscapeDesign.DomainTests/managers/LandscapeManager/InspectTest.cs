@@ -23,16 +23,16 @@ public class LandscapeManager_InspectTest
   }
 
   [Fact]
-  public void TestThrowsExceptionIfTryingToInspectInexistentGlyph()
+  public void TestReturnsBrownSquareIfTryingToInspectInexistentGlyph()
   {
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
-    Assert.Throws<GlyphNotFoundException>(() => manager.Inspect(0, 0));
+    Assert.Equal(GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE], manager.Inspect(x: 0, y: 0));
   }
 
   [Fact]
   public void TestThrowsExceptionIfTryingToInspectGlyphOutsideOfScreenBounds()
   {
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
-    Assert.Throws<PixelOutOfBoundsException>(() => manager.Inspect(5, 5));
+    Assert.Throws<PixelOutOfBoundsException>(() => manager.Inspect(x: 5, y: 5));
   }
 }

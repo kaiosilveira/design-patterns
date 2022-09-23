@@ -29,10 +29,10 @@ public class LandscapeManager_SetNameTest
   }
 
   [Fact]
-  public void TestThrowsExceptionIfTryingToSetHeightToAnInexistentGlyph()
+  public void TestThrowsExceptionIfTryingToSetHeightToADefaultBrownSquareGlyph()
   {
     var landscapeManager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
-    Assert.Throws<GlyphNotFoundException>(
+    Assert.Throws<DefaultGlyphNotEditableException>(
       () => landscapeManager.SetName(x: 0, y: 0, name: "My special tree")
     );
   }

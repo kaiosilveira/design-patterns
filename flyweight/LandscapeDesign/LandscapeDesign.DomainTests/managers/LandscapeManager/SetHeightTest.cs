@@ -29,10 +29,10 @@ public class LandscapeManager_SetHeightTest
   }
 
   [Fact]
-  public void TestThrowsExceptionIfTryingToSetHeightToAnInexistentGlyph()
+  public void TestThrowsExceptionIfTryingToSetHeightToDefaultGlyph()
   {
     var landscapeManager = new LandscapeManager(DEFAULT_5x5_SCREEN_RECT);
-    Assert.Throws<GlyphNotFoundException>(
+    Assert.Throws<DefaultGlyphNotEditableException>(
       () => landscapeManager.SetHeight(x: 0, y: 0, height: 3)
     );
   }

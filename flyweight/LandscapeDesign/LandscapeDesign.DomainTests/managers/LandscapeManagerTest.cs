@@ -26,11 +26,11 @@ public class LandscapeManagerTest
   }
 
   [Fact]
-  public void TestReturnsAnEmptyMatrixIfNothingWasAdded()
+  public void TestReturnsBrownSquaresIfNothingWasAdded()
   {
     var manager = new LandscapeManager(DEFAULT_1x1_SCREEN_RECT);
     var scheme = manager.GetGlyphMap();
-    Assert.Null(scheme[0][0]);
+    Assert.Equal(GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE], scheme[0][0]);
   }
 
   [Fact]
