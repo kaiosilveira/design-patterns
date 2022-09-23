@@ -50,19 +50,7 @@ public class LandscapeManager
     if (baseGlyph.GetChar() == GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE].GetChar())
       throw new DefaultGlyphNotEditableException(x, y);
 
-    var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name, baseGlyph.GetHeight());
-    this.glyphMap[x][y] = unsharedGlyph;
-  }
-
-  public void SetHeight(int x, int y, int height)
-  {
-    this.ValidateScreenCoords(x, y);
-
-    var baseGlyph = this.glyphMap[x][y] ?? throw new GlyphNotFoundException(x, y);
-    if (baseGlyph.GetChar() == GlyphRegistry.GLYPHS[SupportedGlyphs.BROWN_SQUARE].GetChar())
-      throw new DefaultGlyphNotEditableException(x, y);
-
-    var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name: null, height);
+    var unsharedGlyph = UnsharedGlyph.FromExisting(baseGlyph, name);
     this.glyphMap[x][y] = unsharedGlyph;
   }
 

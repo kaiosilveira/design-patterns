@@ -34,7 +34,6 @@ public class InteractiveView : TerminalView
     var currentGlyph = landscapeManager.Inspect(x: currentPositionX, y: currentPositionY);
     Console.WriteLine($"Item: {currentGlyph.GetName()}");
     Console.WriteLine($"Instance: {currentGlyph.GetType().Name}");
-    Console.WriteLine($"Height: {currentGlyph.GetHeight()}");
 
     var key = Console.ReadKey().Key;
     input = Convert.ToString(key);

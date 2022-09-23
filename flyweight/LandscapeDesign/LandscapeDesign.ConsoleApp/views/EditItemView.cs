@@ -26,7 +26,6 @@ public class EditItemView : TerminalView
     }
 
     Console.WriteLine($"Instance: {currentGlyph.GetType().Name}");
-    Console.WriteLine($"Height: {currentGlyph.GetHeight()}");
 
     return new ApplicationState(
       landscapeManager,

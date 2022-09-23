@@ -20,11 +20,6 @@ public class FlyweightGlyph : Glyph
     screen.Add(x, y, this.character);
   }
 
-  public int GetHeight()
-  {
-    return 1;
-  }
-
   public string GetChar()
   {
     return this.character;

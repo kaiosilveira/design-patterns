@@ -4,17 +4,14 @@ namespace LandscapeDesign.Domain.Glyphs;
 
 public class UnsharedGlyph : Glyph
 {
-  private int height;
   private string character;
   private string unicodeValue;
   private string name;
 
-  public UnsharedGlyph(string character, string unicodeValue, string name, int height)
+  public UnsharedGlyph(string character, string unicodeValue, string name)
   {
-    this.height = height;
     this.unicodeValue = unicodeValue;
     this.name = name;
-    this.height = height;
     this.character = character;
   }
 
@@ -28,11 +25,6 @@ public class UnsharedGlyph : Glyph
     return this.character;
   }
 
-  public int GetHeight()
-  {
-    return this.height;
-  }
-
   public string GetName()
   {
     return this.name;
@@ -43,13 +35,12 @@ public class UnsharedGlyph : Glyph
     return this.unicodeValue;
   }
 
-  public static Glyph FromExisting(Glyph glyph, string? name, int? height)
+  public static Glyph FromExisting(Glyph glyph, string? name)
   {
     return new UnsharedGlyph(
       glyph.GetChar(),
       glyph.GetUnicodeValue(),
-      name ?? glyph.GetName(),
-      height ?? glyph.GetHeight()
+      name ?? glyph.GetName()
     );
   }
 }

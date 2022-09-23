@@ -19,7 +19,6 @@ public class LandscapeManager_InspectTest
     Assert.Equal(glyph.GetName(), resultingGlyph.GetName());
     Assert.Equal(glyph.GetChar(), resultingGlyph.GetChar());
     Assert.Equal(glyph.GetUnicodeValue(), resultingGlyph.GetUnicodeValue());
-    Assert.Equal(glyph.GetHeight(), resultingGlyph.GetHeight());
   }
 
   [Fact]

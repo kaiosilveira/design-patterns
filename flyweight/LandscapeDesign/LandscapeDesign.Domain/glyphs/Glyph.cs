@@ -6,8 +6,6 @@ public interface Glyph
 {
   public void Display(int x, int y, Screen screen);
 
-  public int GetHeight();
-
   public string GetChar();
 
   public string GetUnicodeValue();

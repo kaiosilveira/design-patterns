@@ -11,14 +11,12 @@ public class UnsharedGlyphTest
     var glyph = new UnsharedGlyph(
       character: "🟫",
       unicodeValue: "U+1F7EB",
-      name: "Brown Square",
-      height: 3
+      name: "Brown Square"
     );
 
     Assert.Equal("🟫", glyph.GetChar());
     Assert.Equal("Brown Square", glyph.GetName());
     Assert.Equal("U+1F7EB", glyph.GetUnicodeValue());
-    Assert.Equal(3, glyph.GetHeight());
   }
 
   [Fact]
@@ -28,8 +26,7 @@ public class UnsharedGlyphTest
     var glyph = new UnsharedGlyph(
       character: "🟫",
       unicodeValue: "U+1F7EB",
-      name: "Brown Square",
-      height: 3
+      name: "Brown Square"
     );
 
     glyph.Display(x: 0, y: 0, screen: mockedScreen.Object);
@@ -40,7 +37,6 @@ public class UnsharedGlyphTest
   [Fact]
   public void TestCreatesNewInstanceBasedOnExistingGlyph()
   {
-    var newHeight = 3;
     var newName = "My custom name";
     var mockedScreen = new Mock<Screen>();
     var existingGlyph = new FlyweightGlyph(
@@ -49,10 +45,9 @@ public class UnsharedGlyphTest
       name: "Brown Square"
     );
 
-    var newGlyph = UnsharedGlyph.FromExisting(existingGlyph, name: newName, height: newHeight);
+    var newGlyph = UnsharedGlyph.FromExisting(existingGlyph, name: newName);
 
     Assert.Equal(newName, newGlyph.GetName());
-    Assert.Equal(newHeight, newGlyph.GetHeight());
     Assert.Equal(existingGlyph.GetChar(), newGlyph.GetChar());
     Assert.Equal(existingGlyph.GetUnicodeValue(), newGlyph.GetUnicodeValue());
   }

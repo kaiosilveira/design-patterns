@@ -8,7 +8,6 @@ public class FlyweightGlyphTest
   [Fact]
   public void TestSetup()
   {
-    var DEFAULT_GLYPH_HEIGHT = 1;
     var glyph = new FlyweightGlyph(
       character: "🟫",
       unicodeValue: "U+1F7EB",
@@ -18,7 +17,6 @@ public class FlyweightGlyphTest
     Assert.Equal("🟫", glyph.GetChar());
     Assert.Equal("Brown Square", glyph.GetName());
     Assert.Equal("U+1F7EB", glyph.GetUnicodeValue());
-    Assert.Equal(DEFAULT_GLYPH_HEIGHT, glyph.GetHeight());
   }
 
   [Fact]
