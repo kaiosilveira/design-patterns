@@ -3,7 +3,7 @@ using LandscapeDesign.Domain.Screens;
 
 namespace LandscapeDesign.ConsoleApp;
 
-public class InteractiveView
+public class InteractiveView : TerminalView
 {
   private readonly ApplicationState appState;
 

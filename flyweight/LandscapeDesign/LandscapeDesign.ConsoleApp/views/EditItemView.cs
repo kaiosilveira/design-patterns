@@ -1,6 +1,6 @@
 namespace LandscapeDesign.ConsoleApp;
 
-public class EditItemView
+public class EditItemView : TerminalView
 {
   public ApplicationState appState;
   public EditItemView(ApplicationState appState)
