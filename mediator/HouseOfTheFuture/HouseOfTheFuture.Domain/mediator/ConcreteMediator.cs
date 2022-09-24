@@ -12,14 +12,7 @@ public class ConcreteMediator : Mediator
 
   public void RegisterEvent(ApplicationEvent e)
   {
-    switch (e.Type)
-    {
-      case ApplicationEventType.CLOCK_TICK:
-        HandleClockTick(e);
-        break;
-      default:
-        break;
-    }
+    if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
   }
 
   private void HandleClockTick(ApplicationEvent e)
