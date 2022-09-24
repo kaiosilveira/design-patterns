@@ -18,6 +18,11 @@ public class VariableExp : BooleanExp
     return context.Lookup(this.name);
   }
 
+  public string GetName()
+  {
+    return this.name.ToString();
+  }
+
   public BooleanExp Replace(char name, BooleanExp exp)
   {
     return this.name == name ? exp.Copy() : new VariableExp(this.name);

@@ -19,6 +19,11 @@ public class NotExp : BooleanExp
     return !this.exp.Evaluate(context);
   }
 
+  public string GetName()
+  {
+    return "not";
+  }
+
   public BooleanExp Replace(char name, BooleanExp exp)
   {
     return new NotExp(exp.Replace(name, exp));

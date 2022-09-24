@@ -10,12 +10,17 @@ public class Constant : BooleanExp
 
   public BooleanExp Copy()
   {
-    return new Constant(this.value);
+    return new Constant(value);
   }
 
   public bool Evaluate(Context context)
   {
-    return this.value;
+    return value;
+  }
+
+  public string GetName()
+  {
+    return value.ToString();
   }
 
   public BooleanExp Replace(char name, BooleanExp exp)

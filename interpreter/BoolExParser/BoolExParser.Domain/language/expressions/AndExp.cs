@@ -21,6 +21,11 @@ public class AndExp : BooleanExp
     return operand1.Evaluate(context) && operand2.Evaluate(context);
   }
 
+  public string GetName()
+  {
+    return "and";
+  }
+
   public BooleanExp Replace(char c, BooleanExp exp)
   {
     return new AndExp(operand1.Replace(c, exp), operand2.Replace(c, exp));
