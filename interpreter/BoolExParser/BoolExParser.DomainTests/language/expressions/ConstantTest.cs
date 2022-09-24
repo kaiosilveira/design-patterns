@@ -26,4 +26,12 @@ public class ConstantTest
     var exp = new Constant(false);
     Assert.False(exp.Evaluate(context));
   }
+
+  [Fact]
+  public void TestReplacesItself()
+  {
+    var exp = new Constant(true);
+    var anotherExp = new VariableExp(name: 'x');
+    Assert.NotEqual(new Constant(true), exp.Replace(name: 'x', anotherExp));
+  }
 }

@@ -18,8 +18,8 @@ public class Constant : BooleanExp
     return this.value;
   }
 
-  public BooleanExp Replace(char c, BooleanExp exp)
+  public BooleanExp Replace(char name, BooleanExp exp)
   {
-    throw new NotImplementedException();
+    return Copy();
   }
 }
