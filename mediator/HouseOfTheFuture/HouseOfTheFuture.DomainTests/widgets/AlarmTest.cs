@@ -3,7 +3,6 @@ using Moq;
 using System;
 using HouseOfTheFuture.Domain.Widgets;
 using HouseOfTheFuture.Domain.Events;
-using System.Collections.Generic;
 using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.DomainTests;
@@ -13,14 +12,12 @@ public class AlarmTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var hour = 7;
-    var minute = 0;
-    var second = 0;
     var mockedMediatorWrapper = new Mock<Mediator>();
-    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
+    var mockedScheduleWrapper = new Mock<Schedule>();
+    mockedScheduleWrapper.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
     var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(new WeeklySchedule(daysOfWeek, hour, minute, second));
+    alarm.SetSchedule(schedule: mockedScheduleWrapper.Object);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", alarm.Describe());
   }
@@ -28,23 +25,14 @@ public class AlarmTest
   [Fact]
   public void TestEmitsAlarmTriggeredIfScheduledTimeMatchesCurrentTime()
   {
-    var hour = 11;
-    var minute = 0;
-    var second = 0;
     var mockedMediatorWrapper = new Mock<Mediator>();
-    var date = new DateTime(year: 2022, month: 9, day: 22, hour, minute, second);
-    var daysOfWeek = new List<DayOfWeek>()
-    {
-      DayOfWeek.Monday,
-      DayOfWeek.Tuesday,
-      DayOfWeek.Wednesday,
-      DayOfWeek.Thursday,
-      DayOfWeek.Friday
-    };
+    var mockedScheduleWrapper = new Mock<Schedule>();
+    mockedScheduleWrapper.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 
     var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(new WeeklySchedule(daysOfWeek, hour, minute, second));
-    alarm.CheckTime(date);
+    alarm.SetSchedule(schedule: mockedScheduleWrapper.Object);
+
+    alarm.CheckTime(DateTime.Now);
 
     mockedMediatorWrapper.Verify(
       m => m.RegisterEvent(
