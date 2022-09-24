@@ -4,10 +4,10 @@ using BoolExParser.Domain;
 
 namespace BoolExParser.DomainTests;
 
-public class EvaluationTest
+public class CombinationTest
 {
   [Fact]
-  public void TestEvaluatesComplexExpression()
+  public void TestEvaluatesComplexExpressions()
   {
     // exp: (true and x) or (y and (not x))
     // inputs:
