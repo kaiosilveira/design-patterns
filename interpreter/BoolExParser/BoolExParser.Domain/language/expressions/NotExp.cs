@@ -11,12 +11,12 @@ public class NotExp : BooleanExp
 
   public BooleanExp Copy()
   {
-    return new NotExp(this.exp);
+    return new NotExp(exp.Copy());
   }
 
   public bool Evaluate(Context context)
   {
-    return !this.exp.Evaluate(context);
+    return !exp.Evaluate(context);
   }
 
   public string GetName()
@@ -24,8 +24,8 @@ public class NotExp : BooleanExp
     return "not";
   }
 
-  public BooleanExp Replace(char name, BooleanExp exp)
+  public BooleanExp Replace(char name, BooleanExp newExp)
   {
-    return new NotExp(exp.Replace(name, exp));
+    return new NotExp(exp.Replace(name, newExp));
   }
 }
