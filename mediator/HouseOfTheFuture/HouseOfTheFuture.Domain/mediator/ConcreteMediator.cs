@@ -24,22 +24,30 @@ public class ConcreteMediator : Mediator
 
   private void HandleClockTick(ApplicationEvent e)
   {
-    this.widgets
-      .Where(w => w.GetWidgetType() == WidgetType.ALARM)
-      .ToList()
+    GetWidgetsOfType<Alarm>(WidgetType.ALARM)
       .ForEach(alarm =>
       {
         var parsedDataObj = e.Data ?? DateTime.Now;
-        ((Alarm)alarm).CheckTime((DateTime)parsedDataObj);
+        alarm.CheckTime((DateTime)parsedDataObj);
       });
 
-    this.widgets
-      .Where(w => w.GetWidgetType() == WidgetType.SPRINKLER)
-      .ToList()
-      .ForEach(alarm =>
+    GetWidgetsOfType<Sprinkler>(WidgetType.SPRINKLER)
+      .ForEach(sprinkler =>
       {
         var parsedDataObj = e.Data ?? DateTime.Now;
-        ((Sprinkler)alarm).CheckTime((DateTime)parsedDataObj);
+        sprinkler.CheckTime((DateTime)parsedDataObj);
       });
+  }
+
+  private List<T> GetWidgetsOfType<T>(WidgetType type)
+  {
+    var result = new List<T>();
+
+    widgets
+      .Where(widget => widget.GetWidgetType() == type)
+      .ToList()
+      .ForEach(widget => result.Add(((T)widget)));
+
+    return result;
   }
 }
