@@ -1,5 +1,5 @@
 using Xunit;
-using BoolExParser.Domain;
+using BoolExParser.Domain.Language.Contexts;
 
 public class InMemoryLanguageContextTest
 {

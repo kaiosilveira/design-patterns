@@ -1,4 +1,7 @@
-namespace BoolExParser.Domain;
+
+using BoolExParser.Domain.Language.Contexts;
+
+namespace BoolExParser.Domain.Language.Expressions;
 
 public class AndExp : BooleanExp
 {

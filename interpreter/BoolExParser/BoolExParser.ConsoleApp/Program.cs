@@ -1,4 +1,5 @@
-﻿using BoolExParser.Domain;
+﻿using BoolExParser.Domain.Language.Contexts;
+using BoolExParser.Domain.Language.Expressions;
 
 public class Program
 {

@@ -1,4 +1,4 @@
-﻿namespace BoolExParser.Domain;
+﻿namespace BoolExParser.Domain.Language.Contexts;
 
 public interface Context
 {
