@@ -12,7 +12,7 @@ public class ScheduleTest
     var minute = 0;
     var second = 0;
     var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
-    var schedule = new Schedule(daysOfWeek, hour, minute, second);
+    var schedule = new ConcreteSchedule(daysOfWeek, hour, minute, second);
 
     Assert.Equal(hour, schedule.ScheduledHour);
     Assert.Equal(minute, schedule.ScheduledMinute);
@@ -27,7 +27,7 @@ public class ScheduleTest
     var second = 0;
     var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
 
-    var schedule = new Schedule(daysOfWeek, hour, minute, second);
+    var schedule = new ConcreteSchedule(daysOfWeek, hour, minute, second);
 
     var scheduledDateTime = new DateTime(year: 2022, month: 9, day: 24, hour, minute, second);
     Assert.True(schedule.Matches(scheduledDateTime));
