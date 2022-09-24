@@ -48,16 +48,7 @@ public class ConcreteSprinkler : Sprinkler
 
   public override string Describe()
   {
-    var result = new List<string>();
-    this.daysOfWeek.ToList().ForEach(day =>
-    {
-      var dayName = DAY_NAMES[Convert.ToInt32(day)];
-      var hourStr = hour.ToString().PadLeft(2, '0');
-      var minuteStr = minute.ToString().PadLeft(2, '0');
-      result.Add($"{dayName}: {hourStr}:{minuteStr}");
-    });
-
-    return String.Join(" | ", result);
+    return schedule.Describe();
   }
 
   private void StartIrrigation()
