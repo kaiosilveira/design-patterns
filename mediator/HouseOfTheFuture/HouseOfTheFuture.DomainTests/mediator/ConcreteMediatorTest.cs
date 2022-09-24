@@ -8,6 +8,17 @@ using HouseOfTheFuture.Domain.Widgets;
 public class ConcreteMediatorTest
 {
   [Fact]
+  public void TestThrowsErrorIfDateObjectIsNullWhenReceivingClockTick()
+  {
+    var alarm = new Mock<Alarm>();
+    var sprinkler = new Mock<Sprinkler>();
+    var mediator = new ConcreteMediator(new List<Widget>() { alarm.Object, sprinkler.Object });
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.CLOCK_TICK);
+
+    Assert.Throws<InvalidDateTimeTickException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
   public void TestFiresCheckTimeOnAlarmAndSprinklerWhenReceivingClockTick()
   {
     var alarm = new Mock<Alarm>();

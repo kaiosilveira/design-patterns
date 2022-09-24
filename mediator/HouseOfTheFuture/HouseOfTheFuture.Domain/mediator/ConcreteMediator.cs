@@ -24,19 +24,13 @@ public class ConcreteMediator : Mediator
 
   private void HandleClockTick(ApplicationEvent e)
   {
+    var parsedDataObj = e.Data ?? throw new InvalidDateTimeTickException();
+
     GetWidgetsOfType<Alarm>(WidgetType.ALARM)
-      .ForEach(alarm =>
-      {
-        var parsedDataObj = e.Data ?? DateTime.Now;
-        alarm.CheckTime((DateTime)parsedDataObj);
-      });
+      .ForEach(alarm => alarm.CheckTime((DateTime)parsedDataObj));
 
     GetWidgetsOfType<Sprinkler>(WidgetType.SPRINKLER)
-      .ForEach(sprinkler =>
-      {
-        var parsedDataObj = e.Data ?? DateTime.Now;
-        sprinkler.CheckTime((DateTime)parsedDataObj);
-      });
+      .ForEach(sprinkler => sprinkler.CheckTime((DateTime)parsedDataObj));
   }
 
   private List<T> GetWidgetsOfType<T>(WidgetType type)
