@@ -6,7 +6,7 @@ public abstract class Sprinkler : Widget
 {
   public abstract void CheckTime(DateTime time);
   public abstract string Describe();
-  public abstract void SetSchedule(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second);
+
   public abstract void SetSchedule(Schedule schedule);
 
   public WidgetType GetWidgetType()
