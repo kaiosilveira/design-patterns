@@ -19,7 +19,7 @@ public class ConcreteAlarm : Alarm
     this.daysOfWeek = new List<DayOfWeek>();
   }
 
-  public void CheckTime(DateTime time)
+  public override void CheckTime(DateTime time)
   {
     if (
       daysOfWeek.Contains(time.DayOfWeek)
@@ -33,7 +33,7 @@ public class ConcreteAlarm : Alarm
     }
   }
 
-  public string Describe()
+  public override string Describe()
   {
     var result = new List<string>();
     this.daysOfWeek.ToList().ForEach(day =>
@@ -47,7 +47,7 @@ public class ConcreteAlarm : Alarm
     return String.Join(" | ", result);
   }
 
-  public void Set(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second)
+  public override void Set(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second)
   {
     this.daysOfWeek = daysOfWeek;
     this.hour = hour;

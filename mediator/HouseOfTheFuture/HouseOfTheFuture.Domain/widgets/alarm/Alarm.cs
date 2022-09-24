@@ -1,8 +1,13 @@
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public interface Alarm
+public abstract class Alarm : Widget
 {
-  void CheckTime(DateTime time);
-  string Describe();
-  void Set(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second);
+  public abstract void CheckTime(DateTime time);
+  public abstract string Describe();
+  public abstract void Set(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second);
+
+  public WidgetType GetWidgetType()
+  {
+    return WidgetType.ALARM;
+  }
 }
