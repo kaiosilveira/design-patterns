@@ -49,14 +49,6 @@ public class ConcreteAlarm : Alarm
     return String.Join(" | ", result);
   }
 
-  public override void SetSchedule(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second)
-  {
-    this.daysOfWeek = daysOfWeek;
-    this.hour = hour;
-    this.minute = minute;
-    this.second = second;
-  }
-
   public override void SetSchedule(WeeklySchedule schedule)
   {
     this.daysOfWeek = schedule.ScheduledDaysOfWeek;
