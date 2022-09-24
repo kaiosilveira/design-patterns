@@ -48,6 +48,7 @@ public class ConcreteSprinkler : Sprinkler
     this.hour = hour;
     this.minute = minute;
     this.second = second;
+    this.schedule = new WeeklySchedule(daysOfWeek.ToList(), hour, minute, second);
   }
 
   public override string Describe()
