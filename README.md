@@ -3,7 +3,13 @@
 # Design Patterns
 
 This repository was created to exercise my learnings from the Design Patterns book.
-As I'm not exactly creative, at the beginning I found it hard to come up with real-world examples to implement, but thankfully the Head-First Design-Patterns book helped me with that. It also helped me to better fixate the patterns on my brain. So I'm reading both in parallel. For this reason, new patterns might come up in the order presented at Head-First Design Patterns book instead of the original Design Patterns book, as I'm using it as the main learning source and referring to the GoF book catalog as patterns emerge in the learning path.
+As I'm not exactly creative, in the beginning I found it hard to come up with real-world examples to implement, but thankfully the Head-First Design Patterns book helped me with that. It also helped me to better fixate the patterns on my brain, then I started to read both books in parallel. The learning path then went this way:
+
+- Read a chapter from Head-First
+- Read the matching chapter from GoF's catalog
+- Add working example and other relevant docs related to the pattern to this repo
+
+Therefore, this repo has an accurate history of my learning path as I go through each pattern.
 
 ## Repository structure
 
