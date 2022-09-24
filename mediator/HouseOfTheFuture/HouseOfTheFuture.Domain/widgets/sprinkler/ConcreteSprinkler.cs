@@ -37,6 +37,11 @@ public class ConcreteSprinkler : Sprinkler
     }
   }
 
+  public override void SetSchedule(Schedule schedule)
+  {
+    this.schedule = schedule;
+  }
+
   public override void SetSchedule(IList<DayOfWeek> daysOfWeek, int hour, int minute, int second)
   {
     this.daysOfWeek = daysOfWeek;
