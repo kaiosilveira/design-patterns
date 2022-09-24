@@ -6,7 +6,7 @@ public abstract class Alarm : Widget
 {
   public abstract void CheckTime(DateTime time);
   public abstract string Describe();
-  public abstract void SetSchedule(WeeklySchedule schedule);
+  public abstract void SetSchedule(Schedule schedule);
 
   public WidgetType GetWidgetType()
   {

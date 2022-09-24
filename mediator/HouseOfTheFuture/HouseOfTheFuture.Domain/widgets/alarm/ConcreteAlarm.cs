@@ -6,30 +6,17 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteAlarm : Alarm
 {
   private Mediator mediator;
-  private IList<DayOfWeek> daysOfWeek;
   private Schedule schedule;
-  private int hour;
-  private int minute;
-  private int second;
-  private readonly string[] DAY_NAMES = new string[] {
-    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-  };
 
   public ConcreteAlarm(Mediator mediator)
   {
     this.mediator = mediator;
     this.schedule = new EmptySchedule();
-    this.daysOfWeek = new List<DayOfWeek>();
   }
 
   public override void CheckTime(DateTime time)
   {
-    if (
-      daysOfWeek.Contains(time.DayOfWeek)
-      && time.Hour == hour
-      && time.Minute == minute
-      && time.Second == second
-    )
+    if (schedule.Matches(time))
     {
       RingBell();
       var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
@@ -39,24 +26,12 @@ public class ConcreteAlarm : Alarm
 
   public override string Describe()
   {
-    var result = new List<string>();
-    this.daysOfWeek.ToList().ForEach(day =>
-    {
-      var dayName = DAY_NAMES[Convert.ToInt32(day)];
-      var hourStr = hour.ToString().PadLeft(2, '0');
-      var minuteStr = minute.ToString().PadLeft(2, '0');
-      result.Add($"{dayName}: {hourStr}:{minuteStr}");
-    });
-
-    return String.Join(" | ", result);
+    return schedule.Describe();
   }
 
-  public override void SetSchedule(WeeklySchedule schedule)
+  public override void SetSchedule(Schedule schedule)
   {
-    this.daysOfWeek = schedule.ScheduledDaysOfWeek;
-    this.hour = schedule.ScheduledHour;
-    this.minute = schedule.ScheduledMinute;
-    this.second = schedule.ScheduledSecond;
+    this.schedule = schedule;
   }
 
   private void RingBell()
