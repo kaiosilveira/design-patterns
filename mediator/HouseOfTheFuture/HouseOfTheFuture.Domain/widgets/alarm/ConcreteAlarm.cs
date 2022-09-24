@@ -57,7 +57,7 @@ public class ConcreteAlarm : Alarm
     this.second = second;
   }
 
-  public override void SetSchedule(ConcreteSchedule schedule)
+  public override void SetSchedule(WeeklySchedule schedule)
   {
     this.daysOfWeek = schedule.ScheduledDaysOfWeek;
     this.hour = schedule.ScheduledHour;
