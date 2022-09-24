@@ -1,6 +1,5 @@
 namespace BoolExParser.Domain;
 
-
 public class InMemoryLanguageContext : Context
 {
   private Dictionary<char, bool> lookupTable;
@@ -17,6 +16,6 @@ public class InMemoryLanguageContext : Context
 
   public bool Lookup(char variableName)
   {
-    return this.lookupTable.ElementAtOrDefault(variableName).Value;
+    return this.lookupTable.GetValueOrDefault(variableName, defaultValue: false);
   }
 }
