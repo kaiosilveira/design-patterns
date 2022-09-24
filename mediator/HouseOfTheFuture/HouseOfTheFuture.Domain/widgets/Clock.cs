@@ -13,6 +13,7 @@ public class Clock
 
   public void Tick()
   {
-    this.mediator.RegisterEvent(ApplicationEventType.CLOCK_TICK);
+    var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
+    this.mediator.RegisterEvent(e);
   }
 }

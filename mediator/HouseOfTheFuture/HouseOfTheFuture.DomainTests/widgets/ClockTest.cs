@@ -14,7 +14,9 @@ public class ClockTest
     clock.Tick();
 
     mockedMediatorWrapper.Verify(
-      m => m.RegisterEvent(ApplicationEventType.CLOCK_TICK),
+      m => m.RegisterEvent(
+        It.Is<ApplicationEvent>(e => e.Type == ApplicationEventType.CLOCK_TICK)
+      ),
       Times.Once()
     );
   }

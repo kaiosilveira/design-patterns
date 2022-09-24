@@ -29,7 +29,8 @@ public class ConcreteAlarm : Alarm
     )
     {
       RingBell();
-      mediator.RegisterEvent(ApplicationEventType.ALARM_TRIGGERED);
+      var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+      mediator.RegisterEvent(e);
     }
   }
 

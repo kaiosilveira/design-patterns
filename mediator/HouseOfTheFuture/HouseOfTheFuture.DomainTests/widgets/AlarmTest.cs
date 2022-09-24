@@ -46,7 +46,9 @@ public class AlarmTest
     alarm.CheckTime(date);
 
     mockedMediatorWrapper.Verify(
-      m => m.RegisterEvent(ApplicationEventType.ALARM_TRIGGERED),
+      m => m.RegisterEvent(
+        It.Is<ApplicationEvent>(e => e.Data == null && e.Type == ApplicationEventType.ALARM_TRIGGERED)
+      ),
       Times.Once()
     );
   }
