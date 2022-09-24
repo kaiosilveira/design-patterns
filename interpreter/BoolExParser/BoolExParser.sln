@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoolExParser.DomainTests", "BoolExParser.DomainTests\BoolExParser.DomainTests.csproj", "{921B51AB-82B1-4561-A400-A252F3AA5FE8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoolExParser.Domain", "BoolExParser.Domain\BoolExParser.Domain.csproj", "{B9092F30-244A-4DB2-8BEE-164FFD36BF42}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{921B51AB-82B1-4561-A400-A252F3AA5FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{921B51AB-82B1-4561-A400-A252F3AA5FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{921B51AB-82B1-4561-A400-A252F3AA5FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

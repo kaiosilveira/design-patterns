@@ -20,4 +20,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BoolExParser.Domain\BoolExParser.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
