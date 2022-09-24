@@ -2,7 +2,7 @@
 
 Mediator:
 
-CalendarEvents.TICK:
+ClockEvents.TICK:
 
 - sprinkler.checkTime
 - alarm.checkTime
