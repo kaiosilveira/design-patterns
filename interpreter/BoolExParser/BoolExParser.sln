@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoolExParser.DomainTests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoolExParser.Domain", "BoolExParser.Domain\BoolExParser.Domain.csproj", "{B9092F30-244A-4DB2-8BEE-164FFD36BF42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoolExParser.ConsoleApp", "BoolExParser.ConsoleApp\BoolExParser.ConsoleApp.csproj", "{5756CA62-F03A-42B8-9EBC-973B25941B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9092F30-244A-4DB2-8BEE-164FFD36BF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5756CA62-F03A-42B8-9EBC-973B25941B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5756CA62-F03A-42B8-9EBC-973B25941B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5756CA62-F03A-42B8-9EBC-973B25941B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5756CA62-F03A-42B8-9EBC-973B25941B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
