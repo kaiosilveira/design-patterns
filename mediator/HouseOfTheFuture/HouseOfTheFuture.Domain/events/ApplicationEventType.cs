@@ -4,5 +4,6 @@ public enum ApplicationEventType
 {
   CALENDAR_TICK,
   ALARM_TRIGGERED,
-  COFFEE_READY
+  COFFEE_READY,
+  CLOCK_TICK
 }
