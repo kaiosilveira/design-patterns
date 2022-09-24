@@ -4,6 +4,7 @@ using System;
 using HouseOfTheFuture.Domain.Widgets;
 using HouseOfTheFuture.Domain.Events;
 using System.Collections.Generic;
+using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.DomainTests;
 
@@ -19,7 +20,7 @@ public class AlarmTest
     var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
 
     var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(daysOfWeek, hour, minute, second);
+    alarm.SetSchedule(new Schedule(daysOfWeek, hour, minute, second));
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", alarm.Describe());
   }
@@ -42,7 +43,7 @@ public class AlarmTest
     };
 
     var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(daysOfWeek, hour, minute, second);
+    alarm.SetSchedule(new Schedule(daysOfWeek, hour, minute, second));
     alarm.CheckTime(date);
 
     mockedMediatorWrapper.Verify(
