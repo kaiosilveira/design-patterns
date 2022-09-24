@@ -19,7 +19,7 @@ public class SprinklerTest
     var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
 
     var sprinkler = new ConcreteSprinkler(mediator: mockedMediatorWrapper.Object);
-    sprinkler.Set(daysOfWeek, hour, minute, second);
+    sprinkler.SetSchedule(daysOfWeek, hour, minute, second);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", sprinkler.Describe());
   }
@@ -42,7 +42,7 @@ public class SprinklerTest
     };
 
     var sprinkler = new ConcreteSprinkler(mediator: mockedMediatorWrapper.Object);
-    sprinkler.Set(daysOfWeek, hour, minute, second);
+    sprinkler.SetSchedule(daysOfWeek, hour, minute, second);
     sprinkler.CheckTime(date);
 
     mockedMediatorWrapper.Verify(
