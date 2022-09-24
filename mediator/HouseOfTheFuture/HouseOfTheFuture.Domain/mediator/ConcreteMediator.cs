@@ -32,5 +32,14 @@ public class ConcreteMediator : Mediator
         var parsedDataObj = e.Data ?? DateTime.Now;
         ((Alarm)alarm).CheckTime((DateTime)parsedDataObj);
       });
+
+    this.widgets
+      .Where(w => w.GetWidgetType() == WidgetType.SPRINKLER)
+      .ToList()
+      .ForEach(alarm =>
+      {
+        var parsedDataObj = e.Data ?? DateTime.Now;
+        ((Sprinkler)alarm).CheckTime((DateTime)parsedDataObj);
+      });
   }
 }

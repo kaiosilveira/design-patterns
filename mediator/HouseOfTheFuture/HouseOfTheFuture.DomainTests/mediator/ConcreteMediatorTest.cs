@@ -8,14 +8,16 @@ using HouseOfTheFuture.Domain.Widgets;
 public class ConcreteMediatorTest
 {
   [Fact]
-  public void TestFiresCheckTimeOnAlarmWhenReceivingClockTick()
+  public void TestFiresCheckTimeOnAlarmAndSprinklerWhenReceivingClockTick()
   {
     var alarm = new Mock<Alarm>();
-    var mediator = new ConcreteMediator(new List<Widget>() { alarm.Object });
+    var sprinkler = new Mock<Sprinkler>();
+    var mediator = new ConcreteMediator(new List<Widget>() { alarm.Object, sprinkler.Object });
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
     mediator.RegisterEvent(e);
 
     alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+    sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
   }
 }
