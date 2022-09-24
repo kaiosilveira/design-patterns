@@ -1,4 +1,5 @@
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
@@ -6,6 +7,7 @@ public class ConcreteSprinkler : Sprinkler
 {
   private Mediator mediator;
   private IList<DayOfWeek> daysOfWeek;
+  private Schedule schedule;
   private int hour;
   private int minute;
   private int second;
@@ -16,6 +18,7 @@ public class ConcreteSprinkler : Sprinkler
   public ConcreteSprinkler(Mediator mediator)
   {
     this.mediator = mediator;
+    this.schedule = new EmptySchedule();
     this.daysOfWeek = new List<DayOfWeek>();
   }
 
