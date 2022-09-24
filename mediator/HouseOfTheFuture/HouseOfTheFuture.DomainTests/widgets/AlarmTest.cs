@@ -18,7 +18,7 @@ public class AlarmTest
     var mockedMediatorWrapper = new Mock<Mediator>();
     var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
 
-    var alarm = new Alarm(mediator: mockedMediatorWrapper.Object);
+    var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
     alarm.Set(daysOfWeek, hour, minute, second);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", alarm.Describe());
@@ -41,7 +41,7 @@ public class AlarmTest
       DayOfWeek.Friday
     };
 
-    var alarm = new Alarm(mediator: mockedMediatorWrapper.Object);
+    var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
     alarm.Set(daysOfWeek, hour, minute, second);
     alarm.CheckTime(date);
 
