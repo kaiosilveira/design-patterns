@@ -30,6 +30,7 @@ jobs:
               "./builder/Patternsland",
               "./flyweight/LandscapeDesign",
               "./interpreter/BoolExParser",
+              "./mediator/HouseOfTheFuture",
               "./factory-method",
               "./observer",
               "./prototype",
