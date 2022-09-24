@@ -1,6 +1,6 @@
+using Moq;
 using Xunit;
 using BoolExParser.Domain;
-using BoolExParser.DomainTests.Language.Contexts;
 
 public class ConstantTest
 {
@@ -14,7 +14,7 @@ public class ConstantTest
   [Fact]
   public void TestEvaluatesToTrueIfGivenValueIsTrue()
   {
-    var context = new TestingContext();
+    var context = Mock.Of<Context>();
     var exp = new Constant(true);
     Assert.True(exp.Evaluate(context));
   }
@@ -22,7 +22,7 @@ public class ConstantTest
   [Fact]
   public void TestEvaluatesToFalseIfGivenValueIsFalse()
   {
-    var context = new TestingContext();
+    var context = Mock.Of<Context>();
     var exp = new Constant(false);
     Assert.False(exp.Evaluate(context));
   }

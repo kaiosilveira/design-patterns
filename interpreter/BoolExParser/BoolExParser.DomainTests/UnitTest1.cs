@@ -1,6 +1,6 @@
+using Moq;
 using Xunit;
 using BoolExParser.Domain;
-using BoolExParser.DomainTests.Language.Contexts;
 
 namespace BoolExParser.DomainTests;
 
@@ -17,12 +17,12 @@ public class EvaluationTest
 
     var x = new VariableExp('x');
     var y = new VariableExp('y');
-    var context = new TestingContext();
+    var context = new Mock<Context>();
     var expression = new OrExp(new AndExp(new Constant(true), x), new AndExp(y, new NotExp(x)));
 
-    context.Assign('x', false);
-    context.Assign('y', true);
+    context.Setup(c => c.Lookup('x')).Returns(false);
+    context.Setup(c => c.Lookup('y')).Returns(true);
 
-    Assert.True(expression.Evaluate(context));
+    Assert.True(expression.Evaluate(context.Object));
   }
 }
