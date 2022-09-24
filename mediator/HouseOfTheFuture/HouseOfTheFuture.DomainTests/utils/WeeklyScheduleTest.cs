@@ -35,4 +35,17 @@ public class ScheduleTest
     var unscheduledDateTime = new DateTime(year: 2022, month: 9, day: 21, hour, minute, second);
     Assert.False(schedule.Matches(unscheduledDateTime));
   }
+
+  [Fact]
+  public void TestDescribe()
+  {
+    var hour = 7;
+    var minute = 0;
+    var second = 0;
+    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
+
+    var schedule = new WeeklySchedule(daysOfWeek, hour, minute, second);
+
+    Assert.Equal("Saturday: 07:00 | Sunday: 07:00", schedule.Describe());
+  }
 }

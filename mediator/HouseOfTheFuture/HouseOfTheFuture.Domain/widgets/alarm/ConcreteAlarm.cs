@@ -7,6 +7,7 @@ public class ConcreteAlarm : Alarm
 {
   private Mediator mediator;
   private IList<DayOfWeek> daysOfWeek;
+  private Schedule schedule;
   private int hour;
   private int minute;
   private int second;
@@ -17,6 +18,7 @@ public class ConcreteAlarm : Alarm
   public ConcreteAlarm(Mediator mediator)
   {
     this.mediator = mediator;
+    this.schedule = new EmptySchedule();
     this.daysOfWeek = new List<DayOfWeek>();
   }
 
