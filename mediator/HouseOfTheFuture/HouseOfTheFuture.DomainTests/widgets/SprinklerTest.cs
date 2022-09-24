@@ -3,7 +3,7 @@ using Moq;
 using System;
 using HouseOfTheFuture.Domain.Widgets;
 using HouseOfTheFuture.Domain.Events;
-using System.Collections.Generic;
+using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.DomainTests;
 
@@ -12,14 +12,12 @@ public class SprinklerTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var hour = 7;
-    var minute = 0;
-    var second = 0;
-    var mockedMediatorWrapper = new Mock<Mediator>();
-    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
+    var mockedMediator = new Mock<Mediator>();
+    var mockedSchedule = new Mock<Schedule>();
+    mockedSchedule.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
-    var sprinkler = new ConcreteSprinkler(mediator: mockedMediatorWrapper.Object);
-    sprinkler.SetSchedule(daysOfWeek, hour, minute, second);
+    var sprinkler = new ConcreteSprinkler(mediator: mockedMediator.Object);
+    sprinkler.SetSchedule(schedule: mockedSchedule.Object);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", sprinkler.Describe());
   }
@@ -27,25 +25,16 @@ public class SprinklerTest
   [Fact]
   public void TestEmitsIrrigationStartedIfScheduledTimeMatchesCurrentTime()
   {
-    var hour = 11;
-    var minute = 0;
-    var second = 0;
-    var mockedMediatorWrapper = new Mock<Mediator>();
-    var date = new DateTime(year: 2022, month: 9, day: 22, hour, minute, second);
-    var daysOfWeek = new List<DayOfWeek>()
-    {
-      DayOfWeek.Monday,
-      DayOfWeek.Tuesday,
-      DayOfWeek.Wednesday,
-      DayOfWeek.Thursday,
-      DayOfWeek.Friday
-    };
+    var mockedMediator = new Mock<Mediator>();
+    var mockedSchedule = new Mock<Schedule>();
+    mockedSchedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 
-    var sprinkler = new ConcreteSprinkler(mediator: mockedMediatorWrapper.Object);
-    sprinkler.SetSchedule(daysOfWeek, hour, minute, second);
-    sprinkler.CheckTime(date);
+    var sprinkler = new ConcreteSprinkler(mediator: mockedMediator.Object);
+    sprinkler.SetSchedule(schedule: mockedSchedule.Object);
 
-    mockedMediatorWrapper.Verify(
+    sprinkler.CheckTime(DateTime.Now);
+
+    mockedMediator.Verify(
       m => m.RegisterEvent(
         It.Is<ApplicationEvent>(e => e.Data == null && e.Type == ApplicationEventType.IRRIGATION_STARTED)
       ),
