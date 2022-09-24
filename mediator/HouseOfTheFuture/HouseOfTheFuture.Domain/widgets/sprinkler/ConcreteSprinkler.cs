@@ -24,12 +24,7 @@ public class ConcreteSprinkler : Sprinkler
 
   public override void CheckTime(DateTime time)
   {
-    if (
-      daysOfWeek.Contains(time.DayOfWeek)
-      && time.Hour == hour
-      && time.Minute == minute
-      && time.Second == second
-    )
+    if (this.schedule.Matches(time))
     {
       StartIrrigation();
       var e = new ApplicationEvent(data: null, type: ApplicationEventType.IRRIGATION_STARTED);
