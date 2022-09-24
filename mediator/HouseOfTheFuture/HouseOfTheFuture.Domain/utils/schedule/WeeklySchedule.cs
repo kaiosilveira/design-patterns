@@ -1,6 +1,6 @@
 namespace HouseOfTheFuture.Domain.Utils;
 
-public class WeeklySchedule
+public class WeeklySchedule : Schedule
 {
   public List<DayOfWeek> ScheduledDaysOfWeek { get; private set; }
   public int ScheduledHour { get; private set; }

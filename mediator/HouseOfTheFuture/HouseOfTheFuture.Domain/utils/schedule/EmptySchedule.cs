@@ -1,6 +1,6 @@
 namespace HouseOfTheFuture.Domain.Utils;
 
-public class EmptySchedule
+public class EmptySchedule : Schedule
 {
   public bool Matches(DateTime time)
   {
