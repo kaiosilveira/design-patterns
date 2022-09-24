@@ -3,7 +3,8 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public enum WidgetType
 {
   ALARM,
-  CLOCK
+  CLOCK,
+  SPRINKLER
 }
 
 public interface Widget
