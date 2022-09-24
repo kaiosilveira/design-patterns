@@ -1,4 +1,5 @@
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
@@ -54,6 +55,14 @@ public class ConcreteAlarm : Alarm
     this.hour = hour;
     this.minute = minute;
     this.second = second;
+  }
+
+  public override void SetSchedule(Schedule schedule)
+  {
+    this.daysOfWeek = schedule.ScheduledDaysOfWeek;
+    this.hour = schedule.ScheduledHour;
+    this.minute = schedule.ScheduledMinute;
+    this.second = schedule.ScheduledSecond;
   }
 
   private void RingBell()
