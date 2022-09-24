@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseOfTheFuture.DomainTests", "HouseOfTheFuture.DomainTests\HouseOfTheFuture.DomainTests.csproj", "{BC24D104-D366-41BF-B662-152A7E8A877B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseOfTheFuture.Domain", "HouseOfTheFuture.Domain\HouseOfTheFuture.Domain.csproj", "{2DEFB04B-42BB-4DE7-A306-4D842D777480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{BC24D104-D366-41BF-B662-152A7E8A877B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC24D104-D366-41BF-B662-152A7E8A877B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC24D104-D366-41BF-B662-152A7E8A877B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
