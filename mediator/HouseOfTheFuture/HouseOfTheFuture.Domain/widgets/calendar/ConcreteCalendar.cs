@@ -1,3 +1,4 @@
+using HouseOfTheFuture.Domain.Events;
 using HouseOfTheFuture.Domain.ValueObjects;
 
 namespace HouseOfTheFuture.Domain.Widgets;
@@ -16,5 +17,10 @@ public class ConcreteCalendar
   public void AddEvent(CalendarEvent e)
   {
     this.AllEvents.Add(e);
+    var upcomingEvent = new ApplicationEvent(
+      data: e, type: ApplicationEventType.NEW_UPCOMING_EVENT
+    );
+
+    this.mediator.RegisterEvent(upcomingEvent);
   }
 }
