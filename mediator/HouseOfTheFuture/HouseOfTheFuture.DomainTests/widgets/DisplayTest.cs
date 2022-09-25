@@ -74,4 +74,15 @@ public class DisplayTest
 
     Assert.Equal("[26/10, 09:00] Breakfast with Gab | [26/10, 12:00] Meeting with Daniel", upcomingEventsText);
   }
+
+  [Fact]
+  public void TestDisplayGoodMorningMessage()
+  {
+    var mediator = new Mock<Mediator>();
+    var display = new ConcreteDisplay(mediator: mediator.Object);
+
+    var goodMorningMsg = display.ShowGoodMorningMessage();
+
+    Assert.Equal("Good morning!", goodMorningMsg);
+  }
 }
