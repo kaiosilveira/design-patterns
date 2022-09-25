@@ -4,9 +4,9 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteClock : Clock
 {
-  private readonly Mediator mediator;
+  private readonly WidgetMediator mediator;
 
-  public ConcreteClock(Mediator mediator)
+  public ConcreteClock(WidgetMediator mediator)
   {
     this.mediator = mediator;
   }

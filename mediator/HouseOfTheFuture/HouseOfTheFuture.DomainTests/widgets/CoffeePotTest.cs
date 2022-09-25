@@ -10,7 +10,7 @@ public class CoffeePotTest
   [Fact]
   public void TestStartBrewing()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var mockedTimeProvider = new Mock<TimeProvider>();
     mockedTimeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(DateTime.Now);
 
@@ -28,7 +28,7 @@ public class CoffeePotTest
   public void NotifiesCoffeeReadyAfterTwentySecondsOfBrewing()
   {
     var date = DateTime.Now;
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var mockedTimeProvider = new Mock<TimeProvider>();
     mockedTimeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(date);
     mockedTimeProvider

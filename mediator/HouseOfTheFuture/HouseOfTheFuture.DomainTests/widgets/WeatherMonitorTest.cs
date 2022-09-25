@@ -9,7 +9,7 @@ public class WeatherMonitorTest
   [Fact]
   public void TestSetTemperatureUpdatesCurrentTemperatureAndEmitsEvent()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var weatherMonitor = new ConcreteWeatherMonitor(mediator: mockedMediator.Object);
 
     weatherMonitor.SetTemperature(38);

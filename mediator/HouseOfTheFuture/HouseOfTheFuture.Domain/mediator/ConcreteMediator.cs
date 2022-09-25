@@ -1,11 +1,11 @@
 using HouseOfTheFuture.Domain.Events;
 using HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteMediator : Mediator
+public class ConcreteWidgetMediator : WidgetMediator
 {
   private List<Widget> widgets;
 
-  public ConcreteMediator(List<Widget> widgets)
+  public ConcreteWidgetMediator(List<Widget> widgets)
   {
     this.widgets = widgets;
   }

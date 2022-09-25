@@ -12,7 +12,7 @@ public class AlarmTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var mockedMediatorWrapper = new Mock<Mediator>();
+    var mockedMediatorWrapper = new Mock<WidgetMediator>();
     var mockedScheduleWrapper = new Mock<Schedule>();
     mockedScheduleWrapper.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
@@ -25,7 +25,7 @@ public class AlarmTest
   [Fact]
   public void TestEmitsAlarmTriggeredIfScheduledTimeMatchesCurrentTime()
   {
-    var mockedMediatorWrapper = new Mock<Mediator>();
+    var mockedMediatorWrapper = new Mock<WidgetMediator>();
     var mockedScheduleWrapper = new Mock<Schedule>();
     mockedScheduleWrapper.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 

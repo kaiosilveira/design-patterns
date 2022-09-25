@@ -5,10 +5,10 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteAlarm : Alarm
 {
-  private Mediator mediator;
+  private WidgetMediator mediator;
   private Schedule schedule;
 
-  public ConcreteAlarm(Mediator mediator)
+  public ConcreteAlarm(WidgetMediator mediator)
   {
     this.mediator = mediator;
     this.schedule = new EmptySchedule();

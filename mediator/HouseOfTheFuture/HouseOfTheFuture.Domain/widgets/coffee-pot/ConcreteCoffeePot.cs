@@ -6,11 +6,11 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteCoffeePot : CoffeePot
 {
   public bool IsBrewing { get; private set; }
-  private Mediator mediator;
+  private WidgetMediator mediator;
   private TimeProvider timeProvider;
   private DateTime brewingStartedAt;
 
-  public ConcreteCoffeePot(Mediator mediator, TimeProvider timeProvider)
+  public ConcreteCoffeePot(WidgetMediator mediator, TimeProvider timeProvider)
   {
     this.IsBrewing = false;
     this.mediator = mediator;

@@ -9,7 +9,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayCurrentTemperature_ReturnsDefaultIfTemperatureIsUnknown()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     var currentTemp = display.DisplayTemperature();
@@ -20,7 +20,7 @@ public class DisplayTest
   [Fact]
   public void TestSetTemperature_UpdatesTheCurrentTemperature()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     display.SetCurrentTemperature(38);
@@ -32,7 +32,7 @@ public class DisplayTest
   [Fact]
   public void TestAppendUpcomingEvent_AddsAnItemToTheList()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
     var eventDate = new DateTime(2022, 10, 26, 12, 0, 0);
     display.AppendUpcomingEvent(
@@ -46,7 +46,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsDefaultTextIfNoEventsWereRegistered()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     var upcomingEventsText = display.DisplayUpcomingEvents();
@@ -57,7 +57,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsTheListOfUpcomingEventsAsString()
   {
-    var mockedMediator = new Mock<Mediator>();
+    var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     display.AppendUpcomingEvent(
@@ -78,7 +78,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayGoodMorningMessage()
   {
-    var mediator = new Mock<Mediator>();
+    var mediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mediator.Object);
 
     var goodMorningMsg = display.ShowGoodMorningMessage();
