@@ -13,6 +13,8 @@ public abstract class Display : Widget
 
   public abstract void SetCurrentDateTime(DateTime dateTime);
 
+  public abstract void Render();
+
   public WidgetType GetWidgetType()
   {
     return WidgetType.DISPLAY;

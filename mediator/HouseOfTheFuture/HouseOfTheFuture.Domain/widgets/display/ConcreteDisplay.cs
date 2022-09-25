@@ -53,4 +53,16 @@ public class ConcreteDisplay : Display
   {
     this.CurrentDateTime = dateTime;
   }
+
+  public override void Render()
+  {
+    Console.Clear();
+
+    var datePart = CurrentDateTime.ToLongDateString();
+    var timePart = CurrentDateTime.ToLongTimeString();
+
+    Console.WriteLine($"{datePart}, {timePart} | {DisplayTemperature()}");
+    Console.WriteLine();
+    Console.WriteLine($"{DisplayUpcomingEvents()}");
+  }
 }
