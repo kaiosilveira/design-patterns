@@ -30,11 +30,13 @@ public class ConcreteMediatorTest
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
+    var display = new Mock<Display>();
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.CLOCK_TICK);
 
     var mediator = new ConcreteWidgetMediator();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
+    mediator.AddWidget(display.Object);
 
     Assert.Throws<InvalidDateTimeTickException>(() => mediator.RegisterEvent(e));
   }
@@ -44,16 +46,51 @@ public class ConcreteMediatorTest
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
+    var display = new Mock<Display>();
+    var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
+
+    var mediator = new ConcreteWidgetMediator();
+    mediator.AddWidget(alarm.Object);
+    mediator.AddWidget(sprinkler.Object);
+    mediator.AddWidget(display.Object);
+
+    mediator.RegisterEvent(e);
+
+    alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+    sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+  }
+
+  [Fact]
+  public void TestClockTick_ThrowsExceptionIfNoDisplayIsRegistered()
+  {
+    var alarm = new Mock<Alarm>();
+    var sprinkler = new Mock<Sprinkler>();
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
     var mediator = new ConcreteWidgetMediator();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
 
+    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
+  public void TestClockTick_UpdatesDisplayCurrentDateTime()
+  {
+    var alarm = new Mock<Alarm>();
+    var sprinkler = new Mock<Sprinkler>();
+    var display = new Mock<Display>();
+    var date = DateTime.Now;
+    var e = new ApplicationEvent(data: date, type: ApplicationEventType.CLOCK_TICK);
+
+    var mediator = new ConcreteWidgetMediator();
+    mediator.AddWidget(alarm.Object);
+    mediator.AddWidget(sprinkler.Object);
+    mediator.AddWidget(display.Object);
+
     mediator.RegisterEvent(e);
 
-    alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
-    sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+    display.Verify(d => d.SetCurrentDateTime(date), Times.Once());
   }
 
   [Fact]

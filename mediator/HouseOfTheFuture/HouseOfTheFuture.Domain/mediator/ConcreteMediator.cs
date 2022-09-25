@@ -43,12 +43,18 @@ public class ConcreteWidgetMediator : WidgetMediator
   private void HandleClockTick(ApplicationEvent e)
   {
     var parsedDataObj = e.Data ?? throw new InvalidDateTimeTickException();
+    var parsedDateTime = (DateTime)parsedDataObj;
 
     GetWidgetsOfType<Alarm>(WidgetType.ALARM)
-      .ForEach(alarm => alarm.CheckTime((DateTime)parsedDataObj));
+      .ForEach(alarm => alarm.CheckTime(parsedDateTime));
 
     GetWidgetsOfType<Sprinkler>(WidgetType.SPRINKLER)
-      .ForEach(sprinkler => sprinkler.CheckTime((DateTime)parsedDataObj));
+      .ForEach(sprinkler => sprinkler.CheckTime(parsedDateTime));
+
+    var displays = GetWidgetsOfType<Display>(WidgetType.DISPLAY);
+    if (displays.Count == 0) throw new WidgetNotRegisteredException(WidgetType.DISPLAY);
+
+    displays.ForEach(display => display.SetCurrentDateTime(parsedDateTime));
   }
 
   private List<T> GetWidgetsOfType<T>(WidgetType type)
