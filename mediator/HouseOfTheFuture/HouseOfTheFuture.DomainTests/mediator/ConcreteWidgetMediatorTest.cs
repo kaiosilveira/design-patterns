@@ -43,7 +43,7 @@ public class ConcreteMediatorTest
   }
 
   [Fact]
-  public void TestClockTick_FiresCheckTimeOnAlarmAndSprinkler()
+  public void TestClockTick_FiresCheckTimeOnAlarm()
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
@@ -57,8 +57,45 @@ public class ConcreteMediatorTest
 
     mediator.RegisterEvent(e);
 
-    alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
     sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+  }
+
+  [Fact]
+  public void TestClockTick_FiresCheckTimeOnSprinkler()
+  {
+    var alarm = new Mock<Alarm>();
+    var sprinkler = new Mock<Sprinkler>();
+    var display = new Mock<Display>();
+    var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
+
+    var mediator = new ConcreteWidgetMediator();
+    mediator.AddWidget(alarm.Object);
+    mediator.AddWidget(sprinkler.Object);
+    mediator.AddWidget(display.Object);
+
+    mediator.RegisterEvent(e);
+
+    sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
+  }
+
+  [Fact]
+  public void TestClockTick_FiresCheckTimeOnCoffeePot()
+  {
+    var alarm = new Mock<Alarm>();
+    var sprinkler = new Mock<Sprinkler>();
+    var display = new Mock<Display>();
+    var coffeePot = new Mock<CoffeePot>();
+    var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
+
+    var mediator = new ConcreteWidgetMediator();
+    mediator.AddWidget(alarm.Object);
+    mediator.AddWidget(sprinkler.Object);
+    mediator.AddWidget(display.Object);
+    mediator.AddWidget(coffeePot.Object);
+
+    mediator.RegisterEvent(e);
+
+    coffeePot.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
   }
 
   [Fact]
@@ -249,5 +286,31 @@ public class ConcreteMediatorTest
       d.AppendUpcomingEvent(calendarEvent.At, calendarEvent.Description),
       Times.Once()
     );
+  }
+
+  [Fact]
+  public void TestCoffeeIsReady_ThrowsExceptionIfThereAreNoDisplaysRegistered()
+  {
+    var mediator = new ConcreteWidgetMediator();
+    var e = new ApplicationEvent(
+      data: null, type: ApplicationEventType.COFFEE_READY
+    );
+
+    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
+  public void TestCoffeeIsReady_CreatesDisplayNotification()
+  {
+    var display = new Mock<Display>();
+    var mediator = new ConcreteWidgetMediator();
+    mediator.AddWidget(display.Object);
+    var e = new ApplicationEvent(
+      data: null, type: ApplicationEventType.COFFEE_READY
+    );
+
+    mediator.RegisterEvent(e);
+
+    display.Verify(d => d.NotifyCoffeeReady(), Times.Once());
   }
 }

@@ -18,6 +18,13 @@ public class ConcreteWidgetMediator : WidgetMediator
     if (e.Type == ApplicationEventType.ALARM_TRIGGERED) HandleAlarmTriggered(e);
     if (e.Type == ApplicationEventType.TEMPERATURE_CHANGED) HandleTemperatureChange(e);
     if (e.Type == ApplicationEventType.NEW_UPCOMING_EVENT) HandleUpcomingEvent(e);
+    if (e.Type == ApplicationEventType.COFFEE_READY) HandleCoffeeReady(e);
+  }
+
+  private void HandleCoffeeReady(ApplicationEvent e)
+  {
+    var display = GetWidgetOrThrowException<Display>(WidgetType.DISPLAY);
+    display.NotifyCoffeeReady();
   }
 
   private void HandleUpcomingEvent(ApplicationEvent e)
@@ -60,6 +67,9 @@ public class ConcreteWidgetMediator : WidgetMediator
 
     GetWidgetsOfType<Sprinkler>(WidgetType.SPRINKLER)
       .ForEach(sprinkler => sprinkler.CheckTime(parsedDateTime));
+
+    GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT)
+      .ForEach(coffeePot => coffeePot.CheckTime(parsedDateTime));
 
     var displays = GetWidgetsOfType<Display>(WidgetType.DISPLAY);
     if (displays.Count == 0) throw new WidgetNotRegisteredException(WidgetType.DISPLAY);
