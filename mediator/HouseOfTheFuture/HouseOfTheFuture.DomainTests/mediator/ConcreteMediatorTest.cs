@@ -55,4 +55,59 @@ public class ConcreteMediatorTest
 
     coffeePot.Verify(cp => cp.StartBrewing(), Times.Once());
   }
+
+  [Fact]
+  public void TestTemperatureChanged_ThrowsExceptionIfDisplayWidgetIsNotRegistered()
+  {
+    var newTemperature = 35;
+    var widgets = new List<Widget>();
+    var e = new ApplicationEvent(
+      data: newTemperature, type: ApplicationEventType.TEMPERATURE_CHANGED
+    );
+
+    var mediator = new ConcreteMediator(widgets);
+    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
+  public void TestTemperatureChanged_ThrowsExceptionIfNewTemperatureIsInvalid()
+  {
+    var display = new Mock<Display>();
+    var widgets = new List<Widget>() { display.Object };
+    var e = new ApplicationEvent(
+      data: null, type: ApplicationEventType.TEMPERATURE_CHANGED
+    );
+
+    var mediator = new ConcreteMediator(widgets);
+    Assert.Throws<InvalidCastException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
+  public void TestTemperatureChanged_ThrowsExceptionIfNewTemperatureIsNotInteger()
+  {
+    var display = new Mock<Display>();
+    var widgets = new List<Widget>() { display.Object };
+    var e = new ApplicationEvent(
+      data: "invalid integer", type: ApplicationEventType.TEMPERATURE_CHANGED
+    );
+
+    var mediator = new ConcreteMediator(widgets);
+    Assert.Throws<FormatException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
+  public void TestTemperatureChanged_UpdatesDisplay()
+  {
+    var newTemperature = 35;
+    var display = new Mock<Display>();
+    var widgets = new List<Widget>() { display.Object };
+    var e = new ApplicationEvent(
+      data: newTemperature, type: ApplicationEventType.TEMPERATURE_CHANGED
+    );
+
+    var mediator = new ConcreteMediator(widgets);
+    mediator.RegisterEvent(e);
+
+    display.Verify(d => d.SetCurrentTemperature(It.IsAny<int>()), Times.Once());
+  }
 }

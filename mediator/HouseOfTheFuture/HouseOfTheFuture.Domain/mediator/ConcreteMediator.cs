@@ -14,6 +14,16 @@ public class ConcreteMediator : Mediator
   {
     if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
     if (e.Type == ApplicationEventType.ALARM_TRIGGERED) HandleAlarmTriggered(e);
+    if (e.Type == ApplicationEventType.TEMPERATURE_CHANGED) HandleTemperatureChange(e);
+  }
+
+  private void HandleTemperatureChange(ApplicationEvent e)
+  {
+    var possiblyNullDisplay = GetWidgetsOfType<Display>(WidgetType.DISPLAY).FirstOrDefault();
+    var display = possiblyNullDisplay ?? throw new WidgetNotRegisteredException(WidgetType.DISPLAY);
+    var newTemperature = e.Data ?? throw new InvalidCastException();
+
+    display.SetCurrentTemperature(Convert.ToInt32(newTemperature));
   }
 
   private void HandleAlarmTriggered(ApplicationEvent e)

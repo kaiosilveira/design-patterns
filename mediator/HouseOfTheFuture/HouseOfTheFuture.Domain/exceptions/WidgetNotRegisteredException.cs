@@ -7,6 +7,7 @@ public class WidgetNotRegisteredException : Exception
     { WidgetType.COFFEE_POT, "Coffee Pot" },
     { WidgetType.ALARM, "Alarm" },
     { WidgetType.CLOCK, "Clock" },
+    { WidgetType.DISPLAY, "Display" },
   };
 
   public WidgetNotRegisteredException(WidgetType type)
