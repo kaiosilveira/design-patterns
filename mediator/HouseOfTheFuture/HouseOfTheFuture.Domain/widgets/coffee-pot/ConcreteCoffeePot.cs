@@ -3,7 +3,7 @@ using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteCoffeePot
+public class ConcreteCoffeePot : CoffeePot
 {
   public bool IsBrewing { get; private set; }
   private Mediator mediator;
@@ -17,13 +17,13 @@ public class ConcreteCoffeePot
     this.timeProvider = timeProvider;
   }
 
-  public void StartBrewing()
+  public override void StartBrewing()
   {
     IsBrewing = true;
     brewingStartedAt = timeProvider.GetCurrentDateTime();
   }
 
-  public void CheckTime(DateTime time)
+  public override void CheckTime(DateTime time)
   {
     if (IsBrewing && timeProvider.Compare(time, brewingStartedAt.AddSeconds(20)))
     {

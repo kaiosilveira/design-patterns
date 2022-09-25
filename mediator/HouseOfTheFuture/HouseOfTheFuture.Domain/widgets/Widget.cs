@@ -4,7 +4,8 @@ public enum WidgetType
 {
   ALARM,
   CLOCK,
-  SPRINKLER
+  SPRINKLER,
+  COFFEE_POT,
 }
 
 public interface Widget
