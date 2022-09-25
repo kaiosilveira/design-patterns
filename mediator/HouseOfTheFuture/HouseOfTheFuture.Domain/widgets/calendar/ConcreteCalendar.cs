@@ -3,7 +3,7 @@ using HouseOfTheFuture.Domain.ValueObjects;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteCalendar
+public class ConcreteCalendar : Calendar
 {
   public List<CalendarEvent> AllEvents { get; private set; }
   private readonly WidgetMediator mediator;
@@ -14,7 +14,7 @@ public class ConcreteCalendar
     this.mediator = mediator;
   }
 
-  public void AddEvent(CalendarEvent e)
+  public override void AddEvent(CalendarEvent e)
   {
     this.AllEvents.Add(e);
     var upcomingEvent = new ApplicationEvent(

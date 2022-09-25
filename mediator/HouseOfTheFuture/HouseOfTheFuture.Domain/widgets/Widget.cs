@@ -8,6 +8,7 @@ public enum WidgetType
   COFFEE_POT,
   DISPLAY,
   WEATHER_MONITOR,
+  CALENDAR,
 }
 
 public interface Widget
