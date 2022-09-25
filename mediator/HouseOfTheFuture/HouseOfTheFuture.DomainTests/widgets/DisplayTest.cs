@@ -97,4 +97,19 @@ public class DisplayTest
 
     Assert.Equal("Good morning!", goodMorningMsg);
   }
+
+  [Fact]
+  public void TestNotifyCoffeeReady()
+  {
+    var mediator = new Mock<WidgetMediator>();
+    var display = new ConcreteDisplay(mediator.Object);
+
+    display.NotifyCoffeeReady();
+
+    Assert.Single(display.Notifications);
+    Assert.Collection(
+      display.Notifications,
+      notification => Assert.Equal("Coffee is ready!", notification)
+    );
+  }
 }

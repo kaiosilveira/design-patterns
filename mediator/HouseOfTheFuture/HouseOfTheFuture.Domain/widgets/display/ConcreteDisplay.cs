@@ -5,6 +5,7 @@ public class ConcreteDisplay : Display
   private readonly WidgetMediator mediator;
   private int? currentTemperature;
   public DateTime CurrentDateTime { get; private set; }
+  public List<string> Notifications { get; private set; }
   public List<KeyValuePair<DateTime, string>> UpcomingEvents { get; private set; }
 
   public ConcreteDisplay(WidgetMediator mediator)
@@ -12,6 +13,7 @@ public class ConcreteDisplay : Display
     this.mediator = mediator;
     this.CurrentDateTime = DateTime.Now;
     this.UpcomingEvents = new List<KeyValuePair<DateTime, string>>();
+    this.Notifications = new List<string>();
   }
 
   public override void SetCurrentTemperature(int temp)
@@ -64,5 +66,18 @@ public class ConcreteDisplay : Display
     Console.WriteLine($"{datePart}, {timePart} | {ShowCurrentTemperature()}");
     Console.WriteLine();
     Console.WriteLine($"{ShowUpcomingEvents()}");
+    Console.WriteLine($"{ShowNotifications()}");
+  }
+
+  public override void NotifyCoffeeReady()
+  {
+    var msg = "Coffee is ready!";
+    this.Notifications.Add(msg);
+  }
+
+  private string ShowNotifications()
+  {
+    var notifications = String.Join("\n", Notifications);
+    return $"Notifications\n{notifications}";
   }
 }

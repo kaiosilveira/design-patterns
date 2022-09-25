@@ -16,6 +16,8 @@ public abstract class Display : Widget
 
   public abstract void Render();
 
+  public abstract void NotifyCoffeeReady();
+
   public WidgetType GetWidgetType()
   {
     return WidgetType.DISPLAY;
