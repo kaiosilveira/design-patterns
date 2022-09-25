@@ -6,6 +6,8 @@ ClockEvents.TICK:
 
 - sprinkler.checkTime ✅
 - alarm.checkTime ✅
+- display.setCurrentTime
+- display.render (shows current time + upcoming events + alarm schedule)
 
 WeatherMonitor.TEMPERATURE_CHANGED:
 
@@ -18,7 +20,6 @@ Calendar.NEW_UPCOMING_EVENT:
 AlarmEvents.ALARM_TRIGGERED:
 
 - CoffeePot.startBrewing ✅
-- Display.displayUpcomingEvents ✅
 - Display.displayTemperature ✅
 - Display.displayGoodMorningMessage
 
