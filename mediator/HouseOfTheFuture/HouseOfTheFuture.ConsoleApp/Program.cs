@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using HouseOfTheFuture.Domain.Utils;
 using HouseOfTheFuture.Domain.Widgets;
 
 public class Program
@@ -18,13 +19,16 @@ public class Program
     ConcreteClock clock = new ConcreteClock(mediator);
     ConcreteDisplay display = new ConcreteDisplay(mediator);
     ConcreteCalendar calendar = new ConcreteCalendar(mediator);
+    CoffeePot coffeePot = new ConcreteCoffeePot(mediator, timeProvider: new ConcreteTimeProvider());
 
     mediator.AddWidget(alarm);
     mediator.AddWidget(clock);
     mediator.AddWidget(display);
     mediator.AddWidget(weatherMonitor);
+    mediator.AddWidget(coffeePot);
 
     weatherMonitor.SetTemperature(21);
+    coffeePot.StartBrewing();
 
     while (true)
     {
