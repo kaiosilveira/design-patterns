@@ -6,6 +6,10 @@ public abstract class Display : Widget
 
   public abstract string DisplayTemperature();
 
+  public abstract void AppendUpcomingEvent(DateTime at, string description);
+
+  public abstract string DisplayUpcomingEvents();
+
   public WidgetType GetWidgetType()
   {
     return WidgetType.DISPLAY;
