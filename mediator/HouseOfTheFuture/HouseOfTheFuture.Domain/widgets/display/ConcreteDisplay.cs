@@ -19,13 +19,13 @@ public class ConcreteDisplay : Display
     this.currentTemperature = temp;
   }
 
-  public override string DisplayTemperature()
+  public override string ShowCurrentTemperature()
   {
     var tempNumber = currentTemperature.HasValue ? currentTemperature.ToString() : "--";
     return $"{tempNumber} °C";
   }
 
-  public override string DisplayUpcomingEvents()
+  public override string ShowUpcomingEvents()
   {
     if (this.UpcomingEvents.Count == 0) return "No upcoming events";
 
@@ -61,8 +61,8 @@ public class ConcreteDisplay : Display
     var datePart = CurrentDateTime.ToLongDateString();
     var timePart = CurrentDateTime.ToLongTimeString();
 
-    Console.WriteLine($"{datePart}, {timePart} | {DisplayTemperature()}");
+    Console.WriteLine($"{datePart}, {timePart} | {ShowCurrentTemperature()}");
     Console.WriteLine();
-    Console.WriteLine($"{DisplayUpcomingEvents()}");
+    Console.WriteLine($"{ShowUpcomingEvents()}");
   }
 }

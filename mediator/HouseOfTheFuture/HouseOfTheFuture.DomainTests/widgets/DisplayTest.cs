@@ -24,7 +24,7 @@ public class DisplayTest
     var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
-    var currentTemp = display.DisplayTemperature();
+    var currentTemp = display.ShowCurrentTemperature();
 
     Assert.Equal("-- °C", currentTemp);
   }
@@ -36,7 +36,7 @@ public class DisplayTest
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     display.SetCurrentTemperature(38);
-    var currentTemp = display.DisplayTemperature();
+    var currentTemp = display.ShowCurrentTemperature();
 
     Assert.Equal("38 °C", currentTemp);
   }
@@ -61,7 +61,7 @@ public class DisplayTest
     var mockedMediator = new Mock<WidgetMediator>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
-    var upcomingEventsText = display.DisplayUpcomingEvents();
+    var upcomingEventsText = display.ShowUpcomingEvents();
 
     Assert.Equal("No upcoming events", upcomingEventsText);
   }
@@ -82,7 +82,7 @@ public class DisplayTest
       description: "Meeting with Daniel"
     );
 
-    var upcomingEventsText = display.DisplayUpcomingEvents();
+    var upcomingEventsText = display.ShowUpcomingEvents();
 
     Assert.Equal("[26/10, 09:00] Breakfast with Gab | [26/10, 12:00] Meeting with Daniel", upcomingEventsText);
   }
