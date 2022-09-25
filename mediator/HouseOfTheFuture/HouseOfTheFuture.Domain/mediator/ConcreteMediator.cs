@@ -19,18 +19,21 @@ public class ConcreteMediator : Mediator
 
   private void HandleTemperatureChange(ApplicationEvent e)
   {
-    var possiblyNullDisplay = GetWidgetsOfType<Display>(WidgetType.DISPLAY).FirstOrDefault();
-    var display = possiblyNullDisplay ?? throw new WidgetNotRegisteredException(WidgetType.DISPLAY);
+    var display = GetWidgetOrThrowException<Display>(WidgetType.DISPLAY);
     var newTemperature = e.Data ?? throw new InvalidCastException();
-
     display.SetCurrentTemperature(Convert.ToInt32(newTemperature));
   }
 
   private void HandleAlarmTriggered(ApplicationEvent e)
   {
-    var possibleCoffeePot = GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT).FirstOrDefault();
-    var coffeePot = possibleCoffeePot ?? throw new WidgetNotRegisteredException(WidgetType.COFFEE_POT);
+    var coffeePot = GetWidgetOrThrowException<CoffeePot>(WidgetType.COFFEE_POT);
     coffeePot.StartBrewing();
+  }
+
+  private T GetWidgetOrThrowException<T>(WidgetType type)
+  {
+    var possiblyNullWidget = GetWidgetsOfType<T>(type).FirstOrDefault();
+    return possiblyNullWidget ?? throw new WidgetNotRegisteredException(type);
   }
 
   private void HandleClockTick(ApplicationEvent e)
