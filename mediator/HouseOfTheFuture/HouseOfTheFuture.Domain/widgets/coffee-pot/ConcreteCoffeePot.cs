@@ -25,7 +25,7 @@ public class ConcreteCoffeePot : CoffeePot
 
   public override void CheckTime(DateTime time)
   {
-    if (IsBrewing && timeProvider.Compare(time, brewingStartedAt.AddSeconds(20)))
+    if (IsBrewing && timeProvider.Compare(time, brewingStartedAt.AddSeconds(5)))
     {
       var e = new ApplicationEvent(data: null, type: ApplicationEventType.COFFEE_READY);
       mediator.RegisterEvent(e);
