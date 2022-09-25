@@ -13,6 +13,13 @@ public class ConcreteMediator : Mediator
   public void RegisterEvent(ApplicationEvent e)
   {
     if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
+    if (e.Type == ApplicationEventType.ALARM_TRIGGERED) HandleAlarmTriggered(e);
+  }
+
+  private void HandleAlarmTriggered(ApplicationEvent e)
+  {
+    var coffeePot = GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT).FirstOrDefault();
+    coffeePot.StartBrewing();
   }
 
   private void HandleClockTick(ApplicationEvent e)

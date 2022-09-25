@@ -33,4 +33,17 @@ public class ConcreteMediatorTest
     alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
     sprinkler.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
   }
+
+  [Fact]
+  public void TestAlarmTriggered_StartsTheBrewingProcessOnCoffeePot()
+  {
+    var coffeePot = new Mock<CoffeePot>();
+    var widgets = new List<Widget>() { coffeePot.Object };
+
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var mediator = new ConcreteMediator(widgets);
+    mediator.RegisterEvent(e);
+
+    coffeePot.Verify(cp => cp.StartBrewing(), Times.Once());
+  }
 }
