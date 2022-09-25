@@ -5,6 +5,11 @@ public class ConcreteWidgetMediator : WidgetMediator
 {
   private List<Widget> widgets;
 
+  public ConcreteWidgetMediator()
+  {
+    this.widgets = new List<Widget>();
+  }
+
   public ConcreteWidgetMediator(List<Widget>? widgets)
   {
     this.widgets = widgets ?? new List<Widget>();
