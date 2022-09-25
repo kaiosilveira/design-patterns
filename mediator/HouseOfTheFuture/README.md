@@ -6,8 +6,8 @@ ClockEvents.TICK:
 
 - sprinkler.checkTime ✅
 - alarm.checkTime ✅
-- display.setCurrentTime
-- display.render (shows current time + upcoming events + alarm schedule)
+- display.setCurrentTime ✅
+- display.render (shows current time + upcoming events + alarm schedule) ✅
 
 WeatherMonitor.TEMPERATURE_CHANGED:
 
