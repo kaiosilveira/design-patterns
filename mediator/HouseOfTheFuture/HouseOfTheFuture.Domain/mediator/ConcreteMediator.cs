@@ -5,9 +5,9 @@ public class ConcreteWidgetMediator : WidgetMediator
 {
   private List<Widget> widgets;
 
-  public ConcreteWidgetMediator(List<Widget> widgets)
+  public ConcreteWidgetMediator(List<Widget>? widgets)
   {
-    this.widgets = widgets;
+    this.widgets = widgets ?? new List<Widget>();
   }
 
   public void RegisterEvent(ApplicationEvent e)
