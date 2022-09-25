@@ -62,4 +62,14 @@ public class ConcreteMediator : Mediator
 
     return result;
   }
+
+  public void AddWidget(Widget widget)
+  {
+    this.widgets.Add(widget);
+  }
+
+  public int GetWidgetCount()
+  {
+    return this.widgets.Count;
+  }
 }

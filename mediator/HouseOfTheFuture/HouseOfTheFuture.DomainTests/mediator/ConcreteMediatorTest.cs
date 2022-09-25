@@ -8,6 +8,24 @@ using HouseOfTheFuture.Domain.Widgets;
 public class ConcreteMediatorTest
 {
   [Fact]
+  public void TestGetWidgetCount_ReturnsZeroIfWidgetListIsEmpty()
+  {
+    var mediator = new ConcreteMediator(widgets: new List<Widget>());
+    Assert.Equal(0, mediator.GetWidgetCount());
+  }
+
+  [Fact]
+  public void TestAddWidget()
+  {
+    var alarm = new Mock<Alarm>();
+    var mediator = new ConcreteMediator(widgets: new List<Widget>());
+
+    mediator.AddWidget(widget: alarm.Object);
+
+    Assert.Equal(1, mediator.GetWidgetCount());
+  }
+
+  [Fact]
   public void TestClockTick_ThrowsErrorIfDateObjectIsNull()
   {
     var alarm = new Mock<Alarm>();
