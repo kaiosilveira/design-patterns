@@ -10,12 +10,12 @@ public class ConcreteDisplay : Display
     this.mediator = mediator;
   }
 
-  public void SetCurrentTemperature(int temp)
+  public override void SetCurrentTemperature(int temp)
   {
     this.currentTemperature = temp;
   }
 
-  public string DisplayTemperature()
+  public override string DisplayTemperature()
   {
     var tempNumber = currentTemperature.HasValue ? currentTemperature.ToString() : "--";
     return $"{tempNumber} °C";
