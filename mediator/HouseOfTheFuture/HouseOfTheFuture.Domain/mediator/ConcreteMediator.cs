@@ -18,7 +18,8 @@ public class ConcreteMediator : Mediator
 
   private void HandleAlarmTriggered(ApplicationEvent e)
   {
-    var coffeePot = GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT).FirstOrDefault();
+    var possibleCoffeePot = GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT).FirstOrDefault();
+    var coffeePot = possibleCoffeePot ?? throw new WidgetNotRegisteredException(WidgetType.COFFEE_POT);
     coffeePot.StartBrewing();
   }
 

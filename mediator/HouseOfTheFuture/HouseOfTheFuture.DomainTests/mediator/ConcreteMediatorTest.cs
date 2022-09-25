@@ -35,6 +35,15 @@ public class ConcreteMediatorTest
   }
 
   [Fact]
+  public void TestAlarmTriggered_ThrowsExceptionIfNoCoffeePotWasRegistered()
+  {
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var mediator = new ConcreteMediator(widgets: new List<Widget>());
+
+    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
+  }
+
+  [Fact]
   public void TestAlarmTriggered_StartsTheBrewingProcessOnCoffeePot()
   {
     var coffeePot = new Mock<CoffeePot>();
