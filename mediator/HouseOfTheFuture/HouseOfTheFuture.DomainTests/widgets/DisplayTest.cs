@@ -84,7 +84,7 @@ public class DisplayTest
 
     var upcomingEventsText = display.ShowUpcomingEvents();
 
-    Assert.Equal("[26/10, 09:00] Breakfast with Gab | [26/10, 12:00] Meeting with Daniel", upcomingEventsText);
+    Assert.Equal("[26/10, 09:00] Breakfast with Gab\n[26/10, 12:00] Meeting with Daniel", upcomingEventsText);
   }
 
   [Fact]

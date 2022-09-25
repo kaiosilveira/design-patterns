@@ -36,7 +36,7 @@ public class ConcreteDisplay : Display
       return $"[{datePart}, {timePart}] {ue.Value}";
     });
 
-    return string.Join(" | ", formattedEvents);
+    return string.Join("\n", formattedEvents);
   }
 
   public override void AppendUpcomingEvent(DateTime at, string description)
