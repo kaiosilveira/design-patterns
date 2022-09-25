@@ -13,15 +13,14 @@ public class CalendarTest
     var mediator = new Mock<WidgetMediator>();
     var calendar = new ConcreteCalendar(mediator: mediator.Object);
 
-    var date = DateTime.Now;
-    var description = "Meeting with Dan";
-    calendar.AddEvent(new CalendarEvent(date, description));
+    var calendarEvent = new CalendarEvent(at: DateTime.Now, description: "Meeting with Dan");
+    calendar.AddEvent(calendarEvent);
 
     Assert.Collection(
       calendar.AllEvents, firstEvent =>
       {
-        Assert.Equal(date, firstEvent.At);
-        Assert.Equal(description, firstEvent.Description);
+        Assert.Equal(calendarEvent.At, firstEvent.At);
+        Assert.Equal(calendarEvent.Description, firstEvent.Description);
       }
     );
   }
