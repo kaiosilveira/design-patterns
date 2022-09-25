@@ -10,11 +10,6 @@ public class ConcreteWidgetMediator : WidgetMediator
     this.widgets = new List<Widget>();
   }
 
-  public ConcreteWidgetMediator(List<Widget>? widgets)
-  {
-    this.widgets = widgets ?? new List<Widget>();
-  }
-
   public void RegisterEvent(ApplicationEvent e)
   {
     if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
