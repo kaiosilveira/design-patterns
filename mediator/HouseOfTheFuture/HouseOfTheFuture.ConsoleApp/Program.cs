@@ -6,12 +6,16 @@ public class Program
   {
     var mediator = new ConcreteWidgetMediator();
     ConcreteAlarm alarm = new ConcreteAlarm(mediator);
+    ConcreteWeatherMonitor weatherMonitor = new ConcreteWeatherMonitor(mediator);
     ConcreteClock clock = new ConcreteClock(mediator);
     ConcreteDisplay display = new ConcreteDisplay(mediator);
 
     mediator.AddWidget(alarm);
     mediator.AddWidget(clock);
     mediator.AddWidget(display);
+    mediator.AddWidget(weatherMonitor);
+
+    weatherMonitor.SetTemperature(21);
 
     while (true)
     {
