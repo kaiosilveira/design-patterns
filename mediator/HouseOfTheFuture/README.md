@@ -18,9 +18,9 @@ Calendar.NEW_UPCOMING_EVENT:
 AlarmEvents.ALARM_TRIGGERED:
 
 - CoffeePot.startBrewing ✅
-- Display.displayUpcomingEvents
-- Display.displayTemperature
-- Bath.warmUp
+- Display.displayUpcomingEvents ✅
+- Display.displayTemperature ✅
+- Display.displayGoodMorningMessage
 
 CoffeePotEvents.COFFEE_READY:
 
