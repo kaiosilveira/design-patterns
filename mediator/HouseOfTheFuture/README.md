@@ -4,8 +4,8 @@ Mediator:
 
 ClockEvents.TICK:
 
-- sprinkler.checkTime
-- alarm.checkTime
+- sprinkler.checkTime ✅
+- alarm.checkTime ✅
 
 WeatherMonitor.TEMPERATURE_CHANGED:
 
@@ -17,7 +17,7 @@ Calendar.NEW_UPCOMING_EVENT:
 
 AlarmEvents.ALARM_TRIGGERED:
 
-- CoffeePot.startBrewing
+- CoffeePot.startBrewing ✅
 - Display.displayUpcomingEvents
 - Display.displayTemperature
 - Bath.warmUp
