@@ -3,6 +3,7 @@ using Moq;
 using System;
 using HouseOfTheFuture.Domain.Widgets;
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.Utils;
 
 public class CoffeePotTest
 {

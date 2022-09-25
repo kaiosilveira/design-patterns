@@ -1,13 +1,7 @@
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.Domain.Widgets;
-
-public interface TimeProvider
-{
-  DateTime GetCurrentDateTime();
-
-  bool Compare(DateTime t1, DateTime t2);
-}
 
 public class ConcreteCoffeePot
 {
