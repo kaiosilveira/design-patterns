@@ -15,7 +15,7 @@ WeatherMonitor.TEMPERATURE_CHANGED:
 
 Calendar.NEW_UPCOMING_EVENT:
 
-- Display.AppendUpcomingEvent
+- Display.AppendUpcomingEvent ✅
 
 AlarmEvents.ALARM_TRIGGERED:
 
@@ -25,4 +25,4 @@ AlarmEvents.ALARM_TRIGGERED:
 
 CoffeePotEvents.COFFEE_READY:
 
-- Display.notifyCoffeeReady
+- Display.notifyCoffeeReady ✅
