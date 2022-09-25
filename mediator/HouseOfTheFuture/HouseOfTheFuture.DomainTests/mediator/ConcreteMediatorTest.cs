@@ -47,13 +47,41 @@ public class ConcreteMediatorTest
   public void TestAlarmTriggered_StartsTheBrewingProcessOnCoffeePot()
   {
     var coffeePot = new Mock<CoffeePot>();
-    var widgets = new List<Widget>() { coffeePot.Object };
+    var display = new Mock<Display>();
+    var widgets = new List<Widget>() { coffeePot.Object, display.Object };
 
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
     var mediator = new ConcreteMediator(widgets);
     mediator.RegisterEvent(e);
 
     coffeePot.Verify(cp => cp.StartBrewing(), Times.Once());
+  }
+
+  [Fact]
+  public void TestAlarmTriggered_ThrowsExceptionIfNoDisplayWasRegistered()
+  {
+    var coffeePot = new Mock<CoffeePot>();
+    var widgets = new List<Widget>() { coffeePot.Object };
+
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var mediator = new ConcreteMediator(widgets);
+
+    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
+  }
+
+
+  [Fact]
+  public void TestAlarmTriggered_DisplaysUpcomingEvents()
+  {
+    var display = new Mock<Display>();
+    var coffeePot = new Mock<CoffeePot>();
+    var widgets = new List<Widget>() { display.Object, coffeePot.Object };
+
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var mediator = new ConcreteMediator(widgets);
+    mediator.RegisterEvent(e);
+
+    display.Verify(cp => cp.DisplayUpcomingEvents(), Times.Once());
   }
 
   [Fact]

@@ -27,7 +27,10 @@ public class ConcreteMediator : Mediator
   private void HandleAlarmTriggered(ApplicationEvent e)
   {
     var coffeePot = GetWidgetOrThrowException<CoffeePot>(WidgetType.COFFEE_POT);
+    var display = GetWidgetOrThrowException<Display>(WidgetType.DISPLAY);
+
     coffeePot.StartBrewing();
+    display.DisplayUpcomingEvents();
   }
 
   private T GetWidgetOrThrowException<T>(WidgetType type)
