@@ -18,7 +18,6 @@ public class ConcreteAlarm : Alarm
   {
     if (schedule.Matches(time))
     {
-      RingBell();
       var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
       mediator.RegisterEvent(e);
     }
@@ -32,10 +31,5 @@ public class ConcreteAlarm : Alarm
   public override void SetSchedule(Schedule schedule)
   {
     this.schedule = schedule;
-  }
-
-  private void RingBell()
-  {
-    Console.WriteLine("Bell ringing");
   }
 }
