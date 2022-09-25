@@ -130,7 +130,7 @@ public class ConcreteMediatorTest
   }
 
   [Fact]
-  public void TestAlarmTriggered_DisplaysUpcomingEvents()
+  public void TestAlarmTriggered_DisplaysGoodMorningMessage()
   {
     var display = new Mock<Display>();
     var coffeePot = new Mock<CoffeePot>();
@@ -142,23 +142,7 @@ public class ConcreteMediatorTest
 
     mediator.RegisterEvent(e);
 
-    display.Verify(cp => cp.DisplayUpcomingEvents(), Times.Once());
-  }
-
-  [Fact]
-  public void TestAlarmTriggered_DisplaysCurrentTemperature()
-  {
-    var display = new Mock<Display>();
-    var coffeePot = new Mock<CoffeePot>();
-
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetMediator();
-    mediator.AddWidget(display.Object);
-    mediator.AddWidget(coffeePot.Object);
-
-    mediator.RegisterEvent(e);
-
-    display.Verify(cp => cp.DisplayTemperature(), Times.Once());
+    display.Verify(cp => cp.ShowGoodMorningMessage(), Times.Once());
   }
 
   [Fact]

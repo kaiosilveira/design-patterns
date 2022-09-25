@@ -30,8 +30,7 @@ public class ConcreteWidgetMediator : WidgetMediator
     var display = GetWidgetOrThrowException<Display>(WidgetType.DISPLAY);
 
     coffeePot.StartBrewing();
-    display.DisplayUpcomingEvents();
-    display.DisplayTemperature();
+    display.ShowGoodMorningMessage();
   }
 
   private T GetWidgetOrThrowException<T>(WidgetType type)
