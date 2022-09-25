@@ -12,9 +12,10 @@ public class ConcreteMediatorTest
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
-    var mediator = new ConcreteMediator(new List<Widget>() { alarm.Object, sprinkler.Object });
+    var widgets = new List<Widget>() { alarm.Object, sprinkler.Object };
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.CLOCK_TICK);
 
+    var mediator = new ConcreteMediator(widgets);
     Assert.Throws<InvalidDateTimeTickException>(() => mediator.RegisterEvent(e));
   }
 
@@ -23,9 +24,10 @@ public class ConcreteMediatorTest
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
-    var mediator = new ConcreteMediator(new List<Widget>() { alarm.Object, sprinkler.Object });
+    var widgets = new List<Widget>() { alarm.Object, sprinkler.Object };
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
+    var mediator = new ConcreteMediator(widgets);
     mediator.RegisterEvent(e);
 
     alarm.Verify(a => a.CheckTime(It.IsAny<DateTime>()), Times.Once());
