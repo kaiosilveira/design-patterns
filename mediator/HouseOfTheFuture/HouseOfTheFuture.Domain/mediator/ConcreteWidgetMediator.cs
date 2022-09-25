@@ -1,4 +1,5 @@
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.ValueObjects;
 using HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteWidgetMediator : WidgetMediator
@@ -15,6 +16,15 @@ public class ConcreteWidgetMediator : WidgetMediator
     if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
     if (e.Type == ApplicationEventType.ALARM_TRIGGERED) HandleAlarmTriggered(e);
     if (e.Type == ApplicationEventType.TEMPERATURE_CHANGED) HandleTemperatureChange(e);
+    if (e.Type == ApplicationEventType.NEW_UPCOMING_EVENT) HandleUpcomingEvent(e);
+  }
+
+  private void HandleUpcomingEvent(ApplicationEvent e)
+  {
+    var display = GetWidgetOrThrowException<Display>(WidgetType.DISPLAY);
+    var possiblyNullCalendarEvent = e.Data ?? throw new InvalidCalendarEventException();
+    var parsedCalendarEvent = (CalendarEvent)e.Data;
+    display.AppendUpcomingEvent(parsedCalendarEvent.At, parsedCalendarEvent.Description);
   }
 
   private void HandleTemperatureChange(ApplicationEvent e)
