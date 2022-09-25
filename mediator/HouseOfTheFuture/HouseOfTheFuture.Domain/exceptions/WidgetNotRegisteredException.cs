@@ -1,5 +1,7 @@
 using HouseOfTheFuture.Domain.Widgets;
 
+namespace HouseOfTheFuture.Domain.Exceptions;
+
 public class WidgetNotRegisteredException : Exception
 {
   private static Dictionary<WidgetType, string> widgetNames = new Dictionary<WidgetType, string>()

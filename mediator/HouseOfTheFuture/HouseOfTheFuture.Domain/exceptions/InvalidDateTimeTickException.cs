@@ -1,3 +1,5 @@
+namespace HouseOfTheFuture.Domain.Exceptions;
+
 public class InvalidDateTimeTickException : Exception
 {
   public InvalidDateTimeTickException() : base(

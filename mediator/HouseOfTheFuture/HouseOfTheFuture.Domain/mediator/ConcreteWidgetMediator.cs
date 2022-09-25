@@ -1,4 +1,5 @@
 using HouseOfTheFuture.Domain.Events;
+using HouseOfTheFuture.Domain.Exceptions;
 using HouseOfTheFuture.Domain.ValueObjects;
 using HouseOfTheFuture.Domain.Widgets;
 

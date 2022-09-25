@@ -4,6 +4,7 @@ using System;
 using HouseOfTheFuture.Domain.Events;
 using HouseOfTheFuture.Domain.Widgets;
 using HouseOfTheFuture.Domain.ValueObjects;
+using HouseOfTheFuture.Domain.Exceptions;
 
 public class ConcreteMediatorTest
 {
