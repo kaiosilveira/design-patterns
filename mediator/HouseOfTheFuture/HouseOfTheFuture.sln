@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseOfTheFuture.DomainTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseOfTheFuture.Domain", "HouseOfTheFuture.Domain\HouseOfTheFuture.Domain.csproj", "{2DEFB04B-42BB-4DE7-A306-4D842D777480}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HouseOfTheFuture.ConsoleApp", "HouseOfTheFuture.ConsoleApp\HouseOfTheFuture.ConsoleApp.csproj", "{36A660E0-6C19-461B-A832-997792E64E2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DEFB04B-42BB-4DE7-A306-4D842D777480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36A660E0-6C19-461B-A832-997792E64E2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36A660E0-6C19-461B-A832-997792E64E2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36A660E0-6C19-461B-A832-997792E64E2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36A660E0-6C19-461B-A832-997792E64E2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
