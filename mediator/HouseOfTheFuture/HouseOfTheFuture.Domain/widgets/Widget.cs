@@ -6,6 +6,7 @@ public enum WidgetType
   CLOCK,
   SPRINKLER,
   COFFEE_POT,
+  DISPLAY,
 }
 
 public interface Widget

@@ -1,6 +1,6 @@
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteDisplay
+public class ConcreteDisplay : Display
 {
   private readonly Mediator mediator;
   private int? currentTemperature;
