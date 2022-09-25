@@ -3,14 +3,21 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteDisplay
 {
   private readonly Mediator mediator;
+  private int? currentTemperature;
 
   public ConcreteDisplay(Mediator mediator)
   {
     this.mediator = mediator;
   }
 
-  public string DisplayCurrentTemperature()
+  public void SetCurrentTemperature(int temp)
   {
-    return "-- °C";
+    this.currentTemperature = temp;
+  }
+
+  public string DisplayTemperature()
+  {
+    var tempNumber = currentTemperature.HasValue ? currentTemperature.ToString() : "--";
+    return $"{tempNumber} °C";
   }
 }
