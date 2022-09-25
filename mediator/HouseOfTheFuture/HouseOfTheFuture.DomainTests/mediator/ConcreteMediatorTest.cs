@@ -8,7 +8,7 @@ using HouseOfTheFuture.Domain.Widgets;
 public class ConcreteMediatorTest
 {
   [Fact]
-  public void TestThrowsErrorIfDateObjectIsNullWhenReceivingClockTick()
+  public void TestClockTick_ThrowsErrorIfDateObjectIsNull()
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
@@ -19,7 +19,7 @@ public class ConcreteMediatorTest
   }
 
   [Fact]
-  public void TestFiresCheckTimeOnAlarmAndSprinklerWhenReceivingClockTick()
+  public void TestClockTick_FiresCheckTimeOnAlarmAndSprinkler()
   {
     var alarm = new Mock<Alarm>();
     var sprinkler = new Mock<Sprinkler>();
