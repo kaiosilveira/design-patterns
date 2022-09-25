@@ -4,11 +4,13 @@ public class ConcreteDisplay : Display
 {
   private readonly WidgetMediator mediator;
   private int? currentTemperature;
+  public DateTime CurrentDateTime { get; private set; }
   public List<KeyValuePair<DateTime, string>> UpcomingEvents { get; private set; }
 
   public ConcreteDisplay(WidgetMediator mediator)
   {
     this.mediator = mediator;
+    this.CurrentDateTime = DateTime.Now;
     this.UpcomingEvents = new List<KeyValuePair<DateTime, string>>();
   }
 
@@ -45,5 +47,10 @@ public class ConcreteDisplay : Display
   public override string ShowGoodMorningMessage()
   {
     return "Good morning!";
+  }
+
+  public override void SetCurrentDateTime(DateTime dateTime)
+  {
+    this.CurrentDateTime = dateTime;
   }
 }

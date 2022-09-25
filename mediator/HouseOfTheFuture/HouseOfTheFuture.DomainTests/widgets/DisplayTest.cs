@@ -7,6 +7,18 @@ using HouseOfTheFuture.Domain.Widgets;
 public class DisplayTest
 {
   [Fact]
+  public void TestSetCurrentTime()
+  {
+    var mediator = new Mock<WidgetMediator>();
+    var display = new ConcreteDisplay(mediator: mediator.Object);
+    var date = DateTime.Now;
+
+    display.SetCurrentDateTime(date);
+
+    Assert.Equal(date, display.CurrentDateTime);
+  }
+
+  [Fact]
   public void TestDisplayCurrentTemperature_ReturnsDefaultIfTemperatureIsUnknown()
   {
     var mockedMediator = new Mock<WidgetMediator>();
