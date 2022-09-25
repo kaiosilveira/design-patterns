@@ -28,7 +28,10 @@ public class Program
     mediator.AddWidget(coffeePot);
 
     weatherMonitor.SetTemperature(21);
-    coffeePot.StartBrewing();
+
+    var now = DateTime.Now;
+    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
+    alarm.SetSchedule(new WeeklySchedule(daysOfWeek, now.Hour, now.Minute, now.Second + 2));
 
     while (true)
     {
