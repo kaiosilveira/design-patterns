@@ -69,7 +69,6 @@ public class ConcreteMediatorTest
     Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
   }
 
-
   [Fact]
   public void TestAlarmTriggered_DisplaysUpcomingEvents()
   {
@@ -82,6 +81,20 @@ public class ConcreteMediatorTest
     mediator.RegisterEvent(e);
 
     display.Verify(cp => cp.DisplayUpcomingEvents(), Times.Once());
+  }
+
+  [Fact]
+  public void TestAlarmTriggered_DisplaysCurrentTemperature()
+  {
+    var display = new Mock<Display>();
+    var coffeePot = new Mock<CoffeePot>();
+    var widgets = new List<Widget>() { display.Object, coffeePot.Object };
+
+    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var mediator = new ConcreteMediator(widgets);
+    mediator.RegisterEvent(e);
+
+    display.Verify(cp => cp.DisplayTemperature(), Times.Once());
   }
 
   [Fact]

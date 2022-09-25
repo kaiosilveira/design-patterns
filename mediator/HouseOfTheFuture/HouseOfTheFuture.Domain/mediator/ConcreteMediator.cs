@@ -31,6 +31,7 @@ public class ConcreteMediator : Mediator
 
     coffeePot.StartBrewing();
     display.DisplayUpcomingEvents();
+    display.DisplayTemperature();
   }
 
   private T GetWidgetOrThrowException<T>(WidgetType type)
