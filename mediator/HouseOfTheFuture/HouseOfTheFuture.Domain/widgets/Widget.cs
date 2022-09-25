@@ -7,6 +7,7 @@ public enum WidgetType
   SPRINKLER,
   COFFEE_POT,
   DISPLAY,
+  WEATHER_MONITOR,
 }
 
 public interface Widget

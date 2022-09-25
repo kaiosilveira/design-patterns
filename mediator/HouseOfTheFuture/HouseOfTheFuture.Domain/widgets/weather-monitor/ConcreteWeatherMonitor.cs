@@ -2,7 +2,7 @@ using HouseOfTheFuture.Domain.Events;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteWeatherMonitor
+public class ConcreteWeatherMonitor : WeatherMonitor
 {
   private int currentTemperature;
   private WidgetMediator mediator;
