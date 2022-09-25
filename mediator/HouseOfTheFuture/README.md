@@ -9,7 +9,7 @@ ClockEvents.TICK:
 
 WeatherMonitor.TEMPERATURE_CHANGED:
 
-- Display.SetCurrentTemperature
+- Display.SetCurrentTemperature ✅
 
 Calendar.NEW_UPCOMING_EVENT:
 
