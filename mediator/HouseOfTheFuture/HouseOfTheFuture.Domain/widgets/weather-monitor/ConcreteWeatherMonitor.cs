@@ -12,7 +12,7 @@ public class ConcreteWeatherMonitor : WeatherMonitor
     this.mediator = mediator;
   }
 
-  public void SetTemperature(int temp)
+  public override void SetTemperature(int temp)
   {
     currentTemperature = temp;
     var e = new ApplicationEvent(
@@ -22,7 +22,7 @@ public class ConcreteWeatherMonitor : WeatherMonitor
     this.mediator.RegisterEvent(e);
   }
 
-  public int GetCurrentTemperature()
+  public override int GetCurrentTemperature()
   {
     return this.currentTemperature;
   }
