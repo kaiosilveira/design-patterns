@@ -50,6 +50,8 @@ These are the OO principles highlighted by the books:
 
 ## Pattern catalog
 
+The pattern catalog is divided in three parts: **Creational**, **Structural** and **Behavioral**, all of them described below.
+
 ### Creational patterns
 
 Creational design patterns abstract the instantiation process. They help make a system independent of how its objects are created, composed and represented.
