@@ -6,7 +6,6 @@
 
 Remaining refactorings and missing things:
 
-- Pull down private methods inside ConcreteMediator
 - Introduce ClockDependentWidget interface as a subinterface of Widget
 - Document widget class hierarchy
 - Document console app structure and background processes implementation to handle inputs in a non-blocking fashion

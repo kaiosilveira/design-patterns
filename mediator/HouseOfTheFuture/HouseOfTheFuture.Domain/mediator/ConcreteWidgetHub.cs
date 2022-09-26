@@ -12,6 +12,16 @@ public class ConcreteWidgetHub : WidgetHub
     this.widgets = new List<Widget>();
   }
 
+  public void AddWidget(Widget widget)
+  {
+    this.widgets.Add(widget);
+  }
+
+  public int GetWidgetCount()
+  {
+    return this.widgets.Count;
+  }
+
   public void RegisterEvent(ApplicationEvent e)
   {
     if (e.Type == ApplicationEventType.CLOCK_TICK) HandleClockTick(e);
@@ -87,15 +97,5 @@ public class ConcreteWidgetHub : WidgetHub
       .ForEach(widget => result.Add(((T)widget)));
 
     return result;
-  }
-
-  public void AddWidget(Widget widget)
-  {
-    this.widgets.Add(widget);
-  }
-
-  public int GetWidgetCount()
-  {
-    return this.widgets.Count;
   }
 }
