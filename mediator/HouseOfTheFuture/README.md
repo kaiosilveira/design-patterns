@@ -6,7 +6,6 @@
 
 Remaining refactorings and missing things:
 
-- Make mediator readonly in concrete widget classes
 - Rename mediator to WidgetHub
 - Document widget class hierarchy
 - Introduce ClockDependentWidget interface as a subinterface of Widget

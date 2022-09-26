@@ -6,8 +6,8 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteCoffeePot : CoffeePot
 {
   public bool IsBrewing { get; private set; }
-  private WidgetMediator mediator;
-  private TimeProvider timeProvider;
+  private readonly WidgetMediator mediator;
+  private readonly TimeProvider timeProvider;
   private DateTime brewingStartedAt;
 
   public ConcreteCoffeePot(WidgetMediator mediator, TimeProvider timeProvider)

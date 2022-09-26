@@ -5,7 +5,7 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteAlarm : Alarm
 {
-  private WidgetMediator mediator;
+  private readonly WidgetMediator mediator;
   private Schedule schedule;
 
   public ConcreteAlarm(WidgetMediator mediator)

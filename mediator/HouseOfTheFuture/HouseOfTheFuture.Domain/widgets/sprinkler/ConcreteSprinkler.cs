@@ -5,7 +5,7 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteSprinkler : Sprinkler
 {
-  private WidgetMediator mediator;
+  private readonly WidgetMediator mediator;
   private Schedule schedule;
 
   public ConcreteSprinkler(WidgetMediator mediator)
