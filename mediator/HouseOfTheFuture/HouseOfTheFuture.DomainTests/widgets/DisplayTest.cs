@@ -128,4 +128,32 @@ public class DisplayTest
       notification => Assert.Equal("It's Sunday, 09:00!", notification)
     );
   }
+
+  [Fact]
+  public void TestShowNotifications_ReturnsDefaultTextIfNoNewNotificationsWereRegistered()
+  {
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
+
+    var notificationsText = display.ShowNotifications();
+
+    Assert.Equal("No new notifications", notificationsText);
+  }
+
+  [Fact]
+  public void TestShowNotifications_ReturnsTheListOfNotifications()
+  {
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
+
+    display.NotifyAlarmTriggered("It's Sunday, 09:00!");
+    display.NotifyCoffeeReady();
+
+    var notificationsText = display.ShowNotifications();
+
+    Assert.Equal(
+      "Notifications:\nIt's Sunday, 09:00!\nCoffee is ready!",
+      notificationsText
+    );
+  }
 }

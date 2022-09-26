@@ -66,6 +66,7 @@ public class ConcreteDisplay : Display
     Console.WriteLine($"{datePart}, {timePart} | {ShowCurrentTemperature()}");
     Console.WriteLine();
     Console.WriteLine($"{ShowUpcomingEvents()}");
+    Console.WriteLine();
     Console.WriteLine($"{ShowNotifications()}");
     Console.WriteLine();
     Console.WriteLine("- Press E to add a new calendar item");
@@ -82,9 +83,11 @@ public class ConcreteDisplay : Display
     this.Notifications.Add(alarmDescription);
   }
 
-  private string ShowNotifications()
+  public string ShowNotifications()
   {
+    if (Notifications.Count == 0) return "No new notifications";
+
     var notifications = String.Join("\n", Notifications);
-    return $"Notifications\n{notifications}";
+    return $"Notifications:\n{notifications}";
   }
 }
