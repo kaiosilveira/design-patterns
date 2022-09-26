@@ -27,59 +27,6 @@ public class ConcreteWidgetHubTest
   }
 
   [Fact]
-  public void TestAlarmTriggered_ThrowsExceptionIfNoCoffeePotWasRegistered()
-  {
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetHub();
-
-    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
-  }
-
-  [Fact]
-  public void TestAlarmTriggered_StartsTheBrewingProcessOnCoffeePot()
-  {
-    var coffeePot = new Mock<CoffeePot>();
-    var display = new Mock<Display>();
-
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetHub();
-    mediator.AddWidget(coffeePot.Object);
-    mediator.AddWidget(display.Object);
-
-    mediator.RegisterEvent(e);
-
-    coffeePot.Verify(cp => cp.StartBrewing(), Times.Once());
-  }
-
-  [Fact]
-  public void TestAlarmTriggered_ThrowsExceptionIfNoDisplayWasRegistered()
-  {
-    var coffeePot = new Mock<CoffeePot>();
-
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetHub();
-    mediator.AddWidget(coffeePot.Object);
-
-    Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
-  }
-
-  [Fact]
-  public void TestAlarmTriggered_DisplaysGoodMorningMessage()
-  {
-    var display = new Mock<Display>();
-    var coffeePot = new Mock<CoffeePot>();
-
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetHub();
-    mediator.AddWidget(display.Object);
-    mediator.AddWidget(coffeePot.Object);
-
-    mediator.RegisterEvent(e);
-
-    display.Verify(cp => cp.ShowGoodMorningMessage(), Times.Once());
-  }
-
-  [Fact]
   public void TestTemperatureChanged_ThrowsExceptionIfDisplayWidgetIsNotRegistered()
   {
     var newTemperature = 35;
