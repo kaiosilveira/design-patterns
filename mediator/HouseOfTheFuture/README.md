@@ -6,7 +6,6 @@
 
 Remaining refactorings and missing things:
 
-- Introduce ClockDependentWidget interface as a subinterface of Widget
 - Document widget class hierarchy
 - Document console app structure and background processes implementation to handle inputs in a non-blocking fashion
 
