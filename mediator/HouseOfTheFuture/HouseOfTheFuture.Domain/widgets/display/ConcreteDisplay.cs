@@ -46,11 +46,6 @@ public class ConcreteDisplay : Display
     this.UpcomingEvents.Add(new KeyValuePair<DateTime, string>(at, description));
   }
 
-  public override string ShowGoodMorningMessage()
-  {
-    return "Good morning!";
-  }
-
   public override void SetCurrentDateTime(DateTime dateTime)
   {
     this.CurrentDateTime = dateTime;

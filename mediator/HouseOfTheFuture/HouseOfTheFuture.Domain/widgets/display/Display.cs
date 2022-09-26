@@ -10,8 +10,6 @@ public abstract class Display : Widget
 
   public abstract string ShowUpcomingEvents();
 
-  public abstract string ShowGoodMorningMessage();
-
   public abstract void SetCurrentDateTime(DateTime dateTime);
 
   public abstract void Render();

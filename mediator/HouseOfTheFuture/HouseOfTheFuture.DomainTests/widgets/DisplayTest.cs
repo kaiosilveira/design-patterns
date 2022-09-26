@@ -88,17 +88,6 @@ public class DisplayTest
   }
 
   [Fact]
-  public void TestDisplayGoodMorningMessage()
-  {
-    var widgetHub = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: widgetHub.Object);
-
-    var goodMorningMsg = display.ShowGoodMorningMessage();
-
-    Assert.Equal("Good morning!", goodMorningMsg);
-  }
-
-  [Fact]
   public void TestNotifyCoffeeReady()
   {
     var widgetHub = new Mock<WidgetHub>();

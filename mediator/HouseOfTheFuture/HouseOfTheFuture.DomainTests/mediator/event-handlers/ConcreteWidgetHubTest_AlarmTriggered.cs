@@ -56,7 +56,6 @@ public class ConcreteWidgetHubTest_AlarmTriggered
 
     mediator.RegisterEvent(e);
 
-    display.Verify(cp => cp.ShowGoodMorningMessage(), Times.Once());
     display.Verify(cp => cp.NotifyAlarmTriggered(alarmText), Times.Once());
   }
 }
