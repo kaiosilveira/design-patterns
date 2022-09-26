@@ -2,36 +2,140 @@
 
 # House of the future
 
+- WidgetHub class hierarchy and interactions:
+
+```mermaid
+classDiagram
+
+class WidgetHub {
+    void RegisterEvent(ApplcationEvent e)
+}
+
+class ConcreteWidgetHub {
+    List widgets
+    void RegisterEvent(ApplcationEvent e)
+}
+
+class Widget {
+    WidgetType GetWidgetType()
+}
+
+
+<<interface>> WidgetHub
+<<interface>> Widget
+
+WidgetHub <|-- ConcreteWidgetHub : implements
+ConcreteWidgetHub --> Widget : has-a-list-of
+```
+
+- Widget class hierarchy:
+
+```mermaid
+classDiagram
+
+class Widget {
+    WidgetType GetWidgetType()
+}
+
+class ClockDependentWidget {
+    WidgetType GetWidgetType()
+    void CheckTime()
+}
+
+class Clock {
+    WidgetType GetWidgetType()
+    void Tick()
+}
+
+class CalendarEvent {
+    DateTime At
+    string Description
+}
+
+class Calendar {
+    WidgetType GetWidgetType()
+    void AddEvent(CalendarEvent e)
+}
+
+class WeatherMonitor {
+    void SetTemperature(int temp)
+    int GetCurrentTemperature()
+}
+
+class Display {
+    void SetCurrentTemperature(int temp)
+    string ShowCurrentTemperature()
+    void AppendUpcomingEvent(DateTime at, string description)
+    string ShowUpcomingEvents()
+    string ShowGoodMorningMessage()
+    void SetCurrentDateTime(DateTime dateTime)
+    void Render()
+    void NotifyCoffeeReady()
+    WidgetType GetWidgetType()
+}
+
+<<interface>> Widget
+<<interface>> ClockDependentWidget
+
+Widget <|-- ClockDependentWidget : extends
+Widget <|-- Clock : implements
+Widget <|-- WeatherMonitor : implements
+Widget <|-- Calendar : implements
+Widget <|-- Display : implements
+Calendar --> CalendarEvent : has-many
+```
+
+- Clock dependent widgets class hierarchy:
+
+```mermaid
+classDiagram
+
+class Widget {
+    WidgetType GetWidgetType()
+}
+
+class ClockDependentWidget {
+    WidgetType GetWidgetType()
+    void CheckTime()
+}
+
+class Alarm {
+    WidgetType GetWidgetType()
+    void CheckTime()
+    string Describe()
+    void SetSchedule(Schedule schedule)
+}
+
+class Sprinkler {
+    WidgetType GetWidgetType()
+    void CheckTime(DateTime time)
+    string Describe()
+    void SetSchedule(Schedule schedule)
+}
+
+class CoffeePot {
+  WidgetType GetWidgetType()
+  void CheckTime(DateTime time)
+  void StartBrewing()
+}
+
+<<interface>> Widget
+<<interface>> ClockDependentWidget
+
+Widget <|-- ClockDependentWidget : extends
+ClockDependentWidget <|-- Alarm : implements
+ClockDependentWidget <|-- Sprinkler : implements
+ClockDependentWidget <|-- CoffeePot : implements
+```
+
 ## Roadmap
 
 Remaining refactorings and missing things:
 
-- Document widget class hierarchy
+- Format notifications list in the console app
 - Document console app structure and background processes implementation to handle inputs in a non-blocking fashion
-
-Mediator events:
-
-ClockEvents.TICK:
-
-- sprinkler.checkTime ✅
-- alarm.checkTime ✅
-- display.setCurrentTime ✅
-- display.render (shows current time + upcoming events + alarm schedule) ✅
-
-WeatherMonitor.TEMPERATURE_CHANGED:
-
-- Display.SetCurrentTemperature ✅
-
-Calendar.NEW_UPCOMING_EVENT:
-
-- Display.AppendUpcomingEvent ✅
 
 AlarmEvents.ALARM_TRIGGERED:
 
-- CoffeePot.startBrewing ✅
-- Display.displayTemperature ✅
-- Display.displayGoodMorningMessage
-
-CoffeePotEvents.COFFEE_READY:
-
-- Display.notifyCoffeeReady ✅
+- Display.ShowAlarmText
+- Display.ShowGoodMorningMessage
