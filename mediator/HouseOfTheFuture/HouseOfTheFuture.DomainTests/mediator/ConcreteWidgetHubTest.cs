@@ -5,7 +5,7 @@ using HouseOfTheFuture.Domain.Widgets;
 public class ConcreteWidgetHubTest
 {
   [Fact]
-  public void TestGetWidgetCount_ReturnsZeroIfWidgetListIsEmpty()
+  public void TestGetWidgetCountReturnsZeroIfWidgetListIsEmpty()
   {
     var mediator = new ConcreteWidgetHub();
     Assert.Equal(0, mediator.GetWidgetCount());
