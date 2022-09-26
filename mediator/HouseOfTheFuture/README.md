@@ -167,6 +167,8 @@ class ConcreteWidgetHub {
 }
 ```
 
+Although this approach reduces coupling, it centralizes all the cross-widget communication in a single place, which could become hard to maintain, which is not the case for the code implemented for this project when it comes to production code, but could already be seen in the unit tests for the `ConcreteWidgetHub`, which needed to be split in many test classes to keep the test files in a reasonable size.
+
 ## Application events
 
 The `ApplicationEvent` class is the main form of communication between widgets and the widget hub. It's a simple value object containing a generic `Data` object and a `Type`. It's defined as follows:
