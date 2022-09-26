@@ -28,6 +28,7 @@ public class AlarmTest
     var widgetHub = new Mock<WidgetHub>();
     var schedule = new Mock<Schedule>();
     schedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
+    schedule.Setup(s => s.DescribeMatch(It.IsAny<DateTime>())).Returns("Monday, 07:00");
 
     var alarm = new ConcreteAlarm(mediator: widgetHub.Object);
     alarm.SetSchedule(schedule: schedule.Object);
@@ -36,7 +37,10 @@ public class AlarmTest
 
     widgetHub.Verify(
       m => m.RegisterEvent(
-        It.Is<ApplicationEvent>(e => e.Data == null && e.Type == ApplicationEventType.ALARM_TRIGGERED)
+        It
+        .Is<ApplicationEvent>(e => (string)(e.Data ?? "") == "It's Monday, 07:00!"
+          && e.Type == ApplicationEventType.ALARM_TRIGGERED
+        )
       ),
       Times.Once()
     );

@@ -18,7 +18,9 @@ public class ConcreteAlarm : Alarm
   {
     if (schedule.Matches(time))
     {
-      var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+      var alarmText = $"It's {schedule.DescribeMatch(time)}!";
+      var e = new ApplicationEvent(data: alarmText, type: ApplicationEventType.ALARM_TRIGGERED);
+
       mediator.RegisterEvent(e);
     }
   }
