@@ -30,12 +30,12 @@ public class Program
     weatherMonitor.SetTemperature(21);
 
     var now = DateTime.Now;
-    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday };
-    alarm.SetSchedule(new WeeklySchedule(daysOfWeek, now.Hour, now.Minute, now.Second + 2));
+    var daysOfWeek = new List<DayOfWeek>() { DayOfWeek.Saturday, DayOfWeek.Sunday, DayOfWeek.Monday };
+    alarm.SetSchedule(new WeeklySchedule(daysOfWeek, now.Hour, now.Minute, now.Second + 5));
 
     while (true)
     {
-      Thread.Sleep(100);
+      Thread.Sleep(1000);
       clock.Tick();
       if (appState.CurrentView == ViewTypes.MAIN) appState = new MainView(appState).Render(clock, display);
       if (appState.CurrentView == ViewTypes.ADD_EVENT) appState = new AddEventView(appState).Render(calendar);
