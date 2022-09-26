@@ -6,9 +6,6 @@ public class WeeklySchedule : Schedule
   public int ScheduledHour { get; private set; }
   public int ScheduledMinute { get; private set; }
   public int ScheduledSecond { get; private set; }
-  private readonly string[] DAY_NAMES = new string[] {
-    "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-  };
 
   public WeeklySchedule(List<DayOfWeek> daysOfWeek, int hour, int minute, int second)
   {
@@ -31,10 +28,8 @@ public class WeeklySchedule : Schedule
     var result = new List<string>();
     this.ScheduledDaysOfWeek.ToList().ForEach(day =>
     {
-      var dayName = DAY_NAMES[Convert.ToInt32(day)];
-      var hourStr = ScheduledHour.ToString().PadLeft(2, '0');
-      var minuteStr = ScheduledMinute.ToString().PadLeft(2, '0');
-      result.Add($"{dayName}: {hourStr}:{minuteStr}");
+      var entry = new ScheduleEntry(dayOfWeek: day, hour: ScheduledHour, minute: ScheduledMinute);
+      result.Add(entry.AsString(separator: ":"));
     });
 
     return String.Join(" | ", result);
@@ -45,9 +40,7 @@ public class WeeklySchedule : Schedule
     if (!Matches(time)) throw new NoScheduleMatchException();
 
     var day = this.ScheduledDaysOfWeek.Find(i => i == time.DayOfWeek);
-    var dayName = DAY_NAMES[Convert.ToInt32(day)];
-    var hourStr = ScheduledHour.ToString().PadLeft(2, '0');
-    var minuteStr = ScheduledMinute.ToString().PadLeft(2, '0');
-    return $"{dayName}, {hourStr}:{minuteStr}";
+    var entry = new ScheduleEntry(dayOfWeek: day, hour: ScheduledHour, minute: ScheduledMinute);
+    return entry.AsString();
   }
 }
