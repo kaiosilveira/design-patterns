@@ -1,6 +1,6 @@
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public abstract class CoffeePot : Widget
+public abstract class CoffeePot : ClockDependentWidget
 {
   public WidgetType GetWidgetType()
   {
