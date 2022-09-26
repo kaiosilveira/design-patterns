@@ -59,6 +59,7 @@ public class ConcreteWidgetHub : WidgetHub
 
     coffeePot.StartBrewing();
     display.ShowGoodMorningMessage();
+    display.NotifyAlarmTriggered((string)(e.Data ?? ""));
   }
 
   private T GetWidgetOrThrowException<T>(WidgetType type)

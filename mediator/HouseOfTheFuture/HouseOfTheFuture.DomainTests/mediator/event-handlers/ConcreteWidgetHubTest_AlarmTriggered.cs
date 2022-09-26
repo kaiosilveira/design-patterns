@@ -48,8 +48,8 @@ public class ConcreteWidgetHubTest_AlarmTriggered
   {
     var display = new Mock<Display>();
     var coffeePot = new Mock<CoffeePot>();
-
-    var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
+    var alarmText = "It's Friday, 09:00!";
+    var e = new ApplicationEvent(data: alarmText, type: ApplicationEventType.ALARM_TRIGGERED);
     var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
     mediator.AddWidget(coffeePot.Object);
@@ -57,5 +57,6 @@ public class ConcreteWidgetHubTest_AlarmTriggered
     mediator.RegisterEvent(e);
 
     display.Verify(cp => cp.ShowGoodMorningMessage(), Times.Once());
+    display.Verify(cp => cp.NotifyAlarmTriggered(alarmText), Times.Once());
   }
 }
