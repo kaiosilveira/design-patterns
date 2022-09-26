@@ -75,6 +75,11 @@ public class ConcreteDisplay : Display
     this.Notifications.Add(msg);
   }
 
+  public override void NotifyAlarmTriggered(string alarmDescription)
+  {
+    this.Notifications.Add(alarmDescription);
+  }
+
   private string ShowNotifications()
   {
     var notifications = String.Join("\n", Notifications);

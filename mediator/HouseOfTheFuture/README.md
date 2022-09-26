@@ -137,5 +137,5 @@ Remaining refactorings and missing things:
 
 AlarmEvents.ALARM_TRIGGERED:
 
-- Display.ShowAlarmText
+- Display.NotifyAlarmTriggered
 - Display.ShowGoodMorningMessage

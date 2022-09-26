@@ -112,4 +112,20 @@ public class DisplayTest
       notification => Assert.Equal("Coffee is ready!", notification)
     );
   }
+
+  [Fact]
+  public void TestNotifyAlarmTriggered()
+  {
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(widgetHub.Object);
+    var alarmDescription = "It's Sunday, 09:00!";
+
+    display.NotifyAlarmTriggered(alarmDescription);
+
+    Assert.Single(display.Notifications);
+    Assert.Collection(
+      display.Notifications,
+      notification => Assert.Equal("It's Sunday, 09:00!", notification)
+    );
+  }
 }

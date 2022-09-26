@@ -18,6 +18,8 @@ public abstract class Display : Widget
 
   public abstract void NotifyCoffeeReady();
 
+  public abstract void NotifyAlarmTriggered(string alarmDescription);
+
   public WidgetType GetWidgetType()
   {
     return WidgetType.DISPLAY;
