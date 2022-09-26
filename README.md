@@ -72,11 +72,13 @@ Structural patterns are concerned with how classes and objects are composed to f
 
 The structural design patterns presented at GoF's book are:
 
+- [Adapter](/adapter): Converts the interface of a class into another interface the clients expect. Adapter lets class work together that couldn't otherwise because of incompatible interfaces.
+
+- [Bridge](/bridge/): Decouples an abstraction from its implementation so that the two can vary independently.
+
 - [Composite](/composite): Composes objects into tree structures to represent part-whole hierarchies. Composite lets clients treat individual objects and compositions of objects uniformly.
 
 - [Decorator](/decorator): Attaches additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
-
-- [Adapter](/adapter): Converts the interface of a class into another interface the clients expect. Adapter lets class work together that couldn't otherwise because of incompatible interfaces.
 
 - [Facade](/facade): Provides a unified interface to a set of interfaces in a subsystem. Facade defines a higher-level interface that makes the subsystem easier to use.
 
@@ -92,16 +94,22 @@ The behavioral design patterns presented at GoF's book are:
 
 - [Chain of Responsibility](/chain-of-responsibility): Helps avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 
-- [Strategy](/strategy): Defines a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
-
-- [Observer](/observer): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
-
 - [Command](/command): Encapsulates a request as an object, thereby letting you parameterize other objects with different requests, queue or log requests, and support undoable operations.
 
 - [Interpreter](/interpreter): Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 
-- [Template method](/template-method): Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
-
 - [Iterator](/iterator): Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 
+- [Mediator](/mediator): Defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
+
+- **Memento**: Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+
+- [Observer](/observer): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+
 - [State](/state): Allows an object to alter its behavior when its internal state changes. The object will appear to change its class.
+
+- [Strategy](/strategy): Defines a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+- [Template method](/template-method): Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+
+- **Visitor**: Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of elements on which it operates.
