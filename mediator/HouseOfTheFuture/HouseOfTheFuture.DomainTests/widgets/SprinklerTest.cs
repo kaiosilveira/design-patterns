@@ -12,12 +12,12 @@ public class SprinklerTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var mockedSchedule = new Mock<Schedule>();
-    mockedSchedule.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
+    var widgetHub = new Mock<WidgetHub>();
+    var schedule = new Mock<Schedule>();
+    schedule.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
-    var sprinkler = new ConcreteSprinkler(mediator: mockedMediator.Object);
-    sprinkler.SetSchedule(schedule: mockedSchedule.Object);
+    var sprinkler = new ConcreteSprinkler(mediator: widgetHub.Object);
+    sprinkler.SetSchedule(schedule: schedule.Object);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", sprinkler.Describe());
   }
@@ -25,16 +25,16 @@ public class SprinklerTest
   [Fact]
   public void TestEmitsIrrigationStartedIfScheduledTimeMatchesCurrentTime()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var mockedSchedule = new Mock<Schedule>();
-    mockedSchedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
+    var widgetHub = new Mock<WidgetHub>();
+    var schedule = new Mock<Schedule>();
+    schedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 
-    var sprinkler = new ConcreteSprinkler(mediator: mockedMediator.Object);
-    sprinkler.SetSchedule(schedule: mockedSchedule.Object);
+    var sprinkler = new ConcreteSprinkler(mediator: widgetHub.Object);
+    sprinkler.SetSchedule(schedule: schedule.Object);
 
     sprinkler.CheckTime(DateTime.Now);
 
-    mockedMediator.Verify(
+    widgetHub.Verify(
       m => m.RegisterEvent(
         It.Is<ApplicationEvent>(e => e.Data == null && e.Type == ApplicationEventType.IRRIGATION_STARTED)
       ),

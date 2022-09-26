@@ -12,12 +12,12 @@ public class AlarmTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var mockedMediatorWrapper = new Mock<WidgetHub>();
-    var mockedScheduleWrapper = new Mock<Schedule>();
-    mockedScheduleWrapper.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
+    var widgetHub = new Mock<WidgetHub>();
+    var schedule = new Mock<Schedule>();
+    schedule.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
-    var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(schedule: mockedScheduleWrapper.Object);
+    var alarm = new ConcreteAlarm(mediator: widgetHub.Object);
+    alarm.SetSchedule(schedule: schedule.Object);
 
     Assert.Equal("Saturday: 07:00 | Sunday: 07:00", alarm.Describe());
   }
@@ -25,16 +25,16 @@ public class AlarmTest
   [Fact]
   public void TestEmitsAlarmTriggeredIfScheduledTimeMatchesCurrentTime()
   {
-    var mockedMediatorWrapper = new Mock<WidgetHub>();
-    var mockedScheduleWrapper = new Mock<Schedule>();
-    mockedScheduleWrapper.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
+    var widgetHub = new Mock<WidgetHub>();
+    var schedule = new Mock<Schedule>();
+    schedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 
-    var alarm = new ConcreteAlarm(mediator: mockedMediatorWrapper.Object);
-    alarm.SetSchedule(schedule: mockedScheduleWrapper.Object);
+    var alarm = new ConcreteAlarm(mediator: widgetHub.Object);
+    alarm.SetSchedule(schedule: schedule.Object);
 
     alarm.CheckTime(DateTime.Now);
 
-    mockedMediatorWrapper.Verify(
+    widgetHub.Verify(
       m => m.RegisterEvent(
         It.Is<ApplicationEvent>(e => e.Data == null && e.Type == ApplicationEventType.ALARM_TRIGGERED)
       ),

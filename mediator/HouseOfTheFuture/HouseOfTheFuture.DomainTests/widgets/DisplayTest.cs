@@ -9,8 +9,8 @@ public class DisplayTest
   [Fact]
   public void TestSetCurrentTime()
   {
-    var mediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
     var date = DateTime.Now;
 
     display.SetCurrentDateTime(date);
@@ -21,8 +21,8 @@ public class DisplayTest
   [Fact]
   public void TestDisplayCurrentTemperature_ReturnsDefaultIfTemperatureIsUnknown()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mockedMediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
 
     var currentTemp = display.ShowCurrentTemperature();
 
@@ -32,8 +32,8 @@ public class DisplayTest
   [Fact]
   public void TestSetTemperature_UpdatesTheCurrentTemperature()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mockedMediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
 
     display.SetCurrentTemperature(38);
     var currentTemp = display.ShowCurrentTemperature();
@@ -44,8 +44,8 @@ public class DisplayTest
   [Fact]
   public void TestAppendUpcomingEvent_AddsAnItemToTheList()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mockedMediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
     var eventDate = new DateTime(2022, 10, 26, 12, 0, 0);
     display.AppendUpcomingEvent(
       at: eventDate, description: "Meeting with Daniel"
@@ -58,8 +58,8 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsDefaultTextIfNoEventsWereRegistered()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mockedMediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
 
     var upcomingEventsText = display.ShowUpcomingEvents();
 
@@ -69,8 +69,8 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsTheListOfUpcomingEventsAsString()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mockedMediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
 
     display.AppendUpcomingEvent(
       at: new DateTime(2022, 10, 26, 9, 0, 0),
@@ -90,8 +90,8 @@ public class DisplayTest
   [Fact]
   public void TestDisplayGoodMorningMessage()
   {
-    var mediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator: mediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(mediator: widgetHub.Object);
 
     var goodMorningMsg = display.ShowGoodMorningMessage();
 
@@ -101,8 +101,8 @@ public class DisplayTest
   [Fact]
   public void TestNotifyCoffeeReady()
   {
-    var mediator = new Mock<WidgetHub>();
-    var display = new ConcreteDisplay(mediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var display = new ConcreteDisplay(widgetHub.Object);
 
     display.NotifyCoffeeReady();
 

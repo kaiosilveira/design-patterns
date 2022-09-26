@@ -8,12 +8,12 @@ public class ClockTest
   [Fact]
   public void TestEmitsEventOnTick()
   {
-    var mockedMediatorWrapper = new Mock<WidgetHub>();
-    var clock = new ConcreteClock(mediator: mockedMediatorWrapper.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var clock = new ConcreteClock(mediator: widgetHub.Object);
 
     clock.Tick();
 
-    mockedMediatorWrapper.Verify(
+    widgetHub.Verify(
       m => m.RegisterEvent(
         It.Is<ApplicationEvent>(e => e.Type == ApplicationEventType.CLOCK_TICK)
       ),

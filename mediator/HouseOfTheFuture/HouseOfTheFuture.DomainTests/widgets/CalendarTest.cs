@@ -10,8 +10,8 @@ public class CalendarTest
   [Fact]
   public void TestAddEvent_AppendsAnItemToTheList()
   {
-    var mediator = new Mock<WidgetHub>();
-    var calendar = new ConcreteCalendar(mediator: mediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var calendar = new ConcreteCalendar(mediator: widgetHub.Object);
 
     var calendarEvent = new CalendarEvent(at: DateTime.Now, description: "Meeting with Dan");
     calendar.AddEvent(calendarEvent);
@@ -28,13 +28,13 @@ public class CalendarTest
   [Fact]
   public void TestAddEvent_FiresEventNotifyingMediator()
   {
-    var mediator = new Mock<WidgetHub>();
-    var calendar = new ConcreteCalendar(mediator: mediator.Object);
+    var widgetHub = new Mock<WidgetHub>();
+    var calendar = new ConcreteCalendar(mediator: widgetHub.Object);
 
     var calendarEvent = new CalendarEvent(at: DateTime.Now, description: "Meeting with Dan");
     calendar.AddEvent(calendarEvent);
 
-    mediator
+    widgetHub
       .Verify(m => m
         .RegisterEvent(It
           .Is<ApplicationEvent>(e => e.Data == calendarEvent

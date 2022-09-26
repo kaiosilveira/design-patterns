@@ -6,11 +6,10 @@
 
 Remaining refactorings and missing things:
 
-- Rename mediator to WidgetHub
-- Document widget class hierarchy
-- Introduce ClockDependentWidget interface as a subinterface of Widget
-- Document console app structure and background processes implementation to handle inputs in a non-blocking fashion
 - Pull down private methods inside ConcreteMediator
+- Introduce ClockDependentWidget interface as a subinterface of Widget
+- Document widget class hierarchy
+- Document console app structure and background processes implementation to handle inputs in a non-blocking fashion
 
 Mediator events:
 

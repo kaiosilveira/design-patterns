@@ -10,13 +10,13 @@ public class CoffeePotTest
   [Fact]
   public void TestStartBrewing()
   {
-    var mockedMediator = new Mock<WidgetHub>();
-    var mockedTimeProvider = new Mock<TimeProvider>();
-    mockedTimeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(DateTime.Now);
+    var widgetHub = new Mock<WidgetHub>();
+    var timeProvider = new Mock<TimeProvider>();
+    timeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(DateTime.Now);
 
     var coffeePot = new ConcreteCoffeePot(
-      mediator: mockedMediator.Object,
-      timeProvider: mockedTimeProvider.Object
+      mediator: widgetHub.Object,
+      timeProvider: timeProvider.Object
     );
 
     coffeePot.StartBrewing();
@@ -28,21 +28,21 @@ public class CoffeePotTest
   public void NotifiesCoffeeReadyAfterTwentySecondsOfBrewing()
   {
     var date = DateTime.Now;
-    var mockedMediator = new Mock<WidgetHub>();
-    var mockedTimeProvider = new Mock<TimeProvider>();
-    mockedTimeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(date);
-    mockedTimeProvider
+    var widgetHub = new Mock<WidgetHub>();
+    var timeProvider = new Mock<TimeProvider>();
+    timeProvider.Setup(tp => tp.GetCurrentDateTime()).Returns(date);
+    timeProvider
       .Setup(tp => tp.Compare(It.IsAny<DateTime>(), It.IsAny<DateTime>()))
       .Returns(true);
 
     var coffeePot = new ConcreteCoffeePot(
-      mediator: mockedMediator.Object, timeProvider: mockedTimeProvider.Object
+      mediator: widgetHub.Object, timeProvider: timeProvider.Object
     );
 
     coffeePot.StartBrewing();
     coffeePot.CheckTime(date.AddSeconds(20));
 
-    mockedMediator
+    widgetHub
       .Verify(m => m
         .RegisterEvent(
           It.Is<ApplicationEvent>(
