@@ -39,4 +39,15 @@ public class WeeklySchedule : Schedule
 
     return String.Join(" | ", result);
   }
+
+  public string DescribeMatch(DateTime time)
+  {
+    if (!Matches(time)) throw new NoScheduleMatchException();
+
+    var day = this.ScheduledDaysOfWeek.Find(i => i == time.DayOfWeek);
+    var dayName = DAY_NAMES[Convert.ToInt32(day)];
+    var hourStr = ScheduledHour.ToString().PadLeft(2, '0');
+    var minuteStr = ScheduledMinute.ToString().PadLeft(2, '0');
+    return $"{dayName}, {hourStr}:{minuteStr}";
+  }
 }

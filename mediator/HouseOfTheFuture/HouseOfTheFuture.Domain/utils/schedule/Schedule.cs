@@ -4,4 +4,5 @@ public interface Schedule
 {
   bool Matches(DateTime time);
   string Describe();
+  string DescribeMatch(DateTime time);
 }

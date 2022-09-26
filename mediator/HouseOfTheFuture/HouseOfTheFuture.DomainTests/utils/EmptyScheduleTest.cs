@@ -17,4 +17,11 @@ public class EmptyScheduleTest
     var emptySchedule = new EmptySchedule();
     Assert.Equal("Empty schedule", emptySchedule.Describe());
   }
+
+  [Fact]
+  public void TestDescribeMatch_ThrowsNoMatchException()
+  {
+    var emptySchedule = new EmptySchedule();
+    Assert.Throws<NoScheduleMatchException>(() => emptySchedule.DescribeMatch(DateTime.Now));
+  }
 }

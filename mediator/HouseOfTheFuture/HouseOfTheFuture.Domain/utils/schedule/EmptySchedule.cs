@@ -7,6 +7,11 @@ public class EmptySchedule : Schedule
     return "Empty schedule";
   }
 
+  public string DescribeMatch(DateTime time)
+  {
+    throw new NoScheduleMatchException();
+  }
+
   public bool Matches(DateTime time)
   {
     return false;
