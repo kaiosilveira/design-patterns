@@ -72,19 +72,21 @@ public class ConcreteWidgetHub : WidgetHub
     var parsedDataObj = e.Data ?? throw new InvalidDateTimeTickException();
     var parsedDateTime = (DateTime)parsedDataObj;
 
-    GetWidgetsOfType<Alarm>(WidgetType.ALARM)
-      .ForEach(alarm => alarm.CheckTime(parsedDateTime));
-
-    GetWidgetsOfType<Sprinkler>(WidgetType.SPRINKLER)
-      .ForEach(sprinkler => sprinkler.CheckTime(parsedDateTime));
-
-    GetWidgetsOfType<CoffeePot>(WidgetType.COFFEE_POT)
-      .ForEach(coffeePot => coffeePot.CheckTime(parsedDateTime));
+    GetClockDependentWidgets()
+      .ForEach(coffeePot => ((ClockDependentWidget)coffeePot).CheckTime(parsedDateTime));
 
     var displays = GetWidgetsOfType<Display>(WidgetType.DISPLAY);
     if (displays.Count == 0) throw new WidgetNotRegisteredException(WidgetType.DISPLAY);
 
     displays.ForEach(display => display.SetCurrentDateTime(parsedDateTime));
+  }
+
+  private List<ClockDependentWidget> GetClockDependentWidgets()
+  {
+    return widgets
+      .Where(widget => widget is ClockDependentWidget)
+      .Select(widget => (ClockDependentWidget)widget)
+      .ToList();
   }
 
   private List<T> GetWidgetsOfType<T>(WidgetType type)
