@@ -1,7 +1,7 @@
 using HouseOfTheFuture.Domain.Events;
 using HouseOfTheFuture.Domain.Widgets;
 
-public interface WidgetMediator
+public interface WidgetHub
 {
   void RegisterEvent(ApplicationEvent e);
   void AddWidget(Widget widget);

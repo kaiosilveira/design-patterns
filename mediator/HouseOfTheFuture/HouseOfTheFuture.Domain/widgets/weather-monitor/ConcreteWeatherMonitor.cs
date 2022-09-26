@@ -5,9 +5,9 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteWeatherMonitor : WeatherMonitor
 {
   private int currentTemperature;
-  private readonly WidgetMediator mediator;
+  private readonly WidgetHub mediator;
 
-  public ConcreteWeatherMonitor(WidgetMediator mediator)
+  public ConcreteWeatherMonitor(WidgetHub mediator)
   {
     this.mediator = mediator;
   }

@@ -3,11 +3,11 @@ using HouseOfTheFuture.Domain.Exceptions;
 using HouseOfTheFuture.Domain.ValueObjects;
 using HouseOfTheFuture.Domain.Widgets;
 
-public class ConcreteWidgetMediator : WidgetMediator
+public class ConcreteWidgetHub : WidgetHub
 {
   private List<Widget> widgets;
 
-  public ConcreteWidgetMediator()
+  public ConcreteWidgetHub()
   {
     this.widgets = new List<Widget>();
   }

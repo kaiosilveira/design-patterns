@@ -12,7 +12,7 @@ public class SprinklerTest
   [Fact]
   public void TestDescribesTheCurrentSetup()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var mockedSchedule = new Mock<Schedule>();
     mockedSchedule.Setup(s => s.Describe()).Returns("Saturday: 07:00 | Sunday: 07:00");
 
@@ -25,7 +25,7 @@ public class SprinklerTest
   [Fact]
   public void TestEmitsIrrigationStartedIfScheduledTimeMatchesCurrentTime()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var mockedSchedule = new Mock<Schedule>();
     mockedSchedule.Setup(s => s.Matches(It.IsAny<DateTime>())).Returns(true);
 

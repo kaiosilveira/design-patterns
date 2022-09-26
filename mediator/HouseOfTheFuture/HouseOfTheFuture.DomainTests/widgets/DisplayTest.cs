@@ -9,7 +9,7 @@ public class DisplayTest
   [Fact]
   public void TestSetCurrentTime()
   {
-    var mediator = new Mock<WidgetMediator>();
+    var mediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mediator.Object);
     var date = DateTime.Now;
 
@@ -21,7 +21,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayCurrentTemperature_ReturnsDefaultIfTemperatureIsUnknown()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     var currentTemp = display.ShowCurrentTemperature();
@@ -32,7 +32,7 @@ public class DisplayTest
   [Fact]
   public void TestSetTemperature_UpdatesTheCurrentTemperature()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     display.SetCurrentTemperature(38);
@@ -44,7 +44,7 @@ public class DisplayTest
   [Fact]
   public void TestAppendUpcomingEvent_AddsAnItemToTheList()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
     var eventDate = new DateTime(2022, 10, 26, 12, 0, 0);
     display.AppendUpcomingEvent(
@@ -58,7 +58,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsDefaultTextIfNoEventsWereRegistered()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     var upcomingEventsText = display.ShowUpcomingEvents();
@@ -69,7 +69,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayUpcomingEvents_ReturnsTheListOfUpcomingEventsAsString()
   {
-    var mockedMediator = new Mock<WidgetMediator>();
+    var mockedMediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mockedMediator.Object);
 
     display.AppendUpcomingEvent(
@@ -90,7 +90,7 @@ public class DisplayTest
   [Fact]
   public void TestDisplayGoodMorningMessage()
   {
-    var mediator = new Mock<WidgetMediator>();
+    var mediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator: mediator.Object);
 
     var goodMorningMsg = display.ShowGoodMorningMessage();
@@ -101,7 +101,7 @@ public class DisplayTest
   [Fact]
   public void TestNotifyCoffeeReady()
   {
-    var mediator = new Mock<WidgetMediator>();
+    var mediator = new Mock<WidgetHub>();
     var display = new ConcreteDisplay(mediator.Object);
 
     display.NotifyCoffeeReady();

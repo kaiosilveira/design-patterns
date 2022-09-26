@@ -13,7 +13,7 @@ public class Program
     keyListenerWorker.RunWorkerCompleted += KeyListenerWorker_RunWorkerCompleted;
     keyListenerWorker.RunWorkerAsync();
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     ConcreteAlarm alarm = new ConcreteAlarm(mediator);
     ConcreteWeatherMonitor weatherMonitor = new ConcreteWeatherMonitor(mediator);
     ConcreteClock clock = new ConcreteClock(mediator);

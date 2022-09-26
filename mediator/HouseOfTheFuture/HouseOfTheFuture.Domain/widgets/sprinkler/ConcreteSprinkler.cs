@@ -5,10 +5,10 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteSprinkler : Sprinkler
 {
-  private readonly WidgetMediator mediator;
+  private readonly WidgetHub mediator;
   private Schedule schedule;
 
-  public ConcreteSprinkler(WidgetMediator mediator)
+  public ConcreteSprinkler(WidgetHub mediator)
   {
     this.mediator = mediator;
     this.schedule = new EmptySchedule();

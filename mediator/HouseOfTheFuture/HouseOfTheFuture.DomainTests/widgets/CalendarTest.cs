@@ -10,7 +10,7 @@ public class CalendarTest
   [Fact]
   public void TestAddEvent_AppendsAnItemToTheList()
   {
-    var mediator = new Mock<WidgetMediator>();
+    var mediator = new Mock<WidgetHub>();
     var calendar = new ConcreteCalendar(mediator: mediator.Object);
 
     var calendarEvent = new CalendarEvent(at: DateTime.Now, description: "Meeting with Dan");
@@ -28,7 +28,7 @@ public class CalendarTest
   [Fact]
   public void TestAddEvent_FiresEventNotifyingMediator()
   {
-    var mediator = new Mock<WidgetMediator>();
+    var mediator = new Mock<WidgetHub>();
     var calendar = new ConcreteCalendar(mediator: mediator.Object);
 
     var calendarEvent = new CalendarEvent(at: DateTime.Now, description: "Meeting with Dan");

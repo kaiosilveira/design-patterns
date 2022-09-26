@@ -11,7 +11,7 @@ public class ConcreteMediatorTest
   [Fact]
   public void TestGetWidgetCount_ReturnsZeroIfWidgetListIsEmpty()
   {
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     Assert.Equal(0, mediator.GetWidgetCount());
   }
 
@@ -19,7 +19,7 @@ public class ConcreteMediatorTest
   public void TestAddWidget()
   {
     var alarm = new Mock<Alarm>();
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
 
     mediator.AddWidget(widget: alarm.Object);
 
@@ -34,7 +34,7 @@ public class ConcreteMediatorTest
     var display = new Mock<Display>();
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
     mediator.AddWidget(display.Object);
@@ -50,7 +50,7 @@ public class ConcreteMediatorTest
     var display = new Mock<Display>();
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
     mediator.AddWidget(display.Object);
@@ -68,7 +68,7 @@ public class ConcreteMediatorTest
     var display = new Mock<Display>();
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
     mediator.AddWidget(display.Object);
@@ -87,7 +87,7 @@ public class ConcreteMediatorTest
     var coffeePot = new Mock<CoffeePot>();
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
     mediator.AddWidget(display.Object);
@@ -105,7 +105,7 @@ public class ConcreteMediatorTest
     var sprinkler = new Mock<Sprinkler>();
     var e = new ApplicationEvent(data: DateTime.Now, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
 
@@ -121,7 +121,7 @@ public class ConcreteMediatorTest
     var date = DateTime.Now;
     var e = new ApplicationEvent(data: date, type: ApplicationEventType.CLOCK_TICK);
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(alarm.Object);
     mediator.AddWidget(sprinkler.Object);
     mediator.AddWidget(display.Object);
@@ -135,7 +135,7 @@ public class ConcreteMediatorTest
   public void TestAlarmTriggered_ThrowsExceptionIfNoCoffeePotWasRegistered()
   {
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
 
     Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
   }
@@ -147,7 +147,7 @@ public class ConcreteMediatorTest
     var display = new Mock<Display>();
 
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(coffeePot.Object);
     mediator.AddWidget(display.Object);
 
@@ -162,7 +162,7 @@ public class ConcreteMediatorTest
     var coffeePot = new Mock<CoffeePot>();
 
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(coffeePot.Object);
 
     Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
@@ -175,7 +175,7 @@ public class ConcreteMediatorTest
     var coffeePot = new Mock<CoffeePot>();
 
     var e = new ApplicationEvent(data: null, type: ApplicationEventType.ALARM_TRIGGERED);
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
     mediator.AddWidget(coffeePot.Object);
 
@@ -192,7 +192,7 @@ public class ConcreteMediatorTest
       data: newTemperature, type: ApplicationEventType.TEMPERATURE_CHANGED
     );
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     Assert.Throws<WidgetNotRegisteredException>(() => mediator.RegisterEvent(e));
   }
 
@@ -204,7 +204,7 @@ public class ConcreteMediatorTest
       data: null, type: ApplicationEventType.TEMPERATURE_CHANGED
     );
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
 
     Assert.Throws<InvalidCastException>(() => mediator.RegisterEvent(e));
@@ -218,7 +218,7 @@ public class ConcreteMediatorTest
       data: "invalid integer", type: ApplicationEventType.TEMPERATURE_CHANGED
     );
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
 
     Assert.Throws<FormatException>(() => mediator.RegisterEvent(e));
@@ -233,7 +233,7 @@ public class ConcreteMediatorTest
       data: newTemperature, type: ApplicationEventType.TEMPERATURE_CHANGED
     );
 
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
 
     mediator.RegisterEvent(e);
@@ -244,7 +244,7 @@ public class ConcreteMediatorTest
   [Fact]
   public void TestNewUpcomingEvent_ThrowsExceptionIfThereAreNoDisplaysRegistered()
   {
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     var e = new ApplicationEvent(
       data: null, type: ApplicationEventType.NEW_UPCOMING_EVENT
     );
@@ -256,7 +256,7 @@ public class ConcreteMediatorTest
   public void TestNewUpcomingEvent_ThrowsExceptionIfCalendarEventIsInvalid()
   {
     var display = new Mock<Display>();
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
 
     var e = new ApplicationEvent(
@@ -270,7 +270,7 @@ public class ConcreteMediatorTest
   public void TestNewUpcomingEvent_AppendsEventToDisplay()
   {
     var display = new Mock<Display>();
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
 
     var calendarEvent = new CalendarEvent(
@@ -291,7 +291,7 @@ public class ConcreteMediatorTest
   [Fact]
   public void TestCoffeeIsReady_ThrowsExceptionIfThereAreNoDisplaysRegistered()
   {
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     var e = new ApplicationEvent(
       data: null, type: ApplicationEventType.COFFEE_READY
     );
@@ -303,7 +303,7 @@ public class ConcreteMediatorTest
   public void TestCoffeeIsReady_CreatesDisplayNotification()
   {
     var display = new Mock<Display>();
-    var mediator = new ConcreteWidgetMediator();
+    var mediator = new ConcreteWidgetHub();
     mediator.AddWidget(display.Object);
     var e = new ApplicationEvent(
       data: null, type: ApplicationEventType.COFFEE_READY

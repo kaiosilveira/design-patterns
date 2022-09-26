@@ -2,13 +2,13 @@ namespace HouseOfTheFuture.Domain.Widgets;
 
 public class ConcreteDisplay : Display
 {
-  private readonly WidgetMediator mediator;
+  private readonly WidgetHub mediator;
   private int? currentTemperature;
   public DateTime CurrentDateTime { get; private set; }
   public List<string> Notifications { get; private set; }
   public List<KeyValuePair<DateTime, string>> UpcomingEvents { get; private set; }
 
-  public ConcreteDisplay(WidgetMediator mediator)
+  public ConcreteDisplay(WidgetHub mediator)
   {
     this.mediator = mediator;
     this.CurrentDateTime = DateTime.Now;

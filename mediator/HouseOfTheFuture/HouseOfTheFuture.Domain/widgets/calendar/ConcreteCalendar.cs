@@ -6,9 +6,9 @@ namespace HouseOfTheFuture.Domain.Widgets;
 public class ConcreteCalendar : Calendar
 {
   public List<CalendarEvent> AllEvents { get; private set; }
-  private readonly WidgetMediator mediator;
+  private readonly WidgetHub mediator;
 
-  public ConcreteCalendar(WidgetMediator mediator)
+  public ConcreteCalendar(WidgetHub mediator)
   {
     this.AllEvents = new List<CalendarEvent>();
     this.mediator = mediator;
