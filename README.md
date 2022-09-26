@@ -104,7 +104,7 @@ The behavioral design patterns presented at GoF's book are:
 
 - [Mediator](/mediator): Defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
 
-- **Memento**: Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+- [Memento](/memento): 🚧 **WIP** 🚧 Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
 
 - [Observer](/observer): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
