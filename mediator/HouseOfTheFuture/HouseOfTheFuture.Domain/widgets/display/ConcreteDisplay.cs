@@ -67,6 +67,8 @@ public class ConcreteDisplay : Display
     Console.WriteLine();
     Console.WriteLine($"{ShowUpcomingEvents()}");
     Console.WriteLine($"{ShowNotifications()}");
+    Console.WriteLine();
+    Console.WriteLine("- Press E to add a new calendar item");
   }
 
   public override void NotifyCoffeeReady()
