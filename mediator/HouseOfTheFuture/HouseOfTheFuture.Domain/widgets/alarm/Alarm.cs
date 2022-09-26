@@ -2,7 +2,7 @@ using HouseOfTheFuture.Domain.Utils;
 
 namespace HouseOfTheFuture.Domain.Widgets;
 
-public abstract class Alarm : Widget
+public abstract class Alarm : ClockDependentWidget
 {
   public abstract void CheckTime(DateTime time);
   public abstract string Describe();
