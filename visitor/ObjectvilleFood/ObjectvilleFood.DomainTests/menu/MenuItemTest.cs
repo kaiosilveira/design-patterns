@@ -1,6 +1,8 @@
 using Xunit;
+using Moq;
 using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Exceptions;
+using ObjectvilleFood.Domain.Visitors;
 
 namespace ObjectvilleFood.DomainTests;
 
@@ -31,6 +33,14 @@ public class MenuItemTest
     Assert.Equal("Waffles with your choice of blueberries or strawberries", menuItem.Description);
     Assert.True(menuItem.IsVegetarian);
     Assert.Equal(359, menuItem.Price);
+  }
+
+  [Fact]
+  public void TestAcceptsVisitor()
+  {
+    var visitor = new Mock<Visitor>();
+    menuItem.Accept(visitor: visitor.Object);
+    visitor.Verify(v => v.VisitMenuItem(menuItem), Times.Once());
   }
 
   [Fact]
