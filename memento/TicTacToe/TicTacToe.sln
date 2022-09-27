@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.DomainTests", "Ti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.Domain", "TicTacToe.Domain\TicTacToe.Domain.csproj", "{0A3E9385-61EC-413A-87FD-266456D562C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToe.ConsoleApp", "TicTacToe.ConsoleApp\TicTacToe.ConsoleApp.csproj", "{A0EA8388-58FC-4C9C-AABE-EA152F720746}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{0A3E9385-61EC-413A-87FD-266456D562C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A3E9385-61EC-413A-87FD-266456D562C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A3E9385-61EC-413A-87FD-266456D562C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0EA8388-58FC-4C9C-AABE-EA152F720746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0EA8388-58FC-4C9C-AABE-EA152F720746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0EA8388-58FC-4C9C-AABE-EA152F720746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0EA8388-58FC-4C9C-AABE-EA152F720746}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
