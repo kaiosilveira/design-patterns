@@ -4,7 +4,7 @@ This is a simple tic-tac-toe game implemented to run in the terminal.
 
 **Instructions:**
 
-- Type `pn` to add your move, where `n` is within the range 0 <= n < 9
+- Type `pn` to add your move, where `n` is within the range $0 \leq n < 9$
 - Type `q!` to quit
 
 ## The Memento Pattern applied
