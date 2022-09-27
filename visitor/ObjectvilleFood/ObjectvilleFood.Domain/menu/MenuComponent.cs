@@ -18,28 +18,13 @@ public abstract class MenuComponent
     this.IsVegetarian = isVegetarian;
   }
 
-  public virtual void Add(MenuComponent component)
-  {
-    throw new UnsupportedOperationException();
-  }
+  public virtual void Accept(Visitor v) => throw new UnsupportedOperationException();
 
-  public virtual void Remove(MenuComponent component)
-  {
-    throw new UnsupportedOperationException();
-  }
+  public virtual void Add(MenuComponent component) => throw new UnsupportedOperationException();
 
-  public virtual MenuComponent GetChild(int i)
-  {
-    throw new UnsupportedOperationException();
-  }
+  public virtual void Remove(MenuComponent component) => throw new UnsupportedOperationException();
 
-  public virtual void Print()
-  {
-    throw new UnsupportedOperationException();
-  }
+  public virtual void Print() => throw new UnsupportedOperationException();
 
-  public virtual void Accept(Visitor v)
-  {
-    throw new UnsupportedOperationException();
-  }
+  public virtual MenuComponent GetChild(int i) => throw new UnsupportedOperationException();
 }
