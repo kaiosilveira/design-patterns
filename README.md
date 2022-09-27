@@ -104,7 +104,7 @@ The behavioral design patterns presented at GoF's book are:
 
 - [Mediator](/mediator): Defines an object that encapsulates how a set of objects interact. Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it lets you vary their interaction independently.
 
-- [Memento](/memento): 🚧 **WIP** 🚧 Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
+- [Memento](/memento): Without violating encapsulation, capture and externalize an object's internal state so that the object can be restored to this state later.
 
 - [Observer](/observer): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
@@ -114,4 +114,4 @@ The behavioral design patterns presented at GoF's book are:
 
 - [Template method](/template-method): Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
-- **Visitor**: Represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of elements on which it operates.
+- **Visitor**: Represents an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of elements on which it operates.
