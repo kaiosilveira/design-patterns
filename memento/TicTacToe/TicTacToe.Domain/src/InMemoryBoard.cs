@@ -1,11 +1,11 @@
 ﻿namespace TicTacToe.Domain;
 
-public class Board
+public class InMemoryBoard
 {
   public int CurrentPlayNumber { get; private set; }
   public string?[] PlayedPositions { get; private set; }
 
-  public Board()
+  public InMemoryBoard()
   {
     PlayedPositions = new string?[9];
   }

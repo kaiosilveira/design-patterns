@@ -8,7 +8,7 @@ public class BoardTest
   [Fact]
   public void TestAddsPlay_StoresSymbolAndPositionCorrectly()
   {
-    var board = new Board();
+    var board = new InMemoryBoard();
 
     board.AddPlay(position: 5, "X");
     var playedPositions = board.PlayedPositions;
@@ -19,7 +19,7 @@ public class BoardTest
   [Fact]
   public void TestAddsPlay_IncrementsCurrentPlayNumber()
   {
-    var board = new Board();
+    var board = new InMemoryBoard();
     board.AddPlay(position: 5, "X");
     Assert.Equal(1, board.CurrentPlayNumber);
   }
@@ -27,7 +27,7 @@ public class BoardTest
   [Fact]
   public void TestGetState_ReturnsInitialState()
   {
-    var board = new Board();
+    var board = new InMemoryBoard();
 
     var state = board.GetState();
 
@@ -38,7 +38,7 @@ public class BoardTest
   [Fact]
   public void TestGetState_ReturnsUpdatedStateAfterOnePlay()
   {
-    var board = new Board();
+    var board = new InMemoryBoard();
 
     board.AddPlay(position: 5, "X");
     var state = board.GetState();
@@ -63,7 +63,7 @@ public class BoardTest
 
     var state = new BoardState(currentPlayNumber, playedPositions);
 
-    var board = new Board();
+    var board = new InMemoryBoard();
     board.SetState(state);
 
     Assert.Equal(currentPlayNumber, state.CurrentPlayNumber);
