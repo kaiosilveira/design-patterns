@@ -7,18 +7,34 @@ namespace TicTacToe.DomainTests;
 public class GameTest
 {
   [Fact]
-  public void TestComputePlay_AddsPlayToTheBoard()
+  public void TestComputePlay_AddsPlayToTheBoardForPlayer1()
   {
     var board = new Mock<Board>();
     var playedPosition = 2;
-    var symbol = "X";
 
     var game = new Game(board: board.Object);
-    game.ComputePlay(playedPosition, symbol);
+    game.ComputePlay(playedPosition);
 
     board
       .Verify(
-        b => b.AddPlay(It.Is<int>(i => i == playedPosition), It.Is<string>(s => s == symbol)),
+        b => b.AddPlay(It.Is<int>(i => i == playedPosition), It.Is<string>(s => s == "X")),
+        Times.Once()
+      );
+  }
+
+  [Fact]
+  public void TestComputePlay_AddsPlayToTheBoardForPlayer2()
+  {
+    var board = new Mock<Board>();
+    board.Setup(b => b.GetCurrentPlayNumber()).Returns(1);
+    var playedPosition = 2;
+
+    var game = new Game(board: board.Object);
+    game.ComputePlay(playedPosition);
+
+    board
+      .Verify(
+        b => b.AddPlay(It.Is<int>(i => i == playedPosition), It.Is<string>(s => s == "O")),
         Times.Once()
       );
   }
@@ -38,7 +54,7 @@ public class GameTest
     board.Setup(b => b.GetState()).Returns(state);
 
     var game = new Game(board: board.Object);
-    game.ComputePlay(playedPosition: 0, symbol: "O");
+    game.ComputePlay(playedPosition: 0);
 
     game.Undo();
 
