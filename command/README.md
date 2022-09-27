@@ -32,4 +32,4 @@ Invoker --> Command : has-a
 
 As a working example I've implemented a `RemoteControl` that is meant to be generic, accepting instructions passed in as a `Command` object. The `RemoteControl` knows nothing about the action being executed, as the `Command` object abstracts the call to the `Receiver`. The `RemoteControl` only needs to call `Execute()` on the `Command` passed in.
 
-The remote control has 7 slots, each slot accepts a "on" and a "off" command. There's also a global `Undo()` method to allow to take back the last command executed. For implementation details, please have a look at the `home-automation-inc` directory.
+The remote control has 7 slots, each slot accepts a "on" and a "off" command. There's also a global `Undo()` method to allow to take back the last command executed. For implementation details, please have a look at the [HomeAutomationInc](/HomeAutomationInc/) directory.
