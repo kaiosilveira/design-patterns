@@ -22,6 +22,7 @@ jobs:
               "./flyweight/LandscapeDesign",
               "./interpreter/BoolExParser",
               "./mediator/HouseOfTheFuture",
+              "./memento/TicTacToe",
               "./abstract-factory/maze-game",
               "./abstract-factory/pizza-store",
               "./singleton/choc-o-holic",
