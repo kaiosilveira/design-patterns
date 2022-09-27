@@ -26,4 +26,8 @@ public class InMemoryBoard : Board
     this.CurrentPlayNumber = state.CurrentPlayNumber;
     this.PlayedPositions = state.PlayedPositions;
   }
+
+  public void Draw() {
+
+  }
 }
