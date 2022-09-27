@@ -2,7 +2,7 @@ using ObjectvilleFood.Domain.Exceptions;
 
 namespace ObjectvilleFood.Domain.MenuDefinition;
 
-public class MenuComponent
+public abstract class MenuComponent
 {
   public string Name { get; private set; }
   public string Description { get; private set; }
