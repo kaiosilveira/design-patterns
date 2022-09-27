@@ -14,7 +14,7 @@ public class MenuItem : MenuComponent
     Console.WriteLine($"{this.Name}: {this.Description} [{this.Price}] {vegetarianText}");
   }
 
-  public void Accept(Visitor visitor)
+  public override void Accept(Visitor visitor)
   {
     visitor.VisitMenuItem(this);
   }

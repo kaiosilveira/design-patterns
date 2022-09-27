@@ -1,4 +1,5 @@
 using ObjectvilleFood.Domain.Exceptions;
+using ObjectvilleFood.Domain.Visitors;
 
 namespace ObjectvilleFood.Domain.MenuDefinition;
 
@@ -33,6 +34,11 @@ public abstract class MenuComponent
   }
 
   public virtual void Print()
+  {
+    throw new UnsupportedOperationException();
+  }
+
+  public virtual void Accept(Visitor v)
   {
     throw new UnsupportedOperationException();
   }

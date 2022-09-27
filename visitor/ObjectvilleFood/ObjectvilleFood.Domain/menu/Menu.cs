@@ -41,7 +41,7 @@ public class Menu : MenuComponent
     this.menuComponents.ForEach(component => component.Print());
   }
 
-  public void Accept(Visitor visitor)
+  public override void Accept(Visitor visitor)
   {
     visitor.VisitMenu(this);
   }
