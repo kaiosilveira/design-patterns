@@ -40,3 +40,13 @@ deactivate aMemento
 deactivate anOriginator
 deactivate aCareTaker
 ```
+
+```mermaid
+sequenceDiagram
+
+activate aCareTaker
+aCareTaker ->> anOriginator: SetMemento(aMemento)
+anOriginator ->> aMemento: GetState()
+activate aMemento
+deactivate aMemento
+```
