@@ -25,5 +25,4 @@ public class GarageDoorCloseCommand : Command
   {
     return "GarageDoorCloseCommand";
   }
-
 }
