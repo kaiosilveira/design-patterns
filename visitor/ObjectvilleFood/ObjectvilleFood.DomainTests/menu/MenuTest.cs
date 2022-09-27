@@ -1,5 +1,7 @@
 using Xunit;
 using ObjectvilleFood.Domain.MenuDefinition;
+using Moq;
+using ObjectvilleFood.Domain.Visitors;
 
 class TestMenu : Menu
 {
@@ -57,5 +59,16 @@ public class MenuTest
     menu.Add(item);
 
     Assert.Equal(item.Name, menu.GetChild(0).Name);
+  }
+
+  [Fact]
+  public void TestAcceptsVisitor()
+  {
+    var visitor = new Mock<Visitor>();
+    var menu = new TestMenu();
+
+    menu.Accept(visitor: visitor.Object);
+
+    visitor.Verify(v => v.VisitMenu(menu), Times.Once());
   }
 }

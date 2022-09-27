@@ -1,3 +1,5 @@
+using ObjectvilleFood.Domain.Visitors;
+
 namespace ObjectvilleFood.Domain.MenuDefinition;
 
 public class Menu : MenuComponent
@@ -37,5 +39,10 @@ public class Menu : MenuComponent
     Console.WriteLine("---------------------------------");
 
     this.menuComponents.ForEach(component => component.Print());
+  }
+
+  public void Accept(Visitor visitor)
+  {
+    visitor.VisitMenu(this);
   }
 }
