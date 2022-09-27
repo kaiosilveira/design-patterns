@@ -1,6 +1,6 @@
 using Xunit;
-using ObjectvilleFood.Domain.MenuDefinition;
 using Moq;
+using ObjectvilleFood.Domain.MenuDefinition;
 using ObjectvilleFood.Domain.Visitors;
 
 class TestMenu : Menu
