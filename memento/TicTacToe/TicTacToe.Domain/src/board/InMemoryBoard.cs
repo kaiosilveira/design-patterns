@@ -7,7 +7,7 @@ public class InMemoryBoard : Board
 
   public InMemoryBoard()
   {
-    PlayedPositions = new string?[9];
+    PlayedPositions = new string?[9] { null, null, null, null, null, null, null, null, null };
   }
 
   public void AddPlay(int position, string symbol)
@@ -18,7 +18,8 @@ public class InMemoryBoard : Board
 
   public BoardState GetState()
   {
-    return new BoardState(CurrentPlayNumber, PlayedPositions);
+    var clone = new string?[9];
+    return new BoardState(CurrentPlayNumber, playedPositions: (string?[])PlayedPositions.Clone());
   }
 
   public void SetState(BoardState state)
@@ -27,7 +28,18 @@ public class InMemoryBoard : Board
     this.PlayedPositions = state.PlayedPositions;
   }
 
-  public void Draw() {
+  public void Draw()
+  {
+    var firstRow = new string?[3] { PlayedPositions[0], PlayedPositions[1], PlayedPositions[2] };
+    var secondRow = new string?[3] { PlayedPositions[3], PlayedPositions[4], PlayedPositions[5] };
+    var thirdRow = new string?[3] { PlayedPositions[6], PlayedPositions[7], PlayedPositions[8] };
 
+    Console.WriteLine(String.Join(" | ", firstRow.ToList().Select(item => item == null ? " " : item)));
+    Console.WriteLine(String.Join(" | ", secondRow.ToList().Select(item => item == null ? " " : item)));
+    Console.WriteLine(String.Join(" | ", thirdRow.ToList().Select(item => item == null ? " " : item)));
+  }
+
+  public int GetCurrentPlayNumber() {
+    return CurrentPlayNumber;
   }
 }

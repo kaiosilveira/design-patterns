@@ -7,4 +7,8 @@ public interface Board
   BoardState GetState();
 
   void SetState(BoardState state);
+
+  void Draw();
+
+  int GetCurrentPlayNumber();
 }
