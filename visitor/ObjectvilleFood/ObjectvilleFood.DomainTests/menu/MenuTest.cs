@@ -25,7 +25,8 @@ public class MenuTest
   {
     var menu = new TestMenu();
     var item = new MenuItem(
-      name: "Test Item", description: "A test item", isVegetarian: false, price: 0
+      name: "Test Item", description: "A test item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
     );
 
     menu.Add(item);
@@ -38,7 +39,8 @@ public class MenuTest
   {
     var menu = new TestMenu();
     var item = new MenuItem(
-      name: "Test Item", description: "A test item", isVegetarian: false, price: 0
+      name: "Test Item", description: "A test item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
     );
 
     menu.Add(item);
@@ -53,7 +55,8 @@ public class MenuTest
   {
     var menu = new TestMenu();
     var item = new MenuItem(
-      name: "Test Item", description: "A test item", isVegetarian: false, price: 0
+      name: "Test Item", description: "A test item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
     );
 
     menu.Add(item);
@@ -76,10 +79,12 @@ public class MenuTest
   public void TestCallsAcceptVisitorInAllChildren()
   {
     var item1 = new MenuItem(
-      name: "Test Item #1", description: "A test item", isVegetarian: false, price: 0
+      name: "Test Item #1", description: "A test item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
     );
     var item2 = new MenuItem(
-      name: "Test Item #2", description: "A test item", isVegetarian: false, price: 0
+      name: "Test Item #2", description: "A test item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
     );
 
     var visitor = new Mock<Visitor>();

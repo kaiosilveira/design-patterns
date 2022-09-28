@@ -12,6 +12,9 @@ public class DinerMenu : Menu
         description: "(Fakin') Bacon with lettuce & tomato on whole wheat",
         isVegetarian: true,
         price: 299,
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 50.3,
+        fatInGrams: 84.2,
         healthScore: "A"
       )
     );
@@ -22,6 +25,9 @@ public class DinerMenu : Menu
         description: "Bacon with lettuce & tomato on whole wheat",
         isVegetarian: false,
         price: 299,
+        proteinInGams: 32.6,
+        carbohydratesInGrams: 173.3,
+        fatInGrams: 25.2,
         healthScore: "C"
       )
     );
@@ -32,6 +38,9 @@ public class DinerMenu : Menu
         description: "Soup of the day, with a side of potato salad",
         isVegetarian: false,
         price: 329,
+        proteinInGams: 14.6,
+        carbohydratesInGrams: 50.3,
+        fatInGrams: 31.2,
         healthScore: "B"
       )
     );
@@ -42,6 +51,9 @@ public class DinerMenu : Menu
         description: "A hot dog, with saurkraut, relish, onions, topped with cheese",
         isVegetarian: false,
         price: 305,
+        proteinInGams: 23.6,
+        carbohydratesInGrams: 95.3,
+        fatInGrams: 142.2,
         healthScore: "D"
       )
     );

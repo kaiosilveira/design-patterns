@@ -12,7 +12,10 @@ public class PancakeHouseMenu : Menu
         name: "K&B's Pancake Breakfast",
         description: "Pancakes with scrambled eggs, and toast",
         isVegetarian: true,
-        price: 299
+        price: 299,
+        proteinInGams: 15.6,
+        carbohydratesInGrams: 95.3,
+        fatInGrams: 32.2
       )
     );
 
@@ -21,7 +24,10 @@ public class PancakeHouseMenu : Menu
         name: "Regular Pancake Breakfast",
         description: "Pancakes with fried eggs, sausage",
         isVegetarian: false,
-        price: 299
+        price: 299,
+        proteinInGams: 19.6,
+        carbohydratesInGrams: 95.3,
+        fatInGrams: 150.2
       )
     );
 
@@ -30,7 +36,10 @@ public class PancakeHouseMenu : Menu
         name: "Blueberry Pancakes",
         description: "Pancakes made with fresh blueberries",
         isVegetarian: true,
-        price: 349
+        price: 349,
+        proteinInGams: 5.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 20.2
       )
     );
 
@@ -39,7 +48,10 @@ public class PancakeHouseMenu : Menu
         name: "Waffles",
         description: "Waffles, with your choice of blueberries or strawberries",
         isVegetarian: true,
-        price: 359
+        price: 359,
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 63.2
       )
     );
   }

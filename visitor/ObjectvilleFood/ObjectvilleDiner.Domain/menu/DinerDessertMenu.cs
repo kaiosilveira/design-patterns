@@ -13,6 +13,9 @@ public class DinerDessertMenu : Menu
         description: "Apple pie with a flakey crust, topped with vanilla icecream",
         isVegetarian: true,
         price: 159,
+        proteinInGams: 8.6,
+        carbohydratesInGrams: 222.3,
+        fatInGrams: 130.2,
         healthScore: "E"
       )
     );

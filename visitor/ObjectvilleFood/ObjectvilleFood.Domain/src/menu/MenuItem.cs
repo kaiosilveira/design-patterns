@@ -4,12 +4,14 @@ namespace ObjectvilleFood.Domain.MenuDefinition;
 
 public class MenuItem : MenuComponent
 {
-  public MenuItem(string name, string description, bool isVegetarian, int price)
-    : base(name, description, isVegetarian, price)
-  { }
-
-  public MenuItem(string name, string description, bool isVegetarian, int price, string healthScore)
-    : base(name, description, isVegetarian, price, healthScore)
+  public MenuItem(string name, string description, bool isVegetarian, int price,
+    double proteinInGams, double carbohydratesInGrams, double fatInGrams,
+    string healthScore = "?"
+  )
+    : base(
+      name, description, isVegetarian, price,
+      proteinInGams, carbohydratesInGrams, fatInGrams, healthScore
+    )
   { }
 
   public override void Print()

@@ -9,7 +9,10 @@ namespace ObjectvilleFood.DomainTests;
 class EmptyMenuItem : MenuItem
 {
   public EmptyMenuItem()
-    : base(name: "Empty Item", description: "Empty Item", isVegetarian: false, price: 0)
+    : base(
+      name: "Empty Item", description: "Empty Item", isVegetarian: false, price: 0,
+      proteinInGams: 3.6, carbohydratesInGrams: 125.3, fatInGrams: 63.2
+    )
   { }
 }
 
@@ -22,35 +25,33 @@ public class MenuItemTest
         name: "Waffles",
         description: "Waffles with your choice of blueberries or strawberries",
         isVegetarian: true,
-        price: 359
+        price: 359,
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 63.2
     );
   }
 
   [Fact]
   public void TestAssignPropertiesCorrectly()
   {
-    Assert.Equal("Waffles", menuItem.Name);
-    Assert.Equal("Waffles with your choice of blueberries or strawberries", menuItem.Description);
-    Assert.True(menuItem.IsVegetarian);
-    Assert.Equal(359, menuItem.Price);
-  }
-
-  [Fact]
-  public void TestAssignHealthScoreIfPassedIn()
-  {
-    this.menuItem = new MenuItem(
+    var menuItem = new MenuItem(
         name: "Waffles",
         description: "Waffles with your choice of blueberries or strawberries",
         isVegetarian: true,
         price: 359,
-        healthScore: "E"
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 63.2
     );
 
-    Assert.Equal("E", menuItem.HealthScore);
     Assert.Equal("Waffles", menuItem.Name);
     Assert.Equal("Waffles with your choice of blueberries or strawberries", menuItem.Description);
     Assert.True(menuItem.IsVegetarian);
     Assert.Equal(359, menuItem.Price);
+    Assert.Equal(3.6, menuItem.ProteinInGrams);
+    Assert.Equal(125.3, menuItem.CarbohydratesInGrams);
+    Assert.Equal(63.2, menuItem.FatInGrams);
   }
 
   [Fact]

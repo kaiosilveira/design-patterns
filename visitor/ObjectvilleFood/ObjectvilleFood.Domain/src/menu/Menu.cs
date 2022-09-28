@@ -7,7 +7,10 @@ public class Menu : MenuComponent
   protected List<MenuComponent> menuComponents;
 
   public Menu(string name, string description)
-    : base(name, description, isVegetarian: false, price: 0)
+    : base(
+      name, description, isVegetarian: false, price: 0,
+      proteinInGrams: 0, carbohydratesInGrams: 0, fatInGrams: 0
+    )
   {
     this.menuComponents = new List<MenuComponent>();
   }
