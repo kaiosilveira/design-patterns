@@ -114,4 +114,4 @@ The behavioral design patterns presented at GoF's book are:
 
 - [Template method](/template-method): Defines the skeleton of an algorithm in a method, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
-- [Visitor](/visitor): 🚧 **WIP** 🚧 Represents an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of elements on which it operates.
+- [Visitor](/visitor): Represents an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of elements on which it operates.
