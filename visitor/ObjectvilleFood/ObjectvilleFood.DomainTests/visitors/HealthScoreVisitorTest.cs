@@ -11,7 +11,10 @@ public class HealthScoreVisitorTest
         name: "Waffles",
         description: "Waffles with your choice of blueberries or strawberries",
         isVegetarian: true,
-        price: 359
+        price: 359,
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 63.2
     );
 
     var visitor = new HealthScoreVisitor();
@@ -29,6 +32,9 @@ public class HealthScoreVisitorTest
         description: "Waffles with your choice of blueberries or strawberries",
         isVegetarian: true,
         price: 359,
+        proteinInGams: 3.6,
+        carbohydratesInGrams: 125.3,
+        fatInGrams: 63.2,
         healthScore: "E"
     );
 
