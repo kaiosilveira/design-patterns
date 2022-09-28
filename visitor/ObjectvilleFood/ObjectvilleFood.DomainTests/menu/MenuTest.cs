@@ -71,4 +71,24 @@ public class MenuTest
 
     visitor.Verify(v => v.VisitMenu(menu), Times.Once());
   }
+
+  [Fact]
+  public void TestCallsAcceptVisitorInAllChildren()
+  {
+    var item1 = new MenuItem(
+      name: "Test Item #1", description: "A test item", isVegetarian: false, price: 0
+    );
+    var item2 = new MenuItem(
+      name: "Test Item #2", description: "A test item", isVegetarian: false, price: 0
+    );
+
+    var visitor = new Mock<Visitor>();
+    var menu = new TestMenu();
+    menu.Add(item1);
+    menu.Add(item2);
+
+    menu.Accept(visitor: visitor.Object);
+
+    visitor.Verify(v => v.VisitMenuItem(It.IsAny<MenuItem>()), Times.Exactly(2));
+  }
 }

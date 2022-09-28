@@ -43,6 +43,7 @@ public class Menu : MenuComponent
 
   public override void Accept(Visitor visitor)
   {
+    menuComponents.ForEach(menuComponent => menuComponent.Accept(visitor));
     visitor.VisitMenu(this);
   }
 }
