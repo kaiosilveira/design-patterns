@@ -4,7 +4,7 @@ Represents an operation to be performed on the elements of an object structure. 
 
 ## Structure
 
-The formal structure for the visitor pattern has many moving parts. THe class diagram below shows how these parts interact with each other:
+The formal structure for the visitor pattern has many moving parts. The class diagram below shows how these parts interact with each other:
 
 ```mermaid
 classDiagram
@@ -93,3 +93,5 @@ deactivate anObjectStructure
 Visitors are useful when we want to extend the behavior of a class hierarchy without "polluting" the related classes with more code. It's specially helpful when working with composites.
 
 ## Working example
+
+The working example for this pattern is built on top of what we've done for the [Composite Pattern](../composite), where we had a composite structure formed by `MenuComponent` subclasses. Here we've implemented a `Visitor` class hierarchy, containing two visitors: `HealthInformationVisitor` and `MacroNutrientsVisitor`, these two, as the name suggests, are responsible for gathering information regarding health score and macro nutrients info for all menu items. Check out [ObjectvilleFood](./ObjectvilleFood/) for implementation details and further explanations.
