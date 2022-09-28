@@ -8,6 +8,10 @@ public class MenuItem : MenuComponent
     : base(name, description, isVegetarian, price)
   { }
 
+  public MenuItem(string name, string description, bool isVegetarian, int price, string healthScore)
+    : base(name, description, isVegetarian, price, healthScore)
+  { }
+
   public override void Print()
   {
     var vegetarianText = this.IsVegetarian ? "🍀" : "";

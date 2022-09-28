@@ -9,6 +9,7 @@ public abstract class MenuComponent
   public string Description { get; private set; }
   public int Price { get; private set; }
   public bool IsVegetarian { get; private set; }
+  public string? HealthScore { get; private set; }
 
   public MenuComponent(string name, string description, bool isVegetarian, int price)
   {
@@ -16,6 +17,17 @@ public abstract class MenuComponent
     this.Description = description;
     this.Price = price;
     this.IsVegetarian = isVegetarian;
+  }
+
+  public MenuComponent(
+    string name, string description, bool isVegetarian, int price, string healthScore
+  )
+  {
+    this.Name = name;
+    this.Description = description;
+    this.Price = price;
+    this.IsVegetarian = isVegetarian;
+    this.HealthScore = healthScore;
   }
 
   public virtual void Accept(Visitor v) => throw new UnsupportedOperationException();

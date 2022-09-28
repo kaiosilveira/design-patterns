@@ -36,6 +36,24 @@ public class MenuItemTest
   }
 
   [Fact]
+  public void TestAssignHealthScoreIfPassedIn()
+  {
+    this.menuItem = new MenuItem(
+        name: "Waffles",
+        description: "Waffles with your choice of blueberries or strawberries",
+        isVegetarian: true,
+        price: 359,
+        healthScore: "E"
+    );
+
+    Assert.Equal("E", menuItem.HealthScore);
+    Assert.Equal("Waffles", menuItem.Name);
+    Assert.Equal("Waffles with your choice of blueberries or strawberries", menuItem.Description);
+    Assert.True(menuItem.IsVegetarian);
+    Assert.Equal(359, menuItem.Price);
+  }
+
+  [Fact]
   public void TestAcceptsVisitor()
   {
     var visitor = new Mock<Visitor>();
