@@ -87,3 +87,5 @@ var pasteCmd = new PasteCommand(
   pastePosition: doc.GetContents().Length
 );
 ```
+
+Make sure to check out the [CopyAndPaste](./CopyAndPaste/) project for full implementation details.
