@@ -118,3 +118,5 @@ public class ChicagoPizzaStore : PizzaStore
   }
 }
 ```
+
+Make sure to check out the [PizzaStore](./PizzaStore/) project for full implementation details.

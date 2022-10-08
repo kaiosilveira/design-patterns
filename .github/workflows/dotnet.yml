@@ -34,7 +34,7 @@ jobs:
               "./adapter/DuckAdapter",
               "./facade/HomeTheater",
               "./builder/Patternsland",
-              "./factory-method",
+              "./factory-method/PizzaStore",
               "./observer",
               "./prototype",
               "./strategy",
