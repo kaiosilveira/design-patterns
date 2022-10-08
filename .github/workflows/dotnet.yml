@@ -36,7 +36,7 @@ jobs:
               "./builder/Patternsland",
               "./factory-method/PizzaStore",
               "./observer/WeatherStation",
-              "./prototype",
+              "./prototype/CopyAndPaste",
               "./strategy",
               "./decorator",
             ],
