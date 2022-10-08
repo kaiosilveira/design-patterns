@@ -28,7 +28,7 @@ jobs:
               "./composite/ObjectvilleFood",
               "./abstract-factory/MazeGame",
               "./abstract-factory/PizzaStore",
-              "./singleton/choc-o-holic",
+              "./singleton/ChocOHolic",
               "./template-method/starbuzz-coffee",
               "./iterator/objectville-food",
               "./adapter/duck-adapter",

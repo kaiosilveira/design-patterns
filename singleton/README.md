@@ -30,4 +30,4 @@ Although the Singleton Pattern is really straightforward to implement, it has ma
 
 ## Working example
 
-For the working example I've implemented a `ChocolateBoiler` class, responsible for boiling chocolate + milk in a chocolate factory. This factory only has one boiler, that's why we needed it to be a singleton in the code.
+The working example for this pattern was inspired by the `ChocolateBoiler` project described in the Head-First Design Patterns book. The `ChocolateBoiler` class is responsible for boiling chocolate + milk in a chocolate factory. This factory only has one boiler, that's why we needed it to be a singleton in the code. Make sure to check out the [ChocOHolic](./ChocOHolic/) project for the implementation details.
