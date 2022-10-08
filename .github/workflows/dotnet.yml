@@ -32,7 +32,7 @@ jobs:
               "./template-method/StarbuzzCoffee",
               "./iterator/ObjectvilleFood",
               "./adapter/DuckAdapter",
-              "./facade/home-theater",
+              "./facade/HomeTheater",
               "./builder/Patternsland",
               "./factory-method",
               "./observer",
