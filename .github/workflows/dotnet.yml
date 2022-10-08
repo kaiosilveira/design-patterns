@@ -31,7 +31,7 @@ jobs:
               "./singleton/ChocOHolic",
               "./template-method/StarbuzzCoffee",
               "./iterator/ObjectvilleFood",
-              "./adapter/duck-adapter",
+              "./adapter/DuckAdapter",
               "./facade/home-theater",
               "./builder/Patternsland",
               "./factory-method",
