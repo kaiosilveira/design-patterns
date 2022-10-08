@@ -52,3 +52,5 @@ As our working example we will be revisiting our Starbuzz Coffee example first i
 ```
 
 Notice how steps 1 and 3 are the same, and steps 2 and 4 are similar in terms of proceedings.
+
+Make sure to check out the [StarbuzzCofee](./StarbuzzCoffee/) project for full implementation details.
