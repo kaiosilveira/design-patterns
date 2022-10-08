@@ -30,7 +30,7 @@ jobs:
               "./abstract-factory/PizzaStore",
               "./singleton/ChocOHolic",
               "./template-method/StarbuzzCoffee",
-              "./iterator/objectville-food",
+              "./iterator/ObjectvilleFood",
               "./adapter/duck-adapter",
               "./facade/home-theater",
               "./builder/Patternsland",
