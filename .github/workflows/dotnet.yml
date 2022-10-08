@@ -37,7 +37,7 @@ jobs:
               "./factory-method/PizzaStore",
               "./observer/WeatherStation",
               "./prototype/CopyAndPaste",
-              "./strategy",
+              "./strategy/TextFormatter",
               "./decorator",
             ],
         }

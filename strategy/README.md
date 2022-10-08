@@ -101,3 +101,5 @@ var resultC = client.ContextInterface(new ConcreteStrategyC());
 As the working example I expanded the `Renderable` interface presented in the "Composite Pattern" project to allow multiple rendering formats. The `FormattingStrategy` interface was introduced to represent the formatting strategies.
 
 Now, the `Renderable.Render` method expects a parameter specifying the formatting strategy to be used to render the text value. Two formatting strategies were created: `PlainTextFormatter` and `HTMLTextFormatter`, both of them inherit from `Formatter`, which has a default implementation.
+
+Make sure to check out the [TextFormatter](./TextFormatter/) project for full implementation details.
