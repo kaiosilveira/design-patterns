@@ -38,7 +38,7 @@ jobs:
               "./observer/WeatherStation",
               "./prototype/CopyAndPaste",
               "./strategy/TextFormatter",
-              "./decorator",
+              "./decorator/StarbuzzCoffee",
             ],
         }
     defaults:

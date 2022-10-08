@@ -61,3 +61,5 @@ For our working example, we are going to implement the beverages menu for Starbu
 | - Whip .10        |
 +-------------------+
 ```
+
+Make sure to check out the [StarbuzzCoffee](./StarbuzzCoffee/) for implementation details.
